@@ -8,7 +8,7 @@
     </div>
 
 
-    @include('admin.partials.side-nav')
+    @include('customer.partials.side-nav')
 
     <header class="pc-header">
         <div class="m-header">

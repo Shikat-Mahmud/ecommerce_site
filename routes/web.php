@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Customer\CustomerController;
+use App\Http\Controllers\Customer\CustomerProfileController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\SettingsController;
@@ -17,10 +19,20 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/home', function () {
-    return view('welcome');
-})->middleware(['auth', 'admin.redirect'])->name('home');
+// Route::get('/home', function () {
+//     return view('welcome');
+// })->middleware(['auth', 'admin.redirect'])->name('home');
 
+// customer routes
+Route::middleware(['auth'])->group(function () {
+    Route::get('/customer-dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
+
+    Route::get('/customer-profile', [CustomerProfileController::class, 'edit'])->name('customer.profile.edit');
+    Route::patch('/customer-profile', [CustomerProfileController::class, 'update'])->name('customer.profile.update');
+    Route::delete('/customer-profile', [CustomerProfileController::class, 'destroy'])->name('customer.profile.destroy');
+});
+
+// admin routes
 Route::middleware(['auth', 'permission:admin-panel'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [IndexController::class, 'index'])->name('index');
     Route::resource('/roles', RoleController::class);
