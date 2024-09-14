@@ -24,7 +24,7 @@ class CustomerController extends Controller
         $perproduct = (($totalProduct / $subsetCount) * 100);
 
 
-        return view('customer.main.index', compact('totalUsers', 'totalCategory', 'totalProduct', 'peruser', 'percategory', 'perproduct'));
+        return view('customer.main.dashboard', compact('totalUsers', 'totalCategory', 'totalProduct', 'peruser', 'percategory', 'perproduct'));
 
     }
 
