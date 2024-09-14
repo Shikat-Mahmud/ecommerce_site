@@ -108,17 +108,6 @@
 
     @include('customer.partials.side-nav')
 
-    <!-- universal search start -->
-    <div class="pc-container" style="display: none; min-height: 0 !important;">
-        <div class="pc-content">
-            <div class="row">
-                <div id="search-results" class="col">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- universal search end -->
-
     <!-- main content start -->
     @yield('content')
     <!-- main content end -->

@@ -2,6 +2,7 @@
 
 use App\Models\ApplicationSetting;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 function generalSettings(){
     $application = ApplicationSetting::latest()->first();
@@ -10,6 +11,6 @@ function generalSettings(){
 
 function user($id)
 {
-    $users = User::auth()->user();
-    return $users;
+    $user = Auth::user();
+    return $user;
 }
