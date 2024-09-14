@@ -27,6 +27,13 @@
                                 </div>
                             </div>
                             <div class="row mt-3">
+                                <label for="" class="col-md-4 required">Product Price <span
+                                        class="text-danger">*</span></label>
+                                <div class="col-md-8">
+                                    <input type="text" name="price" class="form-control" placeholder="Product Price" value="{{ old('price') }}"/>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
                                 <label for="" class="col-md-4 required">Category Name <span
                                         class="text-danger">*</span></label>
                                 <div class="col-md-8">

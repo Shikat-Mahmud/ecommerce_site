@@ -15,8 +15,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        if (auth()->check() && auth()->user()->hasAnyPermission(['create-product', 'show-product', 'edit-product', 'delete-product']))
-        {
+        if (auth()->check() && auth()->user()->hasAnyPermission(['create-product', 'show-product', 'edit-product', 'delete-product'])) {
             $products = Product::all();
             return view('admin.main.product.index', compact('products'));
         } else {
@@ -39,9 +38,11 @@ class ProductController extends Controller
     {
         try {
             $request->validate([
+                'name' => 'required|string|max:255',
+                'price' => 'required|string|max:20',
+                'description' => 'nullable|string|max:255',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'category_id' => 'required|exists:categories,id',
-                'name' => 'required',
             ]);
 
             $inputs = $request->all();
@@ -75,9 +76,9 @@ class ProductController extends Controller
     public function edit(string $id)
     {
         if (auth()->user()->can('edit-product')) {
-            return view('admin.main.product.edit',[
-                'product'=>Product::find($id),
-                'categories'=>Category::where('status',1)->get(),
+            return view('admin.main.product.edit', [
+                'product' => Product::find($id),
+                'categories' => Category::where('status', 1)->get(),
             ]);
         } else {
             return redirect()->back()->with('error', 'You do not have permission to edit products.');
@@ -86,34 +87,37 @@ class ProductController extends Controller
 
     public function update(Request $request, string $id)
     {
-            try {
-                $request->validate([
-                    'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-                    'category_id' => 'required|exists:categories,id',
-                    'name' => 'required',
-                ]);
+        try {
+            $request->validate([
+                'name' => 'required|string|max:255',
+                'price' => 'required|string|max:20',
+                'description' => 'nullable|string|max:255',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'category_id' => 'required|exists:categories,id',
+            ]);
 
-                $product = Product::find($id);
+            $product = Product::find($id);
 
-                $product->name = $request->input('name');
-                $product->status = $request->input('status');
-                $product->description = $request->input('description');
-                $product->category_id = $request->input('category_id');
+            $product->name = $request->input('name');
+            $product->price = $request->input('price');
+            $product->status = $request->input('status');
+            $product->description = $request->input('description');
+            $product->category_id = $request->input('category_id');
 
-                if ($request->hasFile('image')) {
-                    if ($product->image) {
-                        Storage::delete($product->image);
-                    }
-
-                    $imagePath = $request->file('image')->store('products', 'public');
-                    $product->image = $imagePath;
+            if ($request->hasFile('image')) {
+                if ($product->image) {
+                    Storage::delete($product->image);
                 }
 
-                $product->save();
-                return redirect()->route('products.index')->with('success', 'Product Updated successfully.');
-            } catch (\Exception $e) {
-                return redirect()->back()->with('error', $e->getMessage());
+                $imagePath = $request->file('image')->store('products', 'public');
+                $product->image = $imagePath;
             }
+
+            $product->save();
+            return redirect()->route('products.index')->with('success', 'Product Updated successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
     }
 
     public function destroy(string $id)

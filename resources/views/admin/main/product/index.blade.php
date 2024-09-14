@@ -31,6 +31,7 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Cat.Name</th>
+                                        <th>Price</th>
                                         <th>Description</th>
                                         <th>Image</th>
                                         <th>Status</th>
@@ -42,6 +43,7 @@
                                     <tr>
                                         <td>{{ $product->name }}</td>
                                         <td>{{ $product->category ? $product->category->name : '' }}</td>
+                                        <td>{{ $product->price }}</td>
                                         <td class="desc-box">{{ $product->description }}</td>
                                         <td>
                                             @if ($product->image)

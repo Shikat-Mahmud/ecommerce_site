@@ -30,6 +30,14 @@
                                     </div>
                                 </div>
                                 <div class="row mt-3">
+                                    <label for="" class="col-md-4">Product Price <span
+                                            class="text-danger">*</span></label>
+                                    <div class="col-md-8">
+                                        <input type="text" name="price" value="{{ $product->price }}"
+                                            class="form-control" required />
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
                                     <label for="" class="col-md-4" required>Category Name <span
                                             class="text-danger">*</span></label>
                                     <div class="col-md-8">

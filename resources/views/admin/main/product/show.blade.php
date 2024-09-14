@@ -23,7 +23,7 @@
                                     <img src="{{ asset('storage/' . $product->image) }}" alt="Photo"
                                         style="height: 200px; border-radius: 10px;">
                                 @else
-                                    <img src="{{ asset('/assets/images/user/avatar-2.jpg') }}" alt="User-Profile-Image">
+                                    <img src="{{ asset('/assets/images/user/avatar-2.jpg') }}" alt="Product-Image">
                                 @endif
                             </div>
                             <br>
@@ -43,6 +43,15 @@
                                 </div>
                                 <div class="col-md-8">
                                     <p class="ml-3">{{ $product->category->name }}</p>
+                                </div>
+                            </div>
+
+                            <div class="row d-flex text-left">
+                                <div class="col-md-4">
+                                    <span>Price: </span>
+                                </div>
+                                <div class="col-md-8">
+                                    <p class="ml-3">{{ $product->price }}</p>
                                 </div>
                             </div>
 

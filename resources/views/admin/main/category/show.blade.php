@@ -17,8 +17,8 @@
                         </div>
                         <div class="card-body text-dark">
                             <div class="p-2  text-center">
-                                <img src="https://cdn-icons-png.freepik.com/512/5665/5665189.png" style="height: 100px; "
-                                    alt="User-Profile-Image">
+                                <img src="{{ asset('images/cat_image.png') }}" style="height: 100px; "
+                                    alt="Category-Image">
                             </div>
                             <br>
 
