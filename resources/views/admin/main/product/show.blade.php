@@ -17,13 +17,11 @@
                         </div>
                         <div class="card-body text-dark">
                             <div class="p-2 text-center">
-                                <!-- <img src="https://cdn-icons-png.freepik.com/512/5665/5665189.png" style="height: 100px; "
-                                        alt="User-Profile-Image"> -->
                                 @if (isset($product->image))
-                                    <img src="{{ asset('storage/' . $product->image) }}" alt="Photo"
+                                    <img src="{{ asset('storage/' . $product->image) }}" alt="Product-Image"
                                         style="height: 200px; border-radius: 10px;">
                                 @else
-                                    <img src="{{ asset('/assets/images/user/avatar-2.jpg') }}" alt="Product-Image">
+                                    <img src="{{ asset('images/cat_image.png') }}" alt="Product-Image">
                                 @endif
                             </div>
                             <br>

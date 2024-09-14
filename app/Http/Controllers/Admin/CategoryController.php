@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
@@ -31,13 +32,20 @@ class CategoryController extends Controller
     {
         try {
             $request->validate([
-                'name' => 'required',
+                'name' => 'required|string|max:255',
+                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
 
-            Category::create([
-                'name' => $request->input('name'),
-                'status' => $request->input('status')
-            ]);
+            $inputs = $request->all();
+            if ($request->hasFile('image')) {
+                $imagePath = $request->file('image')->store('categories', 'public');
+                $inputs['image'] = $imagePath;
+            }
+
+            $category = new Category();
+            $category->fill($inputs);
+            $category->save();
+
             return redirect()->route('categories.index')->with('success', 'Category create successfully.');
         } catch (\Exception $e) {
             return redirect()->back()->withInput()->with('error', $e->getMessage());
@@ -70,14 +78,25 @@ class CategoryController extends Controller
     {
         try {
             $request->validate([
-                'name' => 'required',
+                'name' => 'required|string|max:255',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
-            $category = Category::find($id);
 
-            $category->update([
-                'name' => $request->input('name'),
-                'status' => $request->input('status')
-            ]);
+            $category = Category::find($id);
+            
+            $category->name = $request->input('name');
+            $category->status = $request->input('status');
+
+            if ($request->hasFile('image')) {
+                if ($category->image) {
+                    Storage::delete($category->image);
+                }
+
+                $imagePath = $request->file('image')->store('categories', 'public');
+                $category->image = $imagePath;
+            }
+
+            $category->save();
 
             return redirect()->route('categories.index')->with('success', 'Category updated successfully.');
         } catch (\Exception $e) {

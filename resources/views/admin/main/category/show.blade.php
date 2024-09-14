@@ -16,9 +16,13 @@
                             </div>
                         </div>
                         <div class="card-body text-dark">
-                            <div class="p-2  text-center">
-                                <img src="{{ asset('images/cat_image.png') }}" style="height: 100px; "
-                                    alt="Category-Image">
+                            <div class="p-2 text-center">
+                                @if (isset($category->image))
+                                    <img src="{{ asset('storage/' . $category->image) }}" alt="Category-Image"
+                                        style="height: 200px; border-radius: 10px;">
+                                @else
+                                    <img src="{{ asset('images/cat_image.png') }}" alt="Category-Image" style="height: 150px;">
+                                @endif
                             </div>
                             <br>
 

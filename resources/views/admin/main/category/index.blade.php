@@ -25,6 +25,7 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
+                                        <th>Image</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -33,6 +34,15 @@
                                     @foreach ($categories as $item)
                                     <tr>
                                         <td>{{ $item->name }}</td>
+                                        <td>
+                                            @if ($item->image)
+                                            <img src="{{ asset('storage/' . $item->image) }}" alt="Category Image"
+                                                style="height: 50px; border-radius: 6px;">
+                                            @else
+                                            <img src="https://placehold.co/400" alt="Default Image"
+                                                style="height: 50px; border-radius: 6px;">
+                                            @endif
+                                        </td>
                                         <td>
                                             @if ($item->status == '1')
                                             <span>Published</span> <i class="fas fa-circle text-c-green f-10 m-r-15"

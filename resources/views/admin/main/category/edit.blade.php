@@ -17,7 +17,7 @@
                         </div>
                         <div class="card-body">
 
-                            <form action="{{ route('categories.update', ['category' => $categories->id]) }}" method="post">
+                            <form action="{{ route('categories.update', ['category' => $categories->id]) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="row mt-3">
@@ -26,6 +26,18 @@
                                     <div class="col-md-8">
                                         <input type="text" name="name" value="{{ $categories->name }}"
                                             class="form-control" />
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <label for="" class="col-md-4">Category Image <span
+                                    class="text-danger">*</span></label>
+                                    <div class="col-md-8">
+                                        <input type="file" name="image" value="{{ $categories->image }}"
+                                            class="form-control" accept="image/*" />
+                                            @if (isset($categories->image))
+                                                <img src="{{ asset('storage/'.$categories->image) }}" alt="Category Image" style="height: 80px"
+                                                class="mt-2 rounded">
+                                            @endif
                                     </div>
                                 </div>
                                 <div class="row mt-3">
