@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title', content: 'View Product')
+@section('title', content: '- View Product')
 
 @section('content')
  <!-- Breadcrumb -->
@@ -72,7 +72,7 @@
                             <div class="min-[992px]:w-[58.33%] w-full px-[12px] mb-[24px]">
                                 <div class="bb-single-pro-contact">
                                     <div class="bb-sub-title mb-[20px]">
-                                        <h4 class="font-quicksand text-[22px] tracking-[0.03rem] font-bold leading-[1.2] text-[#3d4750]">Ground Nuts Oil Pack 52g</h4>
+                                        <h4 class="font-quicksand text-[22px] tracking-[0.03rem] font-bold leading-[1.2] text-[#3d4750]">{{ $product->name }}</h4>
                                     </div>
                                     <div class="bb-single-rating mb-[12px]">
                                         <span class="bb-pro-rating mr-[10px]">
@@ -296,7 +296,7 @@
     </section>
 
     <!-- Related product section -->
-    <section class="section-related-product py-[50px] max-[1199px]:py-[35px]">
+    <!-- <section class="section-related-product py-[50px] max-[1199px]:py-[35px]">
         <div class="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
             <div class="flex flex-wrap w-full">
                 <div class="w-full px-[12px]">
@@ -550,5 +550,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 @endsection

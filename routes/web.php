@@ -17,7 +17,7 @@ use App\Http\Controllers\Admin\UserController;
 
 // ============== frontend routes ============== //
 Route::get('/', [HomeController::class,'index'])->name('home');
-Route::get('/product', [HomeController::class,'productView'])->name('view.product');
+Route::get('/product/{id}', [HomeController::class,'productView'])->name('view.product');
 
 // ============== customer routes ============== //
 Route::middleware(['auth'])->group(function () {

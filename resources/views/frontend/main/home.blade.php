@@ -181,36 +181,36 @@
                         @endphp
 
                         @if (isset($categories))
-                                            @foreach ($categories as $category)
-                                                                @php
-                                                                    $color = $catBg[$colorIndex % $bgColorCount];
-                                                                    $colorIndex++; // Increment the color index
-                                                                @endphp
-                                                                <div class="bb-category-box p-[30px] rounded-[20px] flex flex-col items-center text-center max-[1399px]:p-[20px] category-items-1"
-                                                                    data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200"
-                                                                    style="background-color: #{{ $color }};">
-                                                                    <div class="category-image mb-[12px]">
-                                                                        @if (isset($category->image))
-                                                                            <img src="{{ asset('storage/' . $category->image) }}" alt="category"
-                                                                                class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
-                                                                        @else
-                                                                            <img src="{{ asset('frontend/img/category/1.svg') }}" alt="category"
-                                                                                class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
-                                                                        @endif
-                                                                    </div>
-                                                                    <div class="category-sub-contact">
-                                                                        <h5
-                                                                            class="mb-[2px] text-[16px] font-quicksand text-[#3d4750] font-semibold tracking-[0.03rem] leading-[1.2]">
-                                                                            <a href="shop-left-sidebar-col-3.html"
-                                                                                class="font-Poppins text-[16px] font-medium leading-[1.2] tracking-[0.03rem] text-[#3d4750] capitalize">{{ $category->name }}</a>
-                                                                        </h5>
-                                                                        <!-- <p class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">485 items</p> -->
-                                                                        <p
-                                                                            class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">
-                                                                            Explore</p>
-                                                                    </div>
-                                                                </div>
-                                            @endforeach
+                            @foreach ($categories as $category)
+                                @php
+                                    $color = $catBg[$colorIndex % $bgColorCount];
+                                    $colorIndex++; // Increment the color index
+                                @endphp
+                                <div class="bb-category-box p-[30px] rounded-[20px] flex flex-col items-center text-center max-[1399px]:p-[20px] category-items-1"
+                                    data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200"
+                                    style="background-color: #{{ $color }};">
+                                    <div class="category-image mb-[12px]">
+                                        @if (isset($category->image))
+                                            <img src="{{ asset('storage/' . $category->image) }}" alt="category"
+                                                class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
+                                        @else
+                                            <img src="{{ asset('frontend/img/category/1.svg') }}" alt="category"
+                                                class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
+                                        @endif
+                                    </div>
+                                    <div class="category-sub-contact">
+                                        <h5
+                                            class="mb-[2px] text-[16px] font-quicksand text-[#3d4750] font-semibold tracking-[0.03rem] leading-[1.2]">
+                                            <a href="shop-left-sidebar-col-3.html"
+                                                class="font-Poppins text-[16px] font-medium leading-[1.2] tracking-[0.03rem] text-[#3d4750] capitalize">{{ $category->name }}</a>
+                                        </h5>
+                                        <!-- <p class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">485 items</p> -->
+                                        <p
+                                            class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">
+                                            Explore</p>
+                                    </div>
+                                </div>
+                            @endforeach
                         @endif
                     </div>
                 </div>
@@ -252,7 +252,7 @@
                                                         <span class="text-[14px] text-[#777] font-medium uppercase">New</span>
                                                     </span> -->
                                 @if (isset($product->image))
-                                    <a href="javascript:void(0)">
+                                    <a href="{{ route('view.product',$product->id)}}">
                                         <div class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
                                             <img class="main-img transition-all duration-[0.3s] ease-in-out w-full"
                                                 src="{{ asset('storage/' . $product->image) }}" alt="product-1"
@@ -263,7 +263,7 @@
                                         </div>
                                     </a>
                                 @else
-                                    <a href="javascript:void(0)">
+                                    <a href="{{ route('view.product',$product->id)}}">
                                         <div class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
                                             <img class="main-img transition-all duration-[0.3s] ease-in-out w-full"
                                                 src="{{ asset('frontend/img/new-product/1.jpg') }}" alt="product-1">
@@ -303,7 +303,7 @@
                             <div class="bb-pro-contact p-[20px]">
                                 <div class="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
                                     <a href="shop-left-sidebar-col-3.html"
-                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">Snacks</a>
+                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">{{ $product->category->name }}</a>
                                     <span class="bb-pro-rating">
                                         <i
                                             class="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
@@ -317,14 +317,14 @@
                                     </span>
                                 </div>
                                 <h4 class="bb-pro-title mb-[8px] text-[16px] leading-[18px]">
-                                    <a href="{{ route('view.product')}}"
+                                    <a href="{{ route('view.product',$product->id)}}"
                                         class="transition-all duration-[0.3s] ease-in-out font-quicksand w-full block whitespace-nowrap overflow-hidden text-ellipsis text-[15px] leading-[18px] text-[#3d4750] font-semibold tracking-[0.03rem]">
                                         {{ $product->name }}</a>
                                 </h4>
                                 <div class="bb-price flex flex-wrap justify-between">
                                     <div class="inner-price mx-[-3px]">
-                                        <span class="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">$15</span>
-                                        <span class="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$22</span>
+                                        <span class="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">৳{{ $product->price }}</span>
+                                        <!-- <span class="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$22</span> -->
                                     </div>
                                     <span class="last-items text-[14px] text-[#686e7d]">500g</span>
                                 </div>

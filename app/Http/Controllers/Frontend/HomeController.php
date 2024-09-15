@@ -32,8 +32,9 @@ class HomeController extends Controller
         return view('frontend.main.home', compact('categories', 'catBg', 'bgColorCount', 'products'));
     }
 
-    public function productView()
+    public function productView($id)
     {
-        return view('frontend.main.product');
+        $product = Product::findOrFail($id);
+        return view('frontend.main.product', compact('product'));
     }
 }
