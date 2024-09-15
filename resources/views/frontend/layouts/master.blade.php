@@ -30,6 +30,9 @@
     <!-- Main Style -->
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
 
+    {{-- toaster --}}
+    <link rel="stylesheet" href="{{ asset('/css/toastr.min.css') }}">
+
 </head>
 
 <body>
@@ -77,10 +80,34 @@
     <script src="{{ asset('frontend/js/vendor/aos.js') }}"></script>
     <script src="{{ asset('frontend/js/vendor/swiper-bundle.min.js') }}"></script>
     <script src="{{ asset('frontend/js/vendor/smoothscroll.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/vendor/countdownTimer.js') }}"></script>
+    <!-- <script src="{{ asset('frontend/js/vendor/countdownTimer.js') }}"></script> -->
     <script src="{{ asset('frontend/js/vendor/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('frontend/js/vendor/slick.min.js') }}"></script>
     <script src="{{ asset('frontend/js/vendor/jquery-range-ui.min.js') }}"></script>
+
+    <!-- Toastr JS -->
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
+    <script>
+        toastr.options = {
+            "closeButton": true,
+            "progressBar": true,
+            "timeOut": 5000,
+            "extendedTimeOut": 1000,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": true,
+            "maxOpened": 3
+        };
+
+        @if (Session::has('success'))
+            toastr.success("{{ Session::get('success') }}");
+        @elseif(Session::has('error'))
+            toastr.error("{{ Session::get('error') }}");
+        @elseif(Session::has('warning'))
+            toastr.warning("{{ Session::get('warning') }}");
+        @elseif(Session::has('info'))
+            toastr.info("{{ Session::get('info') }}");
+        @endif
+    </script>
 
     <!-- main-js -->
     <script src="{{ asset('frontend/js/main.js') }}"></script>

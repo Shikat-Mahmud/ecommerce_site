@@ -27,7 +27,7 @@ class OrderController extends Controller
             ]);
         }
 
-        return response()->json(['message' => 'Item added to cart']);
+        return redirect()->back()->with('success','Item added to cart');
     }
 
     public function checkout()
