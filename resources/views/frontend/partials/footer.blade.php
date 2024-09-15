@@ -252,15 +252,7 @@
                                         class="text-[#686e7d] text-[13px] tracking-[1px] text-center font-normal"
                                         id="copyright_year"></span>
                                     <a class="site-name transition-all duration-[0.3s] ease-in-out font-medium text-[#6c7fd8] hover:text-[#3d4750] font-Poppins text-[15px] leading-[28px] tracking-[0.03rem]"
-                                        href="index.html">BlueBerry</a> all rights reserved.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-bottom-right">
-                            <div class="footer-bottom-payment flex justify-center">
-                                <div class="payment-link">
-                                    <img src="{{ asset('frontend/img/payment/payment.png') }}" alt="payment"
-                                        class="max-[360px]:w-full">
+                                        href="https://eftakharmahmud.com/">Saikat Mahmud</a> all rights reserved.
                                 </div>
                             </div>
                         </div>

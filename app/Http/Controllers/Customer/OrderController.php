@@ -73,7 +73,7 @@ class OrderController extends Controller
         // Clear cart
         Cart::where('user_id', $userId)->delete();
 
-        return response()->json(['message' => 'Order placed successfully']);
+        return redirect()->route('order.success')->with('success', 'Order placed successfully');
     }
 
     public function updateQuantity(Request $request, $id)
@@ -97,4 +97,21 @@ class OrderController extends Controller
         return response()->json(['error' => 'Item not found'], 404);
     }
 
+    public function orderConfirmation()
+    {
+        $order = Order::with('items.product')->where('user_id', auth()->id())->latest()->first();
+
+        if ($order) {
+            $orderItems = $order->items;
+
+            // If the 'total' is not directly stored in the order, calculate it manually
+            $totalAmount = $orderItems->sum(function ($item) {
+                return $item->product->price * $item->quantity;
+            });
+
+            return view('frontend.main.order_success', compact('orderItems', 'totalAmount'));
+        }
+
+        return redirect()->route('home')->with('error', 'Order not found.');
+    }
 }

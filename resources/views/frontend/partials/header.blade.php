@@ -142,8 +142,8 @@
                                         </div>
                                     </a> -->
 
-                                    <a href="javascript:void(0)"
-                                        class="bb-header-btn bb-cart-toggle transition-all duration-[0.3s] ease-in-out relative flex w-[auto] items-center ml-[30px] max-[1199px]:ml-[20px]"
+                                    <a href="{{ route('cart') }}"
+                                        class="transition-all duration-[0.3s] ease-in-out relative flex w-[auto] items-center ml-[30px] max-[1199px]:ml-[20px]"
                                         title="Cart">
                                         <div class="header-icon relative flex">
                                             <svg class="svg-icon w-[30px] h-[30px] max-[1199px]:w-[25px] max-[1199px]:h-[25px] max-[991px]:w-[22px] max-[991px]:h-[22px]"
@@ -155,9 +155,12 @@
                                             <span class="main-label-note-new"></span>
                                         </div>
                                         <div class="bb-btn-desc flex flex-col ml-[10px] max-[1199px]:hidden">
+                                            @php
+                                                $totalCartItems = totalCartItems();
+                                            @endphp
                                             <span
                                                 class="bb-btn-title font-Poppins transition-all duration-[0.3s] ease-in-out text-[12px] leading-[1] text-[#3d4750] mb-[4px] tracking-[0.6px] capitalize font-medium whitespace-nowrap"><b
-                                                    class="bb-cart-count">4</b> items</span>
+                                                    class="bb-cart-count">{{ $totalCartItems }}</b> items</span>
                                             <span
                                                 class="bb-btn-stitle font-Poppins transition-all duration-[0.3s] ease-in-out text-[14px] leading-[16px] font-semibold text-[#3d4750]  tracking-[0.03rem] whitespace-nowrap">Cart</span>
                                         </div>

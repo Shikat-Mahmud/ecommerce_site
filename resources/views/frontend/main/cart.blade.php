@@ -24,7 +24,7 @@
                                             class="text-left font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] text-[#686e7d] font-medium">Sub-Total</span>
                                         <span
                                             class="text-right font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] text-[#686e7d] font-semibold"
-                                            id="subtotal">৳{{ $totalAmount }}.00</span>
+                                            id="subtotal">৳{{ number_format($totalAmount, 2) }}</span>
                                     </li>
                                     <li class="mb-[12px] flex justify-between leading-[28px]">
                                         <span
@@ -67,7 +67,7 @@
                                             Amount</span>
                                         <span
                                             class="text-right font-Poppins text-[16px] leading-[28px] tracking-[0.03rem] font-semibold text-[#686e7d]"
-                                            id="total">৳{{ $totalAmount }}.00</span>
+                                            id="total">৳{{ number_format($totalAmount, 2) }}</span>
                                     </li>
                                 </ul>
                             </div>
@@ -122,7 +122,7 @@
                                         <td class="p-[12px]">
                                             <span
                                                 class="price font-Poppins text-[15px] font-medium leading-[26px] tracking-[0.02rem] text-[#686e7d]"
-                                                data-price="{{ $cartItem->product->price }}">৳{{ $cartItem->product->price }}.00</span>
+                                                data-price="{{ $cartItem->product->price }}">৳{{ number_format($cartItem->product->price, 2) }}</span>
                                         </td>
                                         <td class="p-[12px]">
                                             <div
@@ -141,7 +141,7 @@
 
                                         <td class="p-[12px]">
                                             <span
-                                                class="total-price font-Poppins text-[15px] font-medium leading-[26px] tracking-[0.02rem] text-[#686e7d]">৳{{ $cartItem->product->price * $cartItem->quantity }}.00</span>
+                                                class="total-price font-Poppins text-[15px] font-medium leading-[26px] tracking-[0.02rem] text-[#686e7d]">৳{{ number_format($cartItem->product->price * $cartItem->quantity, 2) }}</span>
                                         </td>
                                         <td class="p-[12px]">
                                             <div class="pro-remove">

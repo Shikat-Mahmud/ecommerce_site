@@ -152,7 +152,7 @@
                                                 </a>
                                             </li> -->
                                         <li class="bb-btn-group">
-                                            <a href="{{ route('cart') }}" title="heart"
+                                            <a href="{{ route('cart') }}" title="Go To Cart"
                                                 class="transition-all duration-[0.3s] ease-in-out w-[40px] h-[40px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] hover:bg-[#6c7fd8] border-[1px] border-solid border-[#eee] rounded-[10px]">
                                                 <i class="ri-shopping-cart-line text-[16px] leading-[10px] text-[#777]"></i>
                                             </a>

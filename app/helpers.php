@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Cart;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\ApplicationSetting;
@@ -19,4 +20,12 @@ function user($id)
 function categories(){
     $categories = Category::where('status', 1)->get();
     return $categories;
+}
+
+function totalCartItems()
+{
+    $userId = auth()->id();
+    $totalCartItems = Cart::where('user_id',$userId)->count();
+
+    return $totalCartItems;
 }
