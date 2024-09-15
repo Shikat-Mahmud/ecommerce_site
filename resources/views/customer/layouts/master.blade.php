@@ -107,6 +107,7 @@
     data-pc-direction="ltr" data-pc-theme="light">
 
     @include('customer.partials.side-nav')
+    @include('customer.partials.header')
 
     <!-- main content start -->
     @yield('content')
