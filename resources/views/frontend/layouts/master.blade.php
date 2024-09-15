@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Blueberry - Multi Purpose eCommerce Template.">
     <meta name="keywords" content="eCommerce, mart, apparel, catalog, fashion, Tailwind, multipurpose, online store, shop, store, template">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Ecommerce @yield('title')</title>
 
     <!-- Site Favicon -->
