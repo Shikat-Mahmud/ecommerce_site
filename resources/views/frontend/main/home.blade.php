@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','- Home')
+@section('title', '- Home')
 
 @section('content')
 <!-- Hero -->
@@ -35,9 +35,8 @@
                                 <div class="min-[992px]:w-[50%] w-full px-[12px] min-[992px]:order-1 order-2 mb-[24px]">
                                     <div
                                         class="hero-contact h-full flex flex-col items-start justify-center max-[991px]:items-center">
-                                        <p
-                                            class="mb-[20px] font-Poppins text-[18px] text-[#777] font-light leading-[28px] tracking-[0.03rem] max-[1199px]:mb-[10px] max-[1199px]:text-[16px]">
-                                            Flat 30% Off</p>
+                                        <!-- <p class="mb-[20px] font-Poppins text-[18px] text-[#777] font-light leading-[28px] tracking-[0.03rem] max-[1199px]:mb-[10px] max-[1199px]:text-[16px]">
+                                            Flat 30% Off</p> -->
                                         <h1
                                             class="mb-[20px] font-quicksand text-[50px] text-[#3d4750] font-bold tracking-[0.03rem] leading-[1.2] max-[1199px]:mb-[10px] max-[1199px]:text-[38px] max-[991px]:text-center max-[991px]:text-[45px] max-[767px]:text-[40px] max-[575px]:text-[35px] max-[420px]:text-[30px] max-[360px]:text-[28px]">
                                             Explore <span class="relative text-[#6c7fd8]">Healthy</span><br> & Fresh
@@ -70,9 +69,8 @@
                                 <div class="min-[992px]:w-[50%] w-full px-[12px] min-[992px]:order-1 order-2 mb-[24px]">
                                     <div
                                         class="hero-contact h-full flex flex-col items-start justify-center max-[991px]:items-center">
-                                        <p
-                                            class="mb-[20px] font-Poppins text-[18px] text-[#777] font-light leading-[28px] tracking-[0.03rem] max-[1199px]:mb-[10px] max-[1199px]:text-[16px]">
-                                            Flat 20% Off</p>
+                                        <!-- <p class="mb-[20px] font-Poppins text-[18px] text-[#777] font-light leading-[28px] tracking-[0.03rem] max-[1199px]:mb-[10px] max-[1199px]:text-[16px]">
+                                            Flat 20% Off</p> -->
                                         <h2
                                             class="mb-[20px] font-quicksand text-[50px] text-[#3d4750] font-bold tracking-[0.03rem] leading-[1.2] max-[1199px]:mb-[10px] max-[1199px]:text-[38px] max-[991px]:text-center max-[991px]:text-[45px] max-[767px]:text-[40px] max-[575px]:text-[35px] max-[420px]:text-[30px] max-[360px]:text-[28px]">
                                             Explore <span class="relative text-[#6c7fd8]">Warm</span><br> Fast Food &
@@ -105,9 +103,8 @@
                                 <div class="min-[992px]:w-[50%] w-full px-[12px] min-[992px]:order-1 order-2 mb-[24px]">
                                     <div
                                         class="hero-contact h-full flex flex-col items-start justify-center max-[991px]:items-center">
-                                        <p
-                                            class="mb-[20px] font-Poppins text-[18px] text-[#777] font-light leading-[28px] tracking-[0.03rem] max-[1199px]:mb-[10px] max-[1199px]:text-[16px]">
-                                            Flat 30% Off</p>
+                                        <!-- <p class="mb-[20px] font-Poppins text-[18px] text-[#777] font-light leading-[28px] tracking-[0.03rem] max-[1199px]:mb-[10px] max-[1199px]:text-[16px]">
+                                            Flat 30% Off</p> -->
                                         <h2
                                             class="mb-[20px] font-quicksand text-[50px] text-[#3d4750] font-bold tracking-[0.03rem] leading-[1.2] max-[1199px]:mb-[10px] max-[1199px]:text-[38px] max-[991px]:text-center max-[991px]:text-[45px] max-[767px]:text-[40px] max-[575px]:text-[35px] max-[420px]:text-[30px] max-[360px]:text-[28px]">
                                             Explore <span class="relative text-[#6c7fd8]">Organic</span><br> & Fresh
@@ -177,77 +174,39 @@
                             class="font-quicksand text-[124px] text-[#fff] opacity-[0.15] font-bold leading-[1.2] tracking-[0.03rem] max-[1399px]:text-[95px] max-[1199px]:text-[70px] max-[767px]:text-[42px]">
                             Explore Categories</h2>
                     </div>
-                    <div
-                        class="bb-category-block owl-carousel ml-[-150px] w-[calc(100%+150px)] pt-[30px] pl-[30px] bg-[#fff] rounded-tl-[30px] relative max-[991px]:ml-[0] max-[991px]:w-full max-[991px]:p-[0]">
-                        <div class="bb-category-box p-[30px] rounded-[20px] flex flex-col items-center text-center max-[1399px]:p-[20px] category-items-1 bg-[#fef1f1]"
-                            data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
-                            <div class="category-image mb-[12px]">
-                                <img src="{{ asset('frontend/img/category/1.svg') }}" alt="category"
-                                    class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
-                            </div>
-                            <div class="category-sub-contact">
-                                <h5
-                                    class="mb-[2px] text-[16px] font-quicksand text-[#3d4750] font-semibold tracking-[0.03rem] leading-[1.2]">
-                                    <a href="shop-left-sidebar-col-3.html"
-                                        class="font-Poppins text-[16px] font-medium leading-[1.2] tracking-[0.03rem] text-[#3d4750] capitalize">vegetables</a>
-                                </h5>
-                                <p
-                                    class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">
-                                    485 items</p>
-                            </div>
-                        </div>
-                        <div class="bb-category-box p-[30px] rounded-[20px] flex flex-col items-center text-center max-[1399px]:p-[20px] category-items-2 bg-[#e1fcf2]"
-                            data-aos="flip-left" data-aos-duration="1000" data-aos-delay="400">
-                            <div class="category-image mb-[12px]">
-                                <img src="{{ asset('frontend/img/category/2.svg') }}" alt="category"
-                                    class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
-                            </div>
-                            <div class="category-sub-contact">
-                                <h5
-                                    class="mb-[2px] text-[16px] font-quicksand text-[#3d4750] font-semibold tracking-[0.03rem] leading-[1.2]">
-                                    <a href="shop-left-sidebar-col-3.html"
-                                        class="font-Poppins text-[16px] font-medium leading-[1.2] tracking-[0.03rem] text-[#3d4750] capitalize">Fruits</a>
-                                </h5>
-                                <p
-                                    class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">
-                                    291 items</p>
-                            </div>
-                        </div>
-                        <div class="bb-category-box p-[30px] rounded-[20px] flex flex-col items-center text-center max-[1399px]:p-[20px] category-items-3 bg-[#f4f1fe]"
-                            data-aos="flip-left" data-aos-duration="1000" data-aos-delay="600">
-                            <div class="category-image mb-[12px]">
-                                <img src="{{ asset('frontend/img/category/3.svg') }}" alt="category"
-                                    class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
-                            </div>
-                            <div class="category-sub-contact">
-                                <h5
-                                    class="mb-[2px] text-[16px] font-quicksand text-[#3d4750] font-semibold tracking-[0.03rem] leading-[1.2]">
-                                    <a href="shop-left-sidebar-col-3.html"
-                                        class="font-Poppins text-[16px] font-medium leading-[1.2] tracking-[0.03rem] text-[#3d4750] capitalize">Cold
-                                        Drinks</a>
-                                </h5>
-                                <p
-                                    class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">
-                                    49 items</p>
-                            </div>
-                        </div>
-                        <div class="bb-category-box p-[30px] rounded-[20px] flex flex-col items-center text-center max-[1399px]:p-[20px] category-items-4 bg-[#fbf9e4]"
-                            data-aos="flip-left" data-aos-duration="1000" data-aos-delay="800">
-                            <div class="category-image mb-[12px]">
-                                <img src="{{ asset('frontend/img/category/4.svg') }}" alt="category"
-                                    class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
-                            </div>
-                            <div class="category-sub-contact">
-                                <h5
-                                    class="mb-[2px] text-[16px] font-quicksand text-[#3d4750] font-semibold tracking-[0.03rem] leading-[1.2]">
-                                    <a href="shop-left-sidebar-col-3.html"
-                                        class="font-Poppins text-[16px] font-medium leading-[1.2] tracking-[0.03rem] text-[#3d4750] capitalize">Bakery</a>
-                                </h5>
-                                <p
-                                    class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">
-                                    08 items</p>
-                            </div>
-                        </div>
+                    <div class="bb-category-block owl-carousel ml-[-150px] w-[calc(100%+150px)] pt-[30px] pl-[30px] bg-[#fff] rounded-tl-[30px] relative max-[991px]:ml-[0] max-[991px]:w-full max-[991px]:p-[0]">
+                        @php
+                            $colorIndex = 0; // Initialize the color index
+                        @endphp
+
+                        @if (isset($categories))
+                            @foreach ($categories as $category)
+                                @php
+                                    $color = $catBg[$colorIndex % $bgColorCount];
+                                    $colorIndex++; // Increment the color index
+                                @endphp
+                                <div class="bb-category-box p-[30px] rounded-[20px] flex flex-col items-center text-center max-[1399px]:p-[20px] category-items-1"
+                                    data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200"
+                                    style="background-color: #{{ $color }};">
+                                    <div class="category-image mb-[12px]">
+                                        @if (isset($category->image))
+                                            <img src="{{ asset('storage/'.$category->image) }}" alt="category" class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
+                                        @else
+                                            <img src="{{ asset('frontend/img/category/1.svg') }}" alt="category" class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
+                                        @endif
+                                    </div>
+                                    <div class="category-sub-contact">
+                                        <h5
+                                            class="mb-[2px] text-[16px] font-quicksand text-[#3d4750] font-semibold tracking-[0.03rem] leading-[1.2]">
+                                            <a href="shop-left-sidebar-col-3.html"
+                                                class="font-Poppins text-[16px] font-medium leading-[1.2] tracking-[0.03rem] text-[#3d4750] capitalize">{{ $category->name }}</a>
+                                        </h5>
+                                        <!-- <p class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">485 items</p> -->
+                                        <p class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">Explore</p>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>

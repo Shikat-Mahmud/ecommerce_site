@@ -15,7 +15,7 @@
                                         class="dark w-[125px] max-[991px]:w-[115px] hidden">
                                 </a>
                             </div>
-                            
+
                         </div>
                         <div class="cols flex justify-center">
                             <div
@@ -177,7 +177,8 @@
         </div>
     </div>
     <div class="bb-main-menu-desk bg-[#fff] py-[5px] border-t-[1px] border-solid border-[#eee] max-[991px]:hidden">
-        <div class="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
+        <div
+            class="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
             <div class="flex flex-wrap w-full">
                 <div class="w-full px-[12px]">
                     <div class="bb-inner-menu-desk flex max-[1199px]:relative max-[991px]:justify-between">
@@ -199,12 +200,25 @@
                                         href="javascript:void(0)">Categories</a>
                                     <ul
                                         class="bb-dropdown-menu min-w-[205px] p-[10px] transition-all duration-[0.3s] ease-in-out mt-[25px] absolute top-[40px] z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] flex flex-col rounded-[10px]">
-                                        <li class="m-[0] py-[5px] px-[15px] relative flex items-center">
-                                            <a href="product-full-width.html"
-                                                class="font-Poppins transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize tracking-[0.03rem]">Product
-                                                full width</a>
-                                        </li>
+                                        @if (isset($categories))
+                                            @foreach ($categories as $category)
+                                                <li class="m-[0] py-[5px] px-[15px] relative flex items-center">
+                                                    <a href="product-full-width.html"
+                                                        class="font-Poppins transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize tracking-[0.03rem]">{{ $category->name }}</a>
+                                                </li>
+                                            @endforeach
+                                        @endif
                                     </ul>
+                                </li>
+                                <li
+                                    class="nav-item flex items-center font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem] mr-[35px]">
+                                    <a class="nav-link p-[0] font-Poppins leading-[28px] text-[15px] font-medium text-[#3d4750] tracking-[0.03rem] block"
+                                        href="#">About Us</a>
+                                </li>
+                                <li
+                                    class="nav-item flex items-center font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem] mr-[35px]">
+                                    <a class="nav-link p-[0] font-Poppins leading-[28px] text-[15px] font-medium text-[#3d4750] tracking-[0.03rem] block"
+                                        href="#">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -323,6 +337,14 @@
                                 </ul>
                             </li>
                         </ul>
+                    </li>
+                    <li class="relative">
+                        <a href="#"
+                            class="transition-all duration-[0.3s] ease-in-out mb-[12px] p-[12px] block font-Poppins capitalize text-[#686e7d] border-[1px] border-solid border-[#eee] rounded-[10px] text-[15px] font-medium leading-[28px] tracking-[0.03rem]">About Us</a>
+                    </li>
+                    <li class="relative">
+                        <a href="#"
+                            class="transition-all duration-[0.3s] ease-in-out mb-[12px] p-[12px] block font-Poppins capitalize text-[#686e7d] border-[1px] border-solid border-[#eee] rounded-[10px] text-[15px] font-medium leading-[28px] tracking-[0.03rem]">Contact Us</a>
                     </li>
                 </ul>
             </div>
