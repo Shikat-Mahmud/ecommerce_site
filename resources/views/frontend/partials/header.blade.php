@@ -1,76 +1,4 @@
 <header class="bb-header relative z-[5] border-b-[1px] border-solid border-[#eee]">
-    <div class="top-header bg-[#3d4750] py-[6px] max-[991px]:hidden">
-        <div
-            class="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
-            <div class="flex flex-wrap w-full">
-                <div class="w-full px-[12px]">
-                    <div class="inner-top-header flex justify-between">
-                        <div class="col-left-bar">
-                            <a href="shop-left-sidebar-col-3.html"
-                                class="transition-all duration-[0.3s] ease-in-out font-Poppins font-light text-[14px] text-[#fff] leading-[28px] tracking-[0.03rem]">Flat
-                                50% Off On Grocery Shop.</a>
-                        </div>
-                        <div class="col-right-bar flex">
-                            <div class="cols px-[12px]">
-                                <a href="faq.html"
-                                    class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] text-[#fff] font-light leading-[28px] tracking-[0.03rem]">Help?</a>
-                            </div>
-                            <div class="cols px-[12px]">
-                                <a href="track-order.html"
-                                    class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] text-[#fff] font-light leading-[28px] tracking-[0.03rem]">Track
-                                    Order</a>
-                            </div>
-                            <div class="cols px-[12px]">
-                                <div class="custom-dropdown relative z-[5]">
-                                    <a class="bb-dropdown-toggle transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] text-[#fff] relative pr-[15px] font-light leading-[28px] tracking-[0.03rem]"
-                                        href="#">Language</a>
-                                    <ul
-                                        class="dropdown transition-all duration-[0.3s] ease-in-out min-w-[150px] py-[10px] px-[10px] mt-[25px] absolute z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] block border-[1px] border-solid border-[#eee] block rounded-[10px]">
-                                        <li
-                                            class="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
-                                            <a href="javascript:void(0)"
-                                                class="transition-all duration-[0.3s] ease-in-out text-[13px] text-[#686e7d] hover:text-[#6c7fd8] font-normal font-Poppins py-[12px] block leading-[28px] tracking-[0.03rem]">English</a>
-                                        </li>
-                                        <li
-                                            class="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
-                                            <a href="javascript:void(0)"
-                                                class="transition-all duration-[0.3s] ease-in-out text-[13px] text-[#686e7d] hover:text-[#6c7fd8] font-normal font-Poppins py-[12px] block leading-[28px] tracking-[0.03rem]">Hindi</a>
-                                        </li>
-                                        <li
-                                            class="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
-                                            <a href="javascript:void(0)"
-                                                class="transition-all duration-[0.3s] ease-in-out text-[13px] text-[#686e7d] hover:text-[#6c7fd8] font-normal font-Poppins py-[12px] block leading-[28px] tracking-[0.03rem]">Gujarati</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="cols px-[12px]">
-                                <div class="custom-dropdown relative z-[5]">
-                                    <a class="bb-dropdown-toggle transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] text-[#fff] relative pr-[15px] font-light leading-[28px] tracking-[0.03rem]"
-                                        href="#">Currency</a>
-                                    <ul
-                                        class="dropdown transition-all duration-[0.3s] ease-in-out min-w-[150px] py-[10px] px-[10px] mt-[25px] absolute z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] block border-[1px] border-solid border-[#eee] block rounded-[10px]">
-                                        <li
-                                            class="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
-                                            <a href="javascript:void(0)"
-                                                class="transition-all duration-[0.3s] ease-in-out text-[13px] text-[#686e7d] hover:text-[#6c7fd8] font-normal font-Poppins py-[12px] block leading-[28px] tracking-[0.03rem]">USD
-                                                $</a>
-                                        </li>
-                                        <li
-                                            class="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
-                                            <a href="javascript:void(0)"
-                                                class="transition-all duration-[0.3s] ease-in-out text-[13px] text-[#686e7d] hover:text-[#6c7fd8] font-normal font-Poppins py-[12px] block leading-[28px] tracking-[0.03rem]">EUR
-                                                €</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="bottom-header py-[20px] max-[991px]:py-[15px]">
         <div
             class="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
@@ -80,22 +8,14 @@
                         <div class="cols bb-logo-detail flex max-[767px]:justify-between">
                             <!-- Header Logo Start -->
                             <div class="header-logo flex items-center max-[575px]:justify-center">
-                                <a href="index.html">
-                                    <img src="frontend/img/logo/logo.png" alt="logo"
+                                <a href="{{ route('home') }}">
+                                    <img src="{{ ('frontend/img/logo/logo.png') }}" alt="logo"
                                         class="light w-[125px] max-[991px]:w-[115px] block">
-                                    <img src="frontend/img/logo/logo-dark.png" alt="logo"
+                                    <img src="{{ ('frontend/img/logo/logo-dark.png') }}" alt="logo"
                                         class="dark w-[125px] max-[991px]:w-[115px] hidden">
                                 </a>
                             </div>
-                            <!-- Header Logo End -->
-                            <a href="javascript:void(0)"
-                                class="bb-sidebar-toggle bb-category-toggle hidden max-[991px]:flex max-[991px]:items-center max-[991px]:ml-[20px] max-[991px]:border-[1px] max-[991px]:border-solid max-[991px]:border-[#eee] max-[991px]:w-[40px] max-[991px]:h-[40px] max-[991px]:rounded-[15px] justify-center transition-all duration-[0.3s] ease-in-out font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem]">
-                                <svg class="svg-icon h-[30px] w-[30px] max-[991px]:w-[22px] max-[991px]:h-[22px]"
-                                    viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="fill-[#6c7fd8]"
-                                        d="M384 928H192a96 96 0 0 1-96-96V640a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM192 608a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V640a32 32 0 0 0-32-32H192zM784 928H640a96 96 0 0 1-96-96V640a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v144a32 32 0 0 1-64 0V640a32 32 0 0 0-32-32H640a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h144a32 32 0 0 1 0 64zM384 480H192a96 96 0 0 1-96-96V192a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM192 160a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V192a32 32 0 0 0-32-32H192zM832 480H640a96 96 0 0 1-96-96V192a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM640 160a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V192a32 32 0 0 0-32-32H640z" />
-                                </svg>
-                            </a>
+                            
                         </div>
                         <div class="cols flex justify-center">
                             <div
@@ -199,7 +119,9 @@
                                         </ul>
                                     </div>
 
-                                    <a href="wishlist.html"
+                                    <!-- Wishlist -->
+
+                                    <!-- <a href="wishlist.html"
                                         class="bb-header-btn bb-wish-toggle transition-all duration-[0.3s] ease-in-out relative flex w-[auto] items-center ml-[30px] max-[1199px]:ml-[20px]"
                                         title="Wishlist">
                                         <div class="header-icon relative flex">
@@ -218,7 +140,8 @@
                                             <span
                                                 class="bb-btn-stitle font-Poppins transition-all duration-[0.3s] ease-in-out text-[14px] leading-[16px] font-semibold text-[#3d4750]  tracking-[0.03rem] whitespace-nowrap">Wishlist</span>
                                         </div>
-                                    </a>
+                                    </a> -->
+
                                     <a href="javascript:void(0)"
                                         class="bb-header-btn bb-cart-toggle transition-all duration-[0.3s] ease-in-out relative flex w-[auto] items-center ml-[30px] max-[1199px]:ml-[20px]"
                                         title="Cart">
@@ -254,152 +177,26 @@
         </div>
     </div>
     <div class="bb-main-menu-desk bg-[#fff] py-[5px] border-t-[1px] border-solid border-[#eee] max-[991px]:hidden">
-        <div
-            class="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
+        <div class="flex flex-wrap justify-between relative items-center mx-auto min-[1400px]:max-w-[1320px] min-[1200px]:max-w-[1140px] min-[992px]:max-w-[960px] min-[768px]:max-w-[720px] min-[576px]:max-w-[540px]">
             <div class="flex flex-wrap w-full">
                 <div class="w-full px-[12px]">
                     <div class="bb-inner-menu-desk flex max-[1199px]:relative max-[991px]:justify-between">
-                        <a href="javascript:void(0)"
-                            class="bb-header-btn bb-sidebar-toggle bb-category-toggle transition-all duration-[0.3s] ease-in-out h-[45px] w-[45px] mr-[30px] p-[8px] flex items-center justify-center bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px] relative max-[767px]:m-[0] max-[575px]:hidden">
-                            <svg class="svg-icon w-[25px] h-[25px]" viewBox="0 0 1024 1024" version="1.1"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path class="fill-[#6c7fd8]"
-                                    d="M384 928H192a96 96 0 0 1-96-96V640a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM192 608a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V640a32 32 0 0 0-32-32H192zM784 928H640a96 96 0 0 1-96-96V640a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v144a32 32 0 0 1-64 0V640a32 32 0 0 0-32-32H640a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h144a32 32 0 0 1 0 64zM384 480H192a96 96 0 0 1-96-96V192a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM192 160a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V192a32 32 0 0 0-32-32H192zM832 480H640a96 96 0 0 1-96-96V192a96 96 0 0 1 96-96h192a96 96 0 0 1 96 96v192a96 96 0 0 1-96 96zM640 160a32 32 0 0 0-32 32v192a32 32 0 0 0 32 32h192a32 32 0 0 0 32-32V192a32 32 0 0 0-32-32H640z" />
-                            </svg>
-                        </a>
                         <button class="navbar-toggler shadow-none hidden" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
                             <i class="ri-menu-2-line"></i>
                         </button>
-                        <div class="bb-main-menu relative flex flex-[auto] justify-start max-[991px]:hidden"
+                        <div class="bb-main-menu relative flex flex-[auto] justify-start max-[991px]:hidden py-3"
                             id="navbarSupportedContent">
                             <ul class="navbar-nav flex flex-wrap flex-row ">
                                 <li
                                     class="nav-item flex items-center font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem] mr-[35px]">
                                     <a class="nav-link p-[0] font-Poppins leading-[28px] text-[15px] font-medium text-[#3d4750] tracking-[0.03rem] block"
-                                        href="index.html">Home</a>
-                                </li>
-                                <li class="nav-item bb-main-dropdown flex items-center mr-[45px]">
-                                    <a class="nav-link bb-dropdown-item font-Poppins relative p-[0] leading-[28px] text-[15px] font-medium text-[#3d4750] block tracking-[0.03rem]"
-                                        href="javascript:void(0)">Categories</a>
-                                    <ul
-                                        class="mega-menu min-w-full transition-all duration-[0.3s] ease-in-out mt-[25px] pl-[30px] absolute top-[40px] z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] flex flex-col rounded-[10px]">
-                                        <li class="m-[0] flex items-center">
-                                            <ul class="mega-block w-[calc(25%-30px)] mr-[30px] py-[15px]">
-                                                <li
-                                                    class="menu_title border-b-[1px] border-solid border-[#eee] mb-[10px] pb-[5px] flex items-center leading-[28px]">
-                                                    <a href="javascript:void(0)"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins h-[auto] text-[#6c7fd8] text-[15px] font-medium tracking-[0.03rem] block py-[10px] leading-[22px] capitalize">Classic</a>
-                                                </li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-left-sidebar-col-3.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">Left
-                                                        sidebar 3 column</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-left-sidebar-col-4.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">Left
-                                                        sidebar 4 column</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-right-sidebar-col-3.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">Right
-                                                        sidebar 3 column</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-right-sidebar-col-4.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">Right
-                                                        sidebar 4 column</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-full-width.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">Full
-                                                        width 4 column</a></li>
-                                            </ul>
-                                            <ul class="mega-block w-[calc(25%-30px)] mr-[30px] py-[15px]">
-                                                <li
-                                                    class="menu_title border-b-[1px] border-solid border-[#eee] mb-[10px] pb-[5px] flex items-center leading-[28px]">
-                                                    <a href="javascript:void(0)"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins h-[auto] text-[#6c7fd8] text-[15px] font-medium tracking-[0.03rem] block py-[10px] leading-[22px] capitalize">Banner</a>
-                                                </li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-banner-left-sidebar-col-3.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">left
-                                                        sidebar 3 column</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-banner-left-sidebar-col-4.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">left
-                                                        sidebar 4 column</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-banner-right-sidebar-col-3.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">right
-                                                        sidebar 3 column</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-banner-right-sidebar-col-4.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">right
-                                                        sidebar 4 column</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-banner-full-width.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">Full
-                                                        width 4 column</a></li>
-                                            </ul>
-                                            <ul class="mega-block w-[calc(25%-30px)] mr-[30px] py-[15px]">
-                                                <li
-                                                    class="menu_title border-b-[1px] border-solid border-[#eee] mb-[10px] pb-[5px] flex items-center leading-[28px]">
-                                                    <a href="javascript:void(0)"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins h-[auto] text-[#6c7fd8] text-[15px] font-medium tracking-[0.03rem] block py-[10px] leading-[22px] capitalize">Columns</a>
-                                                </li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-full-width-col-3.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">3
-                                                        Columns full width</a> </li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-full-width-col-4.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">4
-                                                        Columns full width</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-full-width-col-5.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">5
-                                                        Columns full width</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-full-width-col-6.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">6
-                                                        Columns full width</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-banner-full-width-col-3.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">Banner
-                                                        3 Columns</a></li>
-                                            </ul>
-                                            <ul class="mega-block w-[calc(25%-30px)] mr-[30px] py-[15px]">
-                                                <li
-                                                    class="menu_title border-b-[1px] border-solid border-[#eee] mb-[10px] pb-[5px] flex items-center leading-[28px]">
-                                                    <a href="javascript:void(0)"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins h-[auto] text-[#6c7fd8] text-[15px] font-medium tracking-[0.03rem] block py-[10px] leading-[22px] capitalize">List</a>
-                                                </li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-list-left-sidebar.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">Shop
-                                                        left sidebar</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-list-right-sidebar.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">Shop
-                                                        right sidebar</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-list-banner-left-sidebar.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">Banner
-                                                        left sidebar</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-list-banner-right-sidebar.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">Banner
-                                                        right sidebar</a></li>
-                                                <li class="flex items-center leading-[28px]"><a
-                                                        href="shop-list-full-col-2.html"
-                                                        class="transition-all duration-[0.3s] ease-in-out font-Poppins py-[10px] leading-[22px] text-[14px] font-normal tracking-[0.03rem] text-[#686e7d] hover:text-[#6c7fd8] capitalize">Full
-                                                        width 2 columns</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                        href="{{ route('home') }}">Home</a>
                                 </li>
                                 <li class="nav-item bb-dropdown flex items-center relative mr-[45px]">
                                     <a class="nav-link bb-dropdown-item font-Poppins relative p-[0] leading-[28px] text-[15px] font-medium text-[#3d4750] block tracking-[0.03rem]"
-                                        href="javascript:void(0)">Products</a>
+                                        href="javascript:void(0)">Categories</a>
                                     <ul
                                         class="bb-dropdown-menu min-w-[205px] p-[10px] transition-all duration-[0.3s] ease-in-out mt-[25px] absolute top-[40px] z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] flex flex-col rounded-[10px]">
                                         <li
@@ -443,107 +240,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item bb-dropdown flex items-center relative mr-[45px]">
-                                    <a class="nav-link bb-dropdown-item font-Poppins relative p-[0] leading-[28px] text-[15px] font-medium text-[#3d4750] block tracking-[0.03rem]"
-                                        href="javascript:void(0)">Pages</a>
-                                    <ul
-                                        class="bb-dropdown-menu min-w-[205px] p-[10px] transition-all duration-[0.3s] ease-in-out mt-[25px] absolute top-[40px] z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] flex flex-col rounded-[10px]">
-                                        <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize block w-full whitespace-nowrap"
-                                                href="about-us.html">About Us</a></li>
-                                        <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize block w-full whitespace-nowrap"
-                                                href="contact-us.html">Contact Us</a></li>
-                                        <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize block w-full whitespace-nowrap"
-                                                href="cart.html">Cart</a></li>
-                                        <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize block w-full whitespace-nowrap"
-                                                href="checkout.html">Checkout</a></li>
-                                        <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize block w-full whitespace-nowrap"
-                                                href="compare.html">Compare</a></li>
-                                        <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize block w-full whitespace-nowrap"
-                                                href="faq.html">Faq</a></li>
-                                        <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize block w-full whitespace-nowrap"
-                                                href="login.html">Login</a></li>
-                                        <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize block w-full whitespace-nowrap"
-                                                href="register.html">Register</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item bb-dropdown flex items-center relative mr-[45px]">
-                                    <a class="nav-link bb-dropdown-item font-Poppins relative p-[0] leading-[28px] text-[15px] font-medium text-[#3d4750] block tracking-[0.03rem]"
-                                        href="javascript:void(0)">Blog</a>
-                                    <ul
-                                        class="bb-dropdown-menu min-w-[205px] p-[10px] transition-all duration-[0.3s] ease-in-out mt-[25px] absolute top-[40px] z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] flex flex-col rounded-[10px]">
-                                        <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize block w-full whitespace-nowrap"
-                                                href="blog-left-sidebar.html">Left Sidebar</a></li>
-                                        <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize block w-full whitespace-nowrap"
-                                                href="blog-right-sidebar.html">Right Sidebar</a></li>
-                                        <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize block w-full whitespace-nowrap"
-                                                href="blog-full-width.html">Full Width</a></li>
-                                        <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize block w-full whitespace-nowrap"
-                                                href="blog-detail-left-sidebar.html">Detail Left Sidebar</a></li>
-                                        <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize block w-full whitespace-nowrap"
-                                                href="blog-detail-right-sidebar.html">Detail Right Sidebar</a></li>
-                                        <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize block w-full whitespace-nowrap"
-                                                href="blog-detail-full-width.html">Detail Full Width</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item flex items-center">
-                                    <a class="nav-link font-Poppins  p-[0] leading-[28px] text-[15px] font-medium tracking-[0.03rem] text-[#3d4750] flex"
-                                        href="offer.html">
-                                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0"
-                                            viewBox="0 0 64 64" style="enable-background:new 0 0 512 512"
-                                            xml:space="preserve"
-                                            class="w-[20px] h-[25px] mr-[5px] leading-[18px] align-middle">
-                                            <g>
-                                                <path
-                                                    d="M10 16v22c0 .3.1.6.2.8.3.6 6.5 13.8 21 20h.2c.2 0 .3.1.5.1s.3 0 .5-.1h.2c14.5-6.2 20.8-19.4 21-20 .1-.3.2-.5.2-.8V16c0-.9-.6-1.7-1.5-1.9-7.6-1.9-19.3-9.6-19.4-9.7-.1-.1-.2-.1-.4-.2-.1 0-.1 0-.2-.1h-.9c-.1 0-.2.1-.3.1-.1.1-.2.1-.4.2s-11.8 7.8-19.4 9.7c-.7.2-1.3 1-1.3 1.9zm4 1.5c6.7-2.1 15-7.2 18-9.1 3 1.9 11.3 7 18 9.1v20c-1.1 2.1-6.7 12.1-18 17.3-11.3-5.2-16.9-15.2-18-17.3z"
-                                                    fill="#000000" opacity="1" data-original="#000000"
-                                                    class="fill-[#6c7fd8]"></path>
-                                                <path
-                                                    d="M28.6 38.4c.4.4.9.6 1.4.6s1-.2 1.4-.6l9.9-9.9c.8-.8.8-2 0-2.8s-2-.8-2.8 0L30 34.2l-4.5-4.5c-.8-.8-2-.8-2.8 0s-.8 2 0 2.8z"
-                                                    fill="#000000" opacity="1" data-original="#000000"
-                                                    class="fill-[#6c7fd8]"></path>
-                                            </g>
-                                        </svg>
-                                        Offers
-                                    </a>
-                                </li>
                             </ul>
-                        </div>
-                        <div class="bb-dropdown-menu flex max-[991px]:hidden">
-                            <div
-                                class="inner-select w-[180px] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px] flex items-center">
-                                <svg class="svg-icon m-[10px] w-[25px] h-[25px] align-middle" viewBox="0 0 1024 1024"
-                                    version="1.1" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M511.614214 958.708971c-21.76163 0-41.744753-9.781784-54.865586-26.862811L222.50156 626.526383c-3.540639-4.044106-5.872754-7.978718-7.349385-10.461259-41.72838-58.515718-63.959707-127.685078-63.959707-199.699228 0.87288-193.650465 162.903184-351.075891 361.209691-351.075891 198.726064 0 360.40435 157.49194 360.40435 351.075891-0.839111 72.190159-23.070438 140.856052-64.345494 199.053522-1.962701 3.288906-4.312212 7.189749-7.735171 11.098779L566.479799 931.847184c-13.120832 17.080004-33.103956 26.861788-54.865585 26.861787zM273.525654 580.51956a33.707706 33.707706 0 0 1 2.63399 3.037173L511.278569 890.00931 747.068783 583.556733c0.435928-0.569982 0.889253-1.124614 1.358951-1.669013l2.51631-4.102434c0.285502-0.453325 0.587378-0.89744 0.889253-1.325182 33.507138-46.921659 51.577702-102.416578 52.248991-160.487158 0-155.294902-130.839931-281.95565-291.679105-281.95565-160.571069 0-291.780413 126.72931-292.484448 282.501073 0 57.450457 17.802458 112.811322 51.460022 159.933549l2.90312 4.580318c0.418532 0.73678-0.186242 0.032746-0.756223-0.512676z m476.059439 0.100284v0z m0.066515-0.058329c-0.016373 0.016373-0.033769 0.025583-0.033769 0.041956 0.001023-0.016373 0.017396-0.025583 0.033769-0.041956z m0.051166-0.041955a0.227174 0.227174 0 0 0-0.050142 0.041955c0.016373-0.016373 0.032746-0.033769 0.050142-0.041955z"
-                                        fill="#444444" class="fill-[#6c7fd8]" />
-                                    <path
-                                        d="M512 577.206094c-90.000803 0-163.222455-73.221652-163.222455-163.222455s73.221652-163.222455 163.222455-163.222455S675.222455 323.982836 675.222455 413.983639s-73.222675 163.222455-163.222455 163.222455z m0-240.538355c-42.634006 0-77.3159 34.68087-77.3159 77.3159s34.68087 77.3159 77.3159 77.3159 77.3159-34.681894 77.3159-77.3159-34.681894-77.3159-77.3159-77.3159z"
-                                        fill="#00D8A0" class="fill-[#6c7fd8]" />
-                                </svg>
-                                <div
-                                    class="custom-select transition-all duration-[0.3s] ease-in-out w-full h-full pr-[15px] text-[#777] flex items-center justify-between text-[14px] relative">
-                                    <select>
-                                        <option value="option1">Surat</option>
-                                        <option value="option2">Delhi</option>
-                                        <option value="option3">Rajkot</option>
-                                        <option value="option4">Udaipur</option>
-                                    </select>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -564,7 +261,7 @@
             <div class="bb-menu-content">
                 <ul>
                     <li class="relative">
-                        <a href="index.html"
+                        <a href="{{ route('home') }}"
                             class="transition-all duration-[0.3s] ease-in-out mb-[12px] p-[12px] block font-Poppins capitalize text-[#686e7d] border-[1px] border-solid border-[#eee] rounded-[10px] text-[15px] font-medium leading-[28px] tracking-[0.03rem]">Home</a>
                     </li>
                     <li class="relative">
@@ -659,100 +356,6 @@
                                             width 2 columns</a></li>
                                 </ul>
                             </li>
-                        </ul>
-                    </li>
-                    <li class="relative">
-                        <a href="javascript:void(0)"
-                            class="transition-all duration-[0.3s] ease-in-out mb-[12px] p-[12px] block font-Poppins capitalize text-[#686e7d] border-[1px] border-solid border-[#eee] rounded-[10px] text-[15px] font-medium leading-[28px] tracking-[0.03rem]">Products</a>
-                        <ul class="sub-menu w-full min-w-[auto] p-[0] mb-[10px] static hidden visible opacity-[1]">
-                            <li class="relative">
-                                <a href="javascript:void(0)"
-                                    class="transition-all duration-[0.3s] ease-in-out mb-[0] pl-[15px] pr-[0] py-[12px] capitalize block text-[14px] font-normal text-[#686e7d]">Product
-                                    page</a>
-                                <ul
-                                    class="sub-menu w-full min-w-[auto] p-[0] mb-[10px] static hidden visible opacity-[1]">
-                                    <li class="relative"><a href="product-left-sidebar.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Product
-                                            left sidebar</a></li>
-                                    <li class="relative"><a href="product-right-sidebar.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Product
-                                            right sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li class="relative">
-                                <a href="javascript:void(0)"
-                                    class="transition-all duration-[0.3s] ease-in-out mb-[0] pl-[15px] pr-[0] py-[12px] capitalize block text-[14px] font-normal text-[#686e7d]">Product
-                                    Accordion</a>
-                                <ul
-                                    class="sub-menu w-full min-w-[auto] p-[0] mb-[10px] static hidden visible opacity-[1]">
-                                    <li class="relative"><a href="product-accordion-left-sidebar.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">left
-                                            sidebar</a></li>
-                                    <li class="relative"><a href="product-accordion-right-sidebar.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">right
-                                            sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li class="relative"><a href="product-full-width.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Product
-                                    full width</a></li>
-                            <li class="relative"><a href="product-accordion-full-width.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">accordion
-                                    full width</a></li>
-                        </ul>
-                    </li>
-                    <li class="relative">
-                        <a href="javascript:void(0)"
-                            class="transition-all duration-[0.3s] ease-in-out mb-[12px] p-[12px] block font-Poppins capitalize text-[#686e7d] border-[1px] border-solid border-[#eee] rounded-[10px] text-[15px] font-medium leading-[28px] tracking-[0.03rem]">Pages</a>
-                        <ul class="sub-menu w-full min-w-[auto] p-[0] mb-[10px] static hidden visible opacity-[1]">
-                            <li class="relative"><a href="about-us.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">About
-                                    Us</a></li>
-                            <li class="relative"><a href="contact-us.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Contact
-                                    Us</a></li>
-                            <li class="relative"><a href="cart.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Cart</a>
-                            </li>
-                            <li class="relative"><a href="checkout.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Checkout</a>
-                            </li>
-                            <li class="relative"><a href="compare.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Compare</a>
-                            </li>
-                            <li class="relative"><a href="faq.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Faq</a>
-                            </li>
-                            <li class="relative"><a href="login.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Login</a>
-                            </li>
-                            <li class="relative"><a href="register.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Register</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="relative">
-                        <a href="javascript:void(0)"
-                            class="transition-all duration-[0.3s] ease-in-out mb-[12px] p-[12px] block font-Poppins capitalize text-[#686e7d] border-[1px] border-solid border-[#eee] rounded-[10px] text-[15px] font-medium leading-[28px] tracking-[0.03rem]">Blog</a>
-                        <ul class="sub-menu w-full min-w-[auto] p-[0] mb-[10px] static hidden visible opacity-[1]">
-                            <li class="relative"><a href="blog-left-sidebar.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Left
-                                    Sidebar</a></li>
-                            <li class="relative"><a href="blog-right-sidebar.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Right
-                                    Sidebar</a></li>
-                            <li class="relative"><a href="blog-full-width.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Full
-                                    Width</a></li>
-                            <li class="relative"><a href="blog-detail-left-sidebar.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Detail
-                                    Left Sidebar</a></li>
-                            <li class="relative"><a href="blog-detail-right-sidebar.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Detail
-                                    Right Sidebar</a></li>
-                            <li class="relative"><a href="blog-detail-full-width.html"
-                                    class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[12px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Detail
-                                    Full Width</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -16,16 +16,8 @@ use App\Http\Controllers\Admin\UserController;
 
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
-
-Route::get('/home', function () {
     return view('frontend.main.home');
 })->name('home');
-
-// Route::get('/home', function () {
-//     return view('welcome');
-// })->middleware(['auth', 'admin.redirect'])->name('home');
 
 // customer routes
 Route::middleware(['auth'])->group(function () {

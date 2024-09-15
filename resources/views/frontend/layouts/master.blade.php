@@ -55,7 +55,6 @@
     @include('frontend.partials.cart_sidebar')
 
     <!-- Category Popup -->
-    @include('frontend.partials.category_popup')
 
     <!-- Quick view Modal -->
     @include('frontend.partials.quick_view')
