@@ -9,9 +9,9 @@
                             <!-- Header Logo Start -->
                             <div class="header-logo flex items-center max-[575px]:justify-center">
                                 <a href="{{ route('home') }}">
-                                    <img src="{{ ('frontend/img/logo/logo.png') }}" alt="logo"
+                                    <img src="{{ asset('frontend/img/logo/logo.png') }}" alt="logo"
                                         class="light w-[125px] max-[991px]:w-[115px] block">
-                                    <img src="{{ ('frontend/img/logo/logo-dark.png') }}" alt="logo"
+                                    <img src="{{ asset('frontend/img/logo/logo-dark.png') }}" alt="logo"
                                         class="dark w-[125px] max-[991px]:w-[115px] hidden">
                                 </a>
                             </div>

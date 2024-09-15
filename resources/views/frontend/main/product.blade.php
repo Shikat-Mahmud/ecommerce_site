@@ -13,7 +13,7 @@
                         </div>
                         <div class="min-[768px]:w-[50%] min-[576px]:w-full w-full px-[12px]">
                             <ul class="bb-breadcrumb-list mx-[-5px] flex justify-end max-[767px]:justify-center">
-                                <li class="bb-breadcrumb-item text-[14px] font-normal px-[5px]"><a href="index.html" class="font-Poppins text-[14px] leading-[28px] tracking-[0.03rem] font-semibold text-[#686e7d]">Home</a></li>
+                                <li class="bb-breadcrumb-item text-[14px] font-normal px-[5px]"><a href="{{ route('home') }}" class="font-Poppins text-[14px] leading-[28px] tracking-[0.03rem] font-semibold text-[#686e7d]">Home</a></li>
                                 <li class="text-[14px] font-normal px-[5px]"><i class="ri-arrow-right-double-fill text-[14px] font-semibold leading-[28px]"></i></li>
                                 <li class="bb-breadcrumb-item font-Poppins text-[#686e7d] text-[14px] leading-[28px] font-normal tracking-[0.03rem] px-[5px] active">product Page</li>
                             </ul>
@@ -35,36 +35,11 @@
                                 <div class="single-pro-slider sticky top-[0] p-[15px] border-[1px] border-solid border-[#eee] rounded-[24px] max-[991px]:max-w-[500px] max-[991px]:m-auto">
                                     <div class="single-product-cover">
                                         <div class="single-slide zoom-image-hover rounded-tl-[15px] rounded-tr-[15px]">
-                                            <img class="img-responsive rounded-tl-[15px] rounded-tr-[15px]" src="assets/img/new-product/1.jpg" alt="product-1">
-                                        </div>
-                                        <div class="single-slide zoom-image-hover rounded-tl-[15px] rounded-tr-[15px]">
-                                            <img class="img-responsive rounded-tl-[15px] rounded-tr-[15px]" src="assets/img/new-product/2.jpg" alt="product-2">
-                                        </div>
-                                        <div class="single-slide zoom-image-hover rounded-tl-[15px] rounded-tr-[15px]">
-                                            <img class="img-responsive rounded-tl-[15px] rounded-tr-[15px]" src="assets/img/new-product/3.jpg" alt="product-3">
-                                        </div>
-                                        <div class="single-slide zoom-image-hover rounded-tl-[15px] rounded-tr-[15px]">
-                                            <img class="img-responsive rounded-tl-[15px] rounded-tr-[15px]" src="assets/img/new-product/4.jpg" alt="product-4">
-                                        </div>
-                                        <div class="single-slide zoom-image-hover rounded-tl-[15px] rounded-tr-[15px]">
-                                            <img class="img-responsive rounded-tl-[15px] rounded-tr-[15px]" src="assets/img/new-product/5.jpg" alt="product-5">
-                                        </div>
-                                    </div>
-                                    <div class="single-nav-thumb w-full overflow-hidden">
-                                        <div class="single-slide px-[10px] block">
-                                            <img class="img-responsive border-[1px] border-solid border-transparent transition-all duration-[0.3s] ease delay-[0s] cursor-pointer rounded-[15px]" src="assets/img/new-product/1.jpg" alt="product-1">
-                                        </div>
-                                        <div class="single-slide px-[10px] block">
-                                            <img class="img-responsive border-[1px] border-solid border-transparent transition-all duration-[0.3s] ease delay-[0s] cursor-pointer rounded-[15px]" src="assets/img/new-product/2.jpg" alt="product-2">
-                                        </div>
-                                        <div class="single-slide px-[10px] block">
-                                            <img class="img-responsive border-[1px] border-solid border-transparent transition-all duration-[0.3s] ease delay-[0s] cursor-pointer rounded-[15px]" src="assets/img/new-product/3.jpg" alt="product-3">
-                                        </div>
-                                        <div class="single-slide px-[10px] block">
-                                            <img class="img-responsive border-[1px] border-solid border-transparent transition-all duration-[0.3s] ease delay-[0s] cursor-pointer rounded-[15px]" src="assets/img/new-product/4.jpg" alt="product-4">
-                                        </div>
-                                        <div class="single-slide px-[10px] block">
-                                            <img class="img-responsive border-[1px] border-solid border-transparent transition-all duration-[0.3s] ease delay-[0s] cursor-pointer rounded-[15px]" src="assets/img/new-product/5.jpg" alt="product-5">
+                                            @if (isset($product->image))
+                                                <img class="img-responsive rounded-tl-[15px] rounded-tr-[15px]" src="{{ asset('storage/'.$product->image) }}" alt="product">
+                                            @else
+                                                <img class="img-responsive rounded-tl-[15px] rounded-tr-[15px]" src="{{ asset('frontend/img/new-product/1.jpg') }}" alt="product">
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -86,22 +61,18 @@
                                             |&nbsp;&nbsp;<a href="#bb-spt-nav-review" class="font-Poppins text-[15px] font-light leading-[28px] tracking-[0.03rem] text-[#6c7fd8]">992 Ratings</a>
                                         </span>
                                     </div>
-                                    <p class="font-Poppins text-[15px] font-light leading-[28px] tracking-[0.03rem]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas nihil laboriosam
-                                        voluptatem
-                                        ab consectetur dolorum id, soluta sunt at culpa commodi totam quod natus qui!
+                                    <p class="font-Poppins text-[15px] font-light leading-[28px] tracking-[0.03rem]">
+                                        {{ $product->description }}
                                     </p>
                                     <div class="bb-single-price-wrap flex justify-between py-[10px]">
                                         <div class="bb-single-price py-[15px]">
                                             <div class="price mb-[8px]">
-                                                <h5 class="font-quicksand leading-[1.2] tracking-[0.03rem] text-[20px] font-extrabold text-[#3d4750]">$923.00 <span class="text-[#3d4750] text-[20px]">-78%</span></h5>
-                                            </div>
-                                            <div class="mrp">
-                                                <p class="font-Poppins text-[16px] font-light text-[#686e7d] leading-[28px] tracking-[0.03rem]">M.R.P. : <span class="text-[15px] line-through">$1,999.00</span></p>
+                                                <h5 class="font-quicksand leading-[1.2] tracking-[0.03rem] text-[20px] font-extrabold text-[#3d4750]">৳{{ $product->price }}</h5>
                                             </div>
                                         </div>
                                         <div class="bb-single-price py-[15px]">
                                             <div class="sku mb-[8px]">
-                                                <h5 class="font-quicksand text-[18px] font-extrabold leading-[1.2] tracking-[0.03rem] text-[#3d4750]">SKU#: WH12</h5>
+                                                <h5 class="font-quicksand text-[18px] font-extrabold leading-[1.2] tracking-[0.03rem] text-[#3d4750]">Product Id: ECOM0{{ $product->id }}</h5>
                                             </div>
                                             <div class="stock">
                                                 <span class="text-[18px] text-[#6c7fd8]">In stock</span>
@@ -116,27 +87,7 @@
                                             <li class="my-[8px] font-Poppins text-[14px] font-light leading-[28px] tracking-[0.03rem] text-[#777] list-disc"><span class="font-Poppins text-[#777] text-[14px]">Outer Material :</span> A-Grade Standard Quality</li>
                                         </ul>
                                     </div>
-                                    <div class="bb-single-pro-weight mb-[24px]">
-                                        <div class="pro-title mb-[12px]">
-                                            <h4 class="font-quicksand leading-[1.2] tracking-[0.03rem] text-[16px] font-bold uppercase text-[#3d4750]">Weight</h4>
-                                        </div>
-                                        <div class="bb-pro-variation-contant">
-                                            <ul class="flex flex-wrap m-[-2px]">
-                                                <li class="my-[10px] mx-[2px] py-[2px] px-[15px] border-[1px] border-solid border-[#eee] rounded-[10px] cursor-pointer active-variation">
-                                                    <span class="font-Poppins text-[#686e7d] font-light text-[14px] leading-[28px] tracking-[0.03rem]">250g</span>
-                                                </li>
-                                                <li class="my-[10px] mx-[2px] py-[2px] px-[15px] border-[1px] border-solid border-[#eee] rounded-[10px] cursor-pointer">
-                                                    <span class="font-Poppins text-[#686e7d] font-light text-[14px] leading-[28px] tracking-[0.03rem]">500g</span>
-                                                </li>
-                                                <li class="my-[10px] mx-[2px] py-[2px] px-[15px] border-[1px] border-solid border-[#eee] rounded-[10px] cursor-pointer">
-                                                    <span class="font-Poppins text-[#686e7d] font-light text-[14px] leading-[28px] tracking-[0.03rem]">1kg</span>
-                                                </li>
-                                                <li class="my-[10px] mx-[2px] py-[2px] px-[15px] border-[1px] border-solid border-[#eee] rounded-[10px] cursor-pointer">
-                                                    <span class="font-Poppins text-[#686e7d] font-light text-[14px] leading-[28px] tracking-[0.03rem]">2kg</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+
                                     <div class="bb-single-qty flex flex-wrap m-[-2px]">
                                         <div class="qty-plus-minus m-[2px] w-[85px] h-[40px] py-[7px] border-[1px] border-solid border-[#eee] overflow-hidden relative flex items-center justify-between bg-[#fff] rounded-[10px]">
                                             <input class="qty-input text-[#777] float-left text-[14px] h-auto m-[0] p-[0] text-center w-[32px] outline-[0] font-normal leading-[35px] rounded-[10px]" type="text" name="bb-qtybtn" value="1">
@@ -222,7 +173,7 @@
                                     <div class="bb-reviews">
                                         <div class="reviews-bb-box flex mb-[24px] max-[575px]:flex-col">
                                             <div class="inner-image mr-[12px] max-[575px]:mr-[0] max-[575px]:mb-[12px]">
-                                                <img src="assets/img/reviews/1.jpg" alt="img-1" class="w-[50px] h-[50px] max-w-[50px] rounded-[10px]">
+                                                <img src="{{ asset('frontend/img/reviews/1.jpg') }}" alt="img-1" class="w-[50px] h-[50px] max-w-[50px] rounded-[10px]">
                                             </div>
                                             <div class="inner-contact">
                                                 <h4 class="font-quicksand leading-[1.2] tracking-[0.03rem] mb-[5px] text-[16px] font-bold text-[#3d4750]">Mariya Lykra</h4>
@@ -241,7 +192,7 @@
                                         </div>
                                         <div class="reviews-bb-box flex mb-[24px] max-[575px]:flex-col">
                                             <div class="inner-image mr-[12px] max-[575px]:mr-[0] max-[575px]:mb-[12px]">
-                                                <img src="assets/img/reviews/2.jpg" alt="img-2" class="w-[50px] h-[50px] max-w-[50px] rounded-[10px]">
+                                                <img src="{{ asset('frontend/img/reviews/2.jpg') }}" alt="img-2" class="w-[50px] h-[50px] max-w-[50px] rounded-[10px]">
                                             </div>
                                             <div class="inner-contact">
                                                 <h4 class="font-quicksand leading-[1.2] tracking-[0.03rem] mb-[5px] text-[16px] font-bold text-[#3d4750]">Saddika Alard</h4>
@@ -318,8 +269,8 @@
                                         </span>
                                         <a href="javascript:void(0)">
                                             <div class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
-                                                <img class="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/img/product/1.jpg" alt="product-1">
-                                                <img class="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full" src="assets/img/product/back-1.jpg" alt="product-1">
+                                                <img class="main-img transition-all duration-[0.3s] ease-in-out w-full" src="{{ asset('frontend/img/product/1.jpg') }}" alt="product-1">
+                                                <img class="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full" src="{{ asset('frontend/img/product/back-1.jpg') }}" alt="product-1">
                                             </div>
                                         </a>
                                         <ul class="bb-pro-actions transition-all duration-[0.3s] ease-in-out my-[0] mx-[auto] absolute z-[9] left-[0] right-[0] bottom-[0] flex flex-row items-center justify-center opacity-[0]">
@@ -377,8 +328,8 @@
                                         </span>
                                         <a href="javascript:void(0)">
                                             <div class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
-                                                <img class="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/img/product/2.jpg" alt="product-2">
-                                                <img class="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full" src="assets/img/product/back-2.jpg"
+                                                <img class="main-img transition-all duration-[0.3s] ease-in-out w-full" src="{{ asset('frontend/img/product/2.jpg') }}" alt="product-2">
+                                                <img class="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full" src="{{ asset('frontend/img/product/back-2.jpg') }}"
                                                     alt="product-2">
                                             </div>
                                         </a>
@@ -434,8 +385,8 @@
                                     <div class="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
                                         <a href="javascript:void(0)">
                                             <div class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
-                                                <img class="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/img/product/3.jpg" alt="product-3">
-                                                <img class="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full" src="assets/img/product/back-3.jpg"
+                                                <img class="main-img transition-all duration-[0.3s] ease-in-out w-full" src="{{ asset('frontend/img/product/3.jpg') }}" alt="product-3">
+                                                <img class="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full" src="{{ asset('frontend/img/product/back-3.jpg') }}"
                                                     alt="product-3">
                                             </div>
                                         </a>
@@ -494,8 +445,8 @@
                                         </span>
                                         <a href="javascript:void(0)">
                                             <div class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
-                                                <img class="main-img transition-all duration-[0.3s] ease-in-out w-full" src="assets/img/product/4.jpg" alt="product-4">
-                                                <img class="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full" src="assets/img/product/back-4.jpg"
+                                                <img class="main-img transition-all duration-[0.3s] ease-in-out w-full" src="{{ asset('frontend/img/product/4.jpg') }}" alt="product-4">
+                                                <img class="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full" src="{{ asset('frontend/img/product/back-4.jpg') }}"
                                                     alt="product-4">
                                             </div>
                                         </a>

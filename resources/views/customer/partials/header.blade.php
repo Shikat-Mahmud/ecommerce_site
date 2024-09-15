@@ -1,7 +1,6 @@
 <header class="pc-header">
     <div class="m-header">
         <a href="{{ url('/') }}" class="b-brand text-primary">
-
             @php
                 $settings = generalSettings()
             @endphp
@@ -9,8 +8,9 @@
                 <img src="{{ asset('storage/' . $settings->logo) }}" class="logo-lg" alt="Logo image"
                     style="max-height: 40px; width: auto; max-width: 100%;">
             @else
-                <img src="https://codedthemes.com/demos/admin-templates/gradient-able/bootstrap/default/assets/images/logo-white.svg"
-                    alt="logo image" class="logo-lg">
+                <img src="{{ asset('frontend/img/logo/logo-dark.png') }}"
+                    alt="logo image" class="logo-lg" alt="Logo image"
+                    style="max-height: 35px; width: auto; max-width: 100%;">
             @endif
         </a>
     </div>
