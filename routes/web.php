@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+Route::get('/home', function () {
+    return view('frontend.main.home');
+})->name('home');
+
 // Route::get('/home', function () {
 //     return view('welcome');
 // })->middleware(['auth', 'admin.redirect'])->name('home');
