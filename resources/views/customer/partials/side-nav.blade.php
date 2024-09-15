@@ -26,10 +26,17 @@
                     <a href="{{ route('customer.dashboard') }}" class="pc-link"><span class="pc-micon">
                             <i class="ph ph-gauge"></i></span><span class="pc-mtext">Dashboard</span></a>
                 </li>
+
+                <li class="pc-item pc-hasmenu">
+                    <a href="{{ route('customer.orders') }}" class="pc-link"><span class="pc-micon">
+                            <i class="ph ph-shopping-cart"></i></span><span class="pc-mtext">My Orders</span></a>
+                </li>
+                
                 <li class="pc-item pc-hasmenu">
                     <a href="{{ route('customer.profile.edit') }}" class="pc-link"><span class="pc-micon">
                             <i class="ph ph-user-circle"></i></span><span class="pc-mtext">Edit profile</span></a>
                 </li>
+                
                 <li class="pc-item pc-hasmenu">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

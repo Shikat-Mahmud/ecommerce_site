@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Category;
@@ -26,6 +27,14 @@ class CustomerController extends Controller
 
         return view('customer.main.dashboard', compact('totalUsers', 'totalCategory', 'totalProduct', 'peruser', 'percategory', 'perproduct'));
 
+    }
+
+    public function customerOrders()
+    {
+        $userId = auth()->id();
+        $orders = Order::where('user_id', $userId)->get();
+
+        return view('customer.main.orders', compact('orders'));
     }
 
     public function search(Request $request)
