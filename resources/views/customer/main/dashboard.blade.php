@@ -89,8 +89,8 @@
                             <table class="table">
                                 <tr>
                                     <th>Image</th>
-                                    <th>Product Code</th>
                                     <th>Product Name</th>
+                                    <th>Product Code</th>
                                     <th>Total Purchases</th>
                                 </tr>
                                 @foreach ($topProducts as $product)
@@ -99,8 +99,8 @@
                                             <img src="{{ asset('storage/' . $product->image) }}" alt="prod img"
                                                 class="img-fluid rounded" style="height: 60px; width: auto;">
                                         </td>
-                                        <td>ECOM0{{ $product->id }}</td>
                                         <td>{{ $product->name }}</td>
+                                        <td>ECOM0{{ $product->id }}</td>
                                         <td>
                                             {{ \App\Models\OrderItem::where('product_id', $product->id)->count() }}
                                         </td>

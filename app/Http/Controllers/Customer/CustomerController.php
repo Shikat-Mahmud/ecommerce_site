@@ -31,14 +31,11 @@ class CustomerController extends Controller
         $endOfMonth = Carbon::now()->endOfMonth();
         $userId = auth()->id();
 
-        $monthlyTotal = DB::table('orders')
-            ->where('user_id', $userId)
+        $monthlyTotal = Order::where('user_id', $userId)
             ->whereBetween('created_at', [$startOfMonth, $endOfMonth])
             ->sum('total_amount');
 
-        $monthlyTotalOrder = DB::table('orders')
-            ->where('user_id', $userId)
-            ->count();
+        $monthlyTotalOrder = Order::where('user_id', $userId)->count();
 
         return view('customer.main.dashboard', compact('topProducts', 'monthlyTotal', 'monthlyTotalOrder'));
     }

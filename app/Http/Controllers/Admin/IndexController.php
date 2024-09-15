@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Carbon\Carbon;
 use App\Models\User;
-use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
+use App\Models\Category;
+use App\Models\OrderItem;
+use Illuminate\Http\Request;
 use App\Models\ApplicationSetting;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Schema;
-
-
 
 
 class IndexController extends Controller
@@ -19,31 +21,43 @@ class IndexController extends Controller
     public function index()
     {
         if (auth()->user()->can('admin-panel')) {
-            $totalUsers = User::count();
-            $totalCategory = Category::count();
-            $totalProduct = Product::count();
-            $subsetCount = 100;
+            $startOfMonth = Carbon::now()->startOfMonth();
+            $endOfMonth = Carbon::now()->endOfMonth();
 
-            $peruser = (($totalUsers / $subsetCount) * 100);
-            $percategory = (($totalCategory / $subsetCount) * 100);
-            $perproduct = (($totalProduct / $subsetCount) * 100);
+            $monthlyTotalOrder = Order::whereBetween('created_at', [$startOfMonth, $endOfMonth])->count();
 
+            $monthlyTotalCompletedOrder = Order::whereBetween('created_at', [$startOfMonth, $endOfMonth])
+                ->where('status','completed')
+                ->count();
 
-            return view('admin.main.index', compact('totalUsers', 'totalCategory', 'totalProduct', 'peruser', 'percategory', 'perproduct'));
+            $totalSalesAmount = Order::where('status','completed')->sum('total_amount');
+
+            $monthlyTotalSalesAmount = Order::whereBetween('created_at', [$startOfMonth, $endOfMonth])
+            ->where('status','completed')
+            ->sum('total_amount');
+
+            $topProducts = OrderItem::select('product_id', DB::raw('SUM(quantity) as total_sales'))
+            ->groupBy('product_id')
+            ->orderBy('total_sales', 'desc')
+            ->take(5)
+            ->get();
+
+            return view('admin.main.index', compact('monthlyTotalOrder', 'monthlyTotalCompletedOrder', 'totalSalesAmount', 'monthlyTotalSalesAmount','topProducts'));
         } else {
             return redirect()->back()->with('error', 'You do not have permission to go to admin panel.');
         }
     }
 
-    public function login(){
-        $general =  ApplicationSetting::latest()->first();
+    public function login()
+    {
+        $general = ApplicationSetting::latest()->first();
         return view('admin.main.users.admin_login', compact('general'));
     }
 
     public function search(Request $request)
     {
         $query = $request->input('query');
-        
+
         $models = [
             'User' => User::class,
             'Category' => Category::class,

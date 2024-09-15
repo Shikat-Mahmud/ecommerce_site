@@ -25,7 +25,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/customer-dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
     Route::get('/customer-orders', [CustomerController::class, 'customerOrders'])->name('customer.orders');
 
-
     Route::get('/cart', [OrderController::class,'cart'])->name('cart');
     Route::post('/add-to-cart/{id}', [OrderController::class,'addToCart'])->name('add.to.cart');
     Route::patch('/cart/{id}', [OrderController::class, 'updateQuantity'])->name('cart.updateQuantity');
