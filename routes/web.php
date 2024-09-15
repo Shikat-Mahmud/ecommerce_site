@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\Customer\CustomerProfileController;
+use App\Http\Controllers\Customer\OrderController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,8 @@ Route::get('/product/{id}', [HomeController::class,'productView'])->name('view.p
 // ============== customer routes ============== //
 Route::middleware(['auth'])->group(function () {
     Route::get('/customer-dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
+
+    Route::post('/add-to-cart/{id}', [OrderController::class,'addToCart'])->name('add.to.cart');
 
     Route::get('/customer-profile', [CustomerProfileController::class, 'edit'])->name('customer.profile.edit');
     Route::patch('/customer-profile', [CustomerProfileController::class, 'update'])->name('customer.profile.update');
