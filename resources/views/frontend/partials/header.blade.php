@@ -199,43 +199,9 @@
                                         href="javascript:void(0)">Categories</a>
                                     <ul
                                         class="bb-dropdown-menu min-w-[205px] p-[10px] transition-all duration-[0.3s] ease-in-out mt-[25px] absolute top-[40px] z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] flex flex-col rounded-[10px]">
-                                        <li
-                                            class="bb-mega-dropdown m-[0] py-[5px] px-[15px] relative flex items-center">
-                                            <a class="bb-mega-item transition-all duration-[0.3s] ease-in-out font-Poppins py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize tracking-[0.03rem]"
-                                                href="javascript:void(0)">Product page</a>
-                                            <ul
-                                                class="bb-mega-menu transition-all duration-[0.3s] ease-in-out min-w-[220px] p-[10px] mt-[25px] absolute top-[-20px] left-[193px] z-[16] text-left opacity-[0] invisible right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] flex flex-col rounded-[10px]">
-                                                <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                        class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[6px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize"
-                                                        href="product-left-sidebar.html">Product left sidebar</a></li>
-                                                <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                        class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[6px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize"
-                                                        href="product-right-sidebar.html">Product right sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li
-                                            class="bb-mega-dropdown m-[0] py-[5px] px-[15px] relative flex items-center">
-                                            <a class="bb-mega-item transition-all duration-[0.3s] ease-in-out font-Poppins py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize tracking-[0.03rem]"
-                                                href="javascript:void(0)">Product Accordion</a>
-                                            <ul
-                                                class="bb-mega-menu transition-all duration-[0.3s] ease-in-out min-w-[220px] p-[10px] mt-[25px] absolute top-[-20px] left-[193px] z-[16] text-left opacity-[0] invisible right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] flex flex-col rounded-[10px]">
-                                                <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                        class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[6px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize"
-                                                        href="product-accordion-left-sidebar.html">left sidebar</a></li>
-                                                <li class="m-[0] py-[5px] px-[15px] flex items-center"><a
-                                                        class="dropdown-item transition-all duration-[0.3s] ease-in-out py-[6px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize"
-                                                        href="product-accordion-right-sidebar.html">right sidebar</a>
-                                                </li>
-                                            </ul>
-                                        </li>
                                         <li class="m-[0] py-[5px] px-[15px] relative flex items-center">
                                             <a href="product-full-width.html"
                                                 class="font-Poppins transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize tracking-[0.03rem]">Product
-                                                full width</a>
-                                        </li>
-                                        <li class="m-[0] py-[5px] px-[15px] relative flex items-center">
-                                            <a href="product-accordion-full-width.html"
-                                                class="font-Poppins transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize tracking-[0.03rem]">accordion
                                                 full width</a>
                                         </li>
                                     </ul>
