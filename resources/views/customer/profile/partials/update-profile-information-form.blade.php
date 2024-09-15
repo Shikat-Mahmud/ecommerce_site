@@ -11,7 +11,7 @@
             </p>
             @if (isset($user->photo))
                 <img src="{{ asset('storage/' . $user->photo) }}" alt="Photo" class="rounded-circle"
-                    style="height: 100px; width: 100px; object-fit: cover; border: 3px solid #23B7E5; padding: 2px;">
+                    style="height: 100px; width: 100px; object-fit: cover; border: 3px solid #60AAFF; padding: 2px;">
             @else
                 <img src="{{ asset('/assets/images/user/avatar-2.jpg') }}" class="img-radius mb-4"
                     alt="User-Profile-Image">
