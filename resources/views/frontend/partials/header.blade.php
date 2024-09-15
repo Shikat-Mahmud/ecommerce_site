@@ -200,6 +200,9 @@
                                         href="javascript:void(0)">Categories</a>
                                     <ul
                                         class="bb-dropdown-menu min-w-[205px] p-[10px] transition-all duration-[0.3s] ease-in-out mt-[25px] absolute top-[40px] z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] flex flex-col rounded-[10px]">
+                                        @php
+                                            $categories = categories()
+                                        @endphp
                                         @if (isset($categories))
                                             @foreach ($categories as $category)
                                                 <li class="m-[0] py-[5px] px-[15px] relative flex items-center">
@@ -340,11 +343,13 @@
                     </li>
                     <li class="relative">
                         <a href="#"
-                            class="transition-all duration-[0.3s] ease-in-out mb-[12px] p-[12px] block font-Poppins capitalize text-[#686e7d] border-[1px] border-solid border-[#eee] rounded-[10px] text-[15px] font-medium leading-[28px] tracking-[0.03rem]">About Us</a>
+                            class="transition-all duration-[0.3s] ease-in-out mb-[12px] p-[12px] block font-Poppins capitalize text-[#686e7d] border-[1px] border-solid border-[#eee] rounded-[10px] text-[15px] font-medium leading-[28px] tracking-[0.03rem]">About
+                            Us</a>
                     </li>
                     <li class="relative">
                         <a href="#"
-                            class="transition-all duration-[0.3s] ease-in-out mb-[12px] p-[12px] block font-Poppins capitalize text-[#686e7d] border-[1px] border-solid border-[#eee] rounded-[10px] text-[15px] font-medium leading-[28px] tracking-[0.03rem]">Contact Us</a>
+                            class="transition-all duration-[0.3s] ease-in-out mb-[12px] p-[12px] block font-Poppins capitalize text-[#686e7d] border-[1px] border-solid border-[#eee] rounded-[10px] text-[15px] font-medium leading-[28px] tracking-[0.03rem]">Contact
+                            Us</a>
                     </li>
                 </ul>
             </div>

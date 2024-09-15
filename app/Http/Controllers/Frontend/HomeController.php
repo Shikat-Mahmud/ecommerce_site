@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,6 +12,7 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::where('status', 1)->get();
+        $products = Product::where('status',1)->get();
         $catBg = [
             'fef1f1', // Light pink
             'e1fcf2', // Light cyan
@@ -27,6 +29,11 @@ class HomeController extends Controller
 
         $bgColorCount = count($catBg);
 
-        return view('frontend.main.home', compact('categories', 'catBg', 'bgColorCount'));
+        return view('frontend.main.home', compact('categories', 'catBg', 'bgColorCount', 'products'));
+    }
+
+    public function productView()
+    {
+        return view('frontend.main.product');
     }
 }
