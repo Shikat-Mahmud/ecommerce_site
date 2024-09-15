@@ -62,7 +62,7 @@
                             <h3 class="f-w-300 d-flex align-items-center m-b-0">৳{{ number_format($monthlyTotal, 2) }}
                             </h3>
                             @php
-                                $target = 500000;
+                                $target = 10000;
                                 $percentage = ($monthlyTotal / $target) * 100;
                                 $percentage = min(100, $percentage);
                             @endphp
