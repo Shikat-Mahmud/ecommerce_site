@@ -38,7 +38,7 @@
                                             @if ($order->status == 'pending')
                                             <span class="badge bg-warning">Pending</span>
                                             @elseif($order->status == 'completed')
-                                            <span class="badge bg-success">Accepted</span>
+                                            <span class="badge bg-success">Completed</span>
                                             @elseif($order->status == 'cancelled')
                                             <span class="badge bg-danger">Cancelled</span>
                                             @endif

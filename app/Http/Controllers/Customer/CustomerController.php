@@ -2,31 +2,45 @@
 
 namespace App\Http\Controllers\Customer;
 
-use App\Http\Controllers\Controller;
-use App\Models\Order;
-use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
+use App\Models\Category;
+use App\Models\OrderItem;
+use Illuminate\Http\Request;
 use App\Models\ApplicationSetting;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class CustomerController extends Controller
 {
     public function index()
     {
-        $totalUsers = User::count();
-        $totalCategory = Category::count();
-        $totalProduct = Product::count();
-        $subsetCount = 100;
+        $topProducts = OrderItem::select('product_id', \DB::raw('COUNT(*) as purchase_count'))
+            ->groupBy('product_id')
+            ->orderBy('purchase_count', 'DESC')
+            ->limit(5)
+            ->get()
+            ->map(function ($item) {
+                return Product::find($item->product_id);
+            });
 
-        $peruser = (($totalUsers / $subsetCount) * 100);
-        $percategory = (($totalCategory / $subsetCount) * 100);
-        $perproduct = (($totalProduct / $subsetCount) * 100);
+        $startOfMonth = Carbon::now()->startOfMonth();
+        $endOfMonth = Carbon::now()->endOfMonth();
+        $userId = auth()->id();
 
+        $monthlyTotal = DB::table('orders')
+            ->where('user_id', $userId)
+            ->whereBetween('created_at', [$startOfMonth, $endOfMonth])
+            ->sum('total_amount');
 
-        return view('customer.main.dashboard', compact('totalUsers', 'totalCategory', 'totalProduct', 'peruser', 'percategory', 'perproduct'));
+        $monthlyTotalOrder = DB::table('orders')
+            ->where('user_id', $userId)
+            ->count();
 
+        return view('customer.main.dashboard', compact('topProducts', 'monthlyTotal', 'monthlyTotalOrder'));
     }
 
     public function customerOrders()
