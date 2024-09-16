@@ -4,6 +4,7 @@ use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\Customer\CustomerProfileController;
 use App\Http\Controllers\Customer\OrderController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\SettingsController;
@@ -19,6 +20,8 @@ use App\Http\Controllers\Admin\UserController;
 // ============== frontend routes ============== //
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/product/{id}', [HomeController::class,'productView'])->name('view.product');
+
+Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 
 // ============== customer routes ============== //
 Route::middleware(['auth'])->group(function () {
