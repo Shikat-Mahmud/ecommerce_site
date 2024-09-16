@@ -22,6 +22,8 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/product/{id}', [HomeController::class,'productView'])->name('view.product');
 
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+Route::get('/filter-products', [ShopController::class, 'index'])->name('filter.products');
+
 
 // ============== customer routes ============== //
 Route::middleware(['auth'])->group(function () {

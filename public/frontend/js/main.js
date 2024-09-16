@@ -509,15 +509,54 @@
     $(function () {
         $("#slider-range").slider({
             range: true,
-            min: 130,
-            max: 500,
-            values: [130, 250],
+            min: 10,
+            max: 10000,
+            values: [10, 250],
             slide: function (event, ui) {
-                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                $("#amount").val("৳" + ui.values[0] + " - ৳" + ui.values[1]);
             }
         });
-        $("#amount").val("$" + $("#slider-range").slider("values", 0) +
-            " - $" + $("#slider-range").slider("values", 1));
+        $("#amount").val("৳" + $("#slider-range").slider("values", 0) +
+            " - ৳" + $("#slider-range").slider("values", 1));
+    });
+
+    $(document).ready(function () {
+        // Range slider initialization
+        $("#slider-range").slider({
+            range: true,
+            min: 10,
+            max: 10000,
+            values: [10, 250],
+            slide: function (event, ui) {
+                $("#amount").val("৳" + ui.values[0] + " - ৳" + ui.values[1]);
+                $("#min_price").val(parseInt(ui.values[0], 10)); // Ensure min price is an integer
+                $("#max_price").val(parseInt(ui.values[1], 10)); // Ensure max price is an integer
+            }
+        });
+
+        // Set initial values for slider
+        $("#amount").val("৳" + $("#slider-range").slider("values", 0) + " - ৳" + $("#slider-range").slider("values", 1));
+        $("#min_price").val(parseInt($("#slider-range").slider("values", 0), 10));
+        $("#max_price").val(parseInt($("#slider-range").slider("values", 1), 10));
+
+        // Handle form submission via AJAX
+        $('#filterForm').on('submit', function (e) {
+            e.preventDefault(); // Prevent form from submitting the normal way
+            let formData = $(this).serialize(); // Collect form data
+
+            $.ajax({
+                type: 'GET',
+                url: $(this).attr('action'), // Use the form's action attribute
+                data: formData, // Send form data (categories, price range)
+                success: function (response) {
+                    // Update the product list with the filtered results
+                    $('#product-list').html(response);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
     });
 
     /* Shop sidebar JS */

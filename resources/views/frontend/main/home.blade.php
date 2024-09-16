@@ -181,36 +181,36 @@
                         @endphp
 
                         @if (isset($categories))
-                            @foreach ($categories as $category)
-                                @php
-                                    $color = $catBg[$colorIndex % $bgColorCount];
-                                    $colorIndex++; // Increment the color index
-                                @endphp
-                                <div class="bb-category-box p-[30px] rounded-[20px] flex flex-col items-center text-center max-[1399px]:p-[20px] category-items-1"
-                                    data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200"
-                                    style="background-color: #{{ $color }};">
-                                    <div class="category-image mb-[12px]">
-                                        @if (isset($category->image))
-                                            <img src="{{ asset('storage/' . $category->image) }}" alt="category"
-                                                class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
-                                        @else
-                                            <img src="{{ asset('frontend/img/category/1.svg') }}" alt="category"
-                                                class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
-                                        @endif
-                                    </div>
-                                    <div class="category-sub-contact">
-                                        <h5
-                                            class="mb-[2px] text-[16px] font-quicksand text-[#3d4750] font-semibold tracking-[0.03rem] leading-[1.2]">
-                                            <a href="shop-left-sidebar-col-3.html"
-                                                class="font-Poppins text-[16px] font-medium leading-[1.2] tracking-[0.03rem] text-[#3d4750] capitalize">{{ $category->name }}</a>
-                                        </h5>
-                                        <!-- <p class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">485 items</p> -->
-                                        <p
-                                            class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">
-                                            Explore</p>
-                                    </div>
-                                </div>
-                            @endforeach
+                                            @foreach ($categories as $category)
+                                                                @php
+                                                                    $color = $catBg[$colorIndex % $bgColorCount];
+                                                                    $colorIndex++; // Increment the color index
+                                                                @endphp
+                                                                <div class="bb-category-box p-[30px] rounded-[20px] flex flex-col items-center text-center max-[1399px]:p-[20px] category-items-1"
+                                                                    data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200"
+                                                                    style="background-color: #{{ $color }};">
+                                                                    <div class="category-image mb-[12px]">
+                                                                        @if (isset($category->image))
+                                                                            <img src="{{ asset('storage/' . $category->image) }}" alt="category"
+                                                                                class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
+                                                                        @else
+                                                                            <img src="{{ asset('frontend/img/category/1.svg') }}" alt="category"
+                                                                                class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
+                                                                        @endif
+                                                                    </div>
+                                                                    <div class="category-sub-contact">
+                                                                        <h5
+                                                                            class="mb-[2px] text-[16px] font-quicksand text-[#3d4750] font-semibold tracking-[0.03rem] leading-[1.2]">
+                                                                            <a href="shop-left-sidebar-col-3.html"
+                                                                                class="font-Poppins text-[16px] font-medium leading-[1.2] tracking-[0.03rem] text-[#3d4750] capitalize">{{ $category->name }}</a>
+                                                                        </h5>
+                                                                        <!-- <p class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">485 items</p> -->
+                                                                        <p
+                                                                            class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">
+                                                                            Explore</p>
+                                                                    </div>
+                                                                </div>
+                                            @endforeach
                         @endif
                     </div>
                 </div>
@@ -248,11 +248,11 @@
                         <div class="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
                             <div class="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
                                 <!-- <span
-                                                        class="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
-                                                        <span class="text-[14px] text-[#777] font-medium uppercase">New</span>
-                                                    </span> -->
+                                                                                class="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
+                                                                                <span class="text-[14px] text-[#777] font-medium uppercase">New</span>
+                                                                            </span> -->
                                 @if (isset($product->image))
-                                    <a href="{{ route('view.product',$product->id)}}">
+                                    <a href="{{ route('view.product', $product->id)}}">
                                         <div class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
                                             <img class="main-img transition-all duration-[0.3s] ease-in-out w-full"
                                                 src="{{ asset('storage/' . $product->image) }}" alt="product-1"
@@ -263,7 +263,7 @@
                                         </div>
                                     </a>
                                 @else
-                                    <a href="{{ route('view.product',$product->id)}}">
+                                    <a href="{{ route('view.product', $product->id)}}">
                                         <div class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
                                             <img class="main-img transition-all duration-[0.3s] ease-in-out w-full"
                                                 src="{{ asset('frontend/img/new-product/1.jpg') }}" alt="product-1">
@@ -317,13 +317,14 @@
                                     </span>
                                 </div>
                                 <h4 class="bb-pro-title mb-[8px] text-[16px] leading-[18px]">
-                                    <a href="{{ route('view.product',$product->id)}}"
+                                    <a href="{{ route('view.product', $product->id)}}"
                                         class="transition-all duration-[0.3s] ease-in-out font-quicksand w-full block whitespace-nowrap overflow-hidden text-ellipsis text-[15px] leading-[18px] text-[#3d4750] font-semibold tracking-[0.03rem]">
                                         {{ $product->name }}</a>
                                 </h4>
                                 <div class="bb-price flex flex-wrap justify-between">
                                     <div class="inner-price mx-[-3px]">
-                                        <span class="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">৳{{ $product->price }}</span>
+                                        <span
+                                            class="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">৳{{ $product->price }}</span>
                                         <!-- <span class="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$22</span> -->
                                     </div>
                                     <span class="last-items text-[14px] text-[#686e7d]">500g</span>
@@ -333,6 +334,12 @@
                     </div>
                 @endforeach
             @endif
+        </div>
+    </div>
+    <div class="w-full py-3 flex justify-center">
+        <div class="bb-bl-btn py-[10px] flex max-[420px]:justify-center">
+            <a href="{{ route('shop') }}"
+                class="bb-btn-1 transition-all duration-[0.3s] ease-in-out font-Poppins leading-[28px] tracking-[0.03rem] py-[8px] px-[20px] text-[14px] font-normal bg-[#6c7fd8] text-[#fff] rounded-[10px] border-[1px] border-solid border-[#6c7fd8] max-[1199px]:py-[3px] max-[1199px]:px-[15px] hover:bg-[#fff] hover:border-[#6c7fd8] hover:text-[#6c7fd8]">Explore More</a>
         </div>
     </div>
 </section>
