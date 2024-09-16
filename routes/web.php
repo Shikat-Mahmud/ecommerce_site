@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\OrderManageController;
 use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\Customer\CustomerProfileController;
 use App\Http\Controllers\Customer\OrderController;
@@ -55,6 +56,8 @@ Route::middleware(['auth', 'permission:admin-panel'])->name('admin.')->prefix('a
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
     Route::get('/users/roles/{user}', [UserController::class, 'role'])->name('users.roles.edit');
     Route::post('/users/roles/{user}', [UserController::class, 'giveRole'])->name('users.roles');
+
+    Route::resource('orders', OrderManageController::class);
 
     // ============== search route ============== //
     Route::get('/search', [IndexController::class, 'search'])->name('search');

@@ -24,6 +24,27 @@
                             <i class="ph ph-gauge"></i></span><span class="pc-mtext">Dashboard</span></a>
                 </li>
 
+                @if (auth()->check() && auth()->user()->hasAnyPermission(['create-category', 'edit-category',
+                'show-category', 'delete-category', 'create-product', 'edit-product', 'show-product',
+                'delete-product']))
+                    @if (auth()->check() && auth()->user()->hasAnyPermission(['create-category', 'edit-category',
+                    'show-category', 'delete-category']))
+                        <li class="pc-item pc-hasmenu">
+                            <a class="pc-link" href="{{ route('categories.index') }}"><span class="pc-micon"><i class="ph ph-squares-four"></i></span><span class="pc-mtext">Category</span></a>
+                        </li>
+                    @endif
+                    @if (auth()->check() && auth()->user()->hasAnyPermission(['create-product', 'edit-product',
+                    'show-product', 'delete-product']))
+                        <li class="pc-item pc-hasmenu">
+                            <a class="pc-link" href="{{ route('products.index') }}"><span class="pc-micon"><i class="ph ph-package"></i></span><span class="pc-mtext">Product</span></a>
+                        </li>
+                    @endif
+                @endif
+
+                <li class="pc-item pc-hasmenu">
+                    <a class="pc-link" href="{{ route('admin.orders.index') }}"><span class="pc-micon"><i class="ph ph-truck"></i></span><span class="pc-mtext">Orders</span></a>
+                </li>
+
                 <li class="pc-item pc-caption">
                     <label>Widget</label>
                     <i class="ph ph-chart-pie"></i>
@@ -70,30 +91,6 @@
                         'delete-role']))
                         <li class="pc-item">
                             <a class="pc-link" href="{{ route('admin.roles.index') }}">Roles</a>
-                        </li>
-                        @endif
-                    </ul>
-                </li>
-                @endif
-
-                @if (auth()->check() && auth()->user()->hasAnyPermission(['create-category', 'edit-category',
-                'show-category', 'delete-category', 'create-product', 'edit-product', 'show-product',
-                'delete-product']))
-                <li class="pc-item pc-hasmenu">
-                    <a href="#!" class="pc-link"><span class="pc-micon">
-                            <i class="ph ph-list"></i></span><span class="pc-mtext">Menus</span><span
-                            class="pc-arrow"><i data-feather="chevron-right"></i></span></a>
-                    <ul class="pc-submenu">
-                        @if (auth()->check() && auth()->user()->hasAnyPermission(['create-category', 'edit-category',
-                        'show-category', 'delete-category']))
-                        <li class="pc-item">
-                            <a class="pc-link" href="{{ route('categories.index') }}">Category</a>
-                        </li>
-                        @endif
-                        @if (auth()->check() && auth()->user()->hasAnyPermission(['create-product', 'edit-product',
-                        'show-product', 'delete-product']))
-                        <li class="pc-item">
-                            <a class="pc-link" href="{{ route('products.index') }}">Product</a>
                         </li>
                         @endif
                     </ul>
