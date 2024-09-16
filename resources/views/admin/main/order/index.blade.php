@@ -51,20 +51,24 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex">
+                                                    <a class="btn btn-secondary btn-sm me-2"
+                                                        href="{{ route('admin.orders.show', $order->id) }}">View</a>
+
                                                     <form action="{{ route('admin.orders.update', $order->id) }}"
                                                         method="POST">
                                                         @csrf
                                                         @method('PUT')
 
                                                         <div class="d-flex">
-                                                            <select name="status" class="form-select me-2" style="min-width: 120px;">
+                                                            <select name="status" class="form-select me-2"
+                                                                style="min-width: 120px;">
                                                                 <option value="pending" {{ $order->status == 'pending' ? 'selected' : '' }}>Pending</option>
                                                                 <option value="completed" {{ $order->status == 'completed' ? 'selected' : '' }}>Completed</option>
                                                                 <option value="cancelled" {{ $order->status == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
                                                             </select>
 
                                                             <button type="submit" class="btn btn-info btn-sm">Change
-                                                                Status</button> 
+                                                                Status</button>
                                                         </div>
                                                     </form>
                                                 </div>

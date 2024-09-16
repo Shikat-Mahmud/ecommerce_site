@@ -58,6 +58,7 @@ Route::middleware(['auth', 'permission:admin-panel'])->name('admin.')->prefix('a
     Route::post('/users/roles/{user}', [UserController::class, 'giveRole'])->name('users.roles');
 
     Route::resource('orders', OrderManageController::class);
+    Route::get('/export-section/{orderId}', [OrderManageController::class, 'exportSection'])->name('export.section');
 
     // ============== search route ============== //
     Route::get('/search', [IndexController::class, 'search'])->name('search');

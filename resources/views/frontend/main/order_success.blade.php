@@ -48,7 +48,7 @@
                                 </td>
                                 <td class="p-[12px]">
                                     <span
-                                        class="font-Poppins text-[15px] font-medium leading-[26px] tracking-[0.02rem] text-[#686e7d]">৳{{ $orderItem->product->price }}.00</span>
+                                        class="font-Poppins text-[15px] font-medium leading-[26px] tracking-[0.02rem] text-[#686e7d]">৳{{ $orderItem->product->price }}</span>
                                 </td>
                                 <td class="p-[12px]">
                                     <span
@@ -56,7 +56,7 @@
                                 </td>
                                 <td class="p-[12px]">
                                     <span
-                                        class="font-Poppins text-[15px] font-medium leading-[26px] tracking-[0.02rem] text-[#686e7d]">৳{{ $orderItem->product->price * $orderItem->quantity }}.00</span>
+                                        class="font-Poppins text-[15px] font-medium leading-[26px] tracking-[0.02rem] text-[#686e7d]">৳{{ number_format($orderItem->product->price * $orderItem->quantity, 2) }}</span>
                                 </td>
                             </tr>
                         @endforeach
