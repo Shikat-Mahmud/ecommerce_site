@@ -49,19 +49,7 @@
                                                 <td>
                                                     <div class="d-flex">
                                                         <a class="btn btn-secondary btn-sm me-2"
-                                                            href="{{ route('categories.show', $customer->id) }}">View</a>
-
-                                                        <a class="btn btn-info btn-sm me-2"
-                                                            href="{{ route('categories.edit', $customer->id) }}">Edit</a>
-
-                                                        <form class="deleteForm"
-                                                            action="{{ route('categories.destroy', $customer->id) }}"
-                                                            method="post">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="button"
-                                                                class="btn btn-danger btn-sm btnDelete">Delete</button>
-                                                        </form>
+                                                            href="{{ route('admin.customers.show', $customer->id) }}">View</a>
                                                     </div>
                                                 </td>
                                             </tr>

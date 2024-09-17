@@ -46,7 +46,7 @@
                 </li>
 
                 <li class="pc-item pc-hasmenu">
-                    <a class="pc-link" href="{{ route('admin.customers.index') }}"><span class="pc-micon"><i class="ph ph-truck"></i></span><span class="pc-mtext">Customers</span></a>
+                    <a class="pc-link" href="{{ route('admin.customers.index') }}"><span class="pc-micon"><i class="ph ph-users"></i></span><span class="pc-mtext">Customers</span></a>
                 </li>
 
                 <li class="pc-item pc-caption">
