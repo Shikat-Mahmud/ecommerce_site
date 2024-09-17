@@ -37,4 +37,14 @@ class HomeController extends Controller
         $product = Product::findOrFail($id);
         return view('frontend.main.product', compact('product'));
     }
+
+    public function about()
+    {
+        return view('frontend.main.about_us');
+    }
+
+    public function contact()
+    {
+        return view('frontend.main.contact_us');
+    }
 }

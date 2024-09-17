@@ -219,12 +219,12 @@
                                 <li
                                     class="nav-item flex items-center font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem] mr-[35px]">
                                     <a class="nav-link p-[0] font-Poppins leading-[28px] text-[15px] font-medium text-[#3d4750] tracking-[0.03rem] block"
-                                        href="#">About Us</a>
+                                        href="{{ route('about') }}">About Us</a>
                                 </li>
                                 <li
                                     class="nav-item flex items-center font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem] mr-[35px]">
                                     <a class="nav-link p-[0] font-Poppins leading-[28px] text-[15px] font-medium text-[#3d4750] tracking-[0.03rem] block"
-                                        href="#">Contact Us</a>
+                                        href="{{ route('contact') }}">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -345,12 +345,12 @@
                         </ul>
                     </li>
                     <li class="relative">
-                        <a href="#"
+                        <a href="{{ route('about') }}"
                             class="transition-all duration-[0.3s] ease-in-out mb-[12px] p-[12px] block font-Poppins capitalize text-[#686e7d] border-[1px] border-solid border-[#eee] rounded-[10px] text-[15px] font-medium leading-[28px] tracking-[0.03rem]">About
                             Us</a>
                     </li>
                     <li class="relative">
-                        <a href="#"
+                        <a href="{{ route('contact') }}"
                             class="transition-all duration-[0.3s] ease-in-out mb-[12px] p-[12px] block font-Poppins capitalize text-[#686e7d] border-[1px] border-solid border-[#eee] rounded-[10px] text-[15px] font-medium leading-[28px] tracking-[0.03rem]">Contact
                             Us</a>
                     </li>
