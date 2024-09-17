@@ -18,8 +18,12 @@ class CustomerController extends Controller
 {
     public function index()
     {
-        $topProducts = OrderItem::select('product_id', \DB::raw('COUNT(*) as purchase_count'))
-            ->groupBy('product_id')
+        $userId = auth()->id();
+
+        $topProducts = OrderItem::join('orders', 'order_items.order_id', '=', 'orders.id')
+            ->where('orders.user_id', $userId)
+            ->select('order_items.product_id', \DB::raw('COUNT(order_items.product_id) as purchase_count'))
+            ->groupBy('order_items.product_id')
             ->orderBy('purchase_count', 'DESC')
             ->limit(5)
             ->get()
@@ -29,7 +33,6 @@ class CustomerController extends Controller
 
         $startOfMonth = Carbon::now()->startOfMonth();
         $endOfMonth = Carbon::now()->endOfMonth();
-        $userId = auth()->id();
 
         $monthlyTotal = Order::where('user_id', $userId)
             ->whereBetween('created_at', [$startOfMonth, $endOfMonth])
