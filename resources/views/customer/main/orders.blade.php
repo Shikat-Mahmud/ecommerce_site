@@ -32,7 +32,7 @@
                                 <tbody>
                                     @foreach ($orders as $order)
                                     <tr>
-                                        <td>{{ $order->id }}</td>
+                                        <td>#{{ $order->id }}</td>
                                         <td>৳{{ $order->total_amount }}</td>
                                         <td>
                                             @if ($order->status == 'pending')

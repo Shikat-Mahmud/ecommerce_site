@@ -46,7 +46,7 @@
                                     </li>
                                     <li class="mb-[12px] flex justify-between leading-[28px]">
                                         <div class="coupon-down-box w-full">
-                                            <form method="post" class="relative mb-[15px]">
+                                            <form class="relative mb-[15px]">
                                                 <input
                                                     class="bb-coupon w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] rounded-[10px]"
                                                     type="text" placeholder="Enter Your coupon Code" name="bb-coupon"
@@ -104,11 +104,11 @@
                                     <tr class="border-b-[1px] border-solid border-[#eee] cart-item"
                                         id="cart-item-{{ $cartItem->id }}">
                                         <td class="p-[12px]">
-                                            <a href="javascript:void(0)">
+                                            <a href="{{ route('view.product', $cartItem->product->id) }}">
                                                 <div class="Product-cart flex items-center">
                                                     @if (isset($cartItem->product->image))
                                                         <img src="{{ asset('storage/' . $cartItem->product->image) }}"
-                                                            alt="new-product-1"
+                                                            alt="{{ $cartItem->name }}"
                                                             class="w-[70px] border-[1px] border-solid border-[#eee] rounded-[10px]">
                                                     @else
                                                         <img src="{{ asset('frontend/img/new-product/1.jpg') }}" alt="new-product-1"
@@ -163,13 +163,9 @@
                         </tbody>
                     </table>
                 </div>
-                <form action="{{ route('checkout') }}" method="POST">
-                    @csrf
-                    <button type="submit"
-                        class="bb-btn-2 mt-[24px] inline-flex items-center justify-center check-btn transition-all duration-[0.3s] ease-in-out font-Poppins leading-[28px] tracking-[0.03rem] py-[8px] px-[20px] text-[14px] font-normal text-[#fff] bg-[#6c7fd8] rounded-[10px] border-[1px] border-solid border-[#6c7fd8] hover:bg-transparent hover:border-[#3d4750] hover:text-[#3d4750]"
-                        data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Check Out</button>
-                </form>
-
+                <a href="{{ route('checkout') }}"
+                    class="bb-btn-2 mt-[24px] inline-flex items-center justify-center check-btn transition-all duration-[0.3s] ease-in-out font-Poppins leading-[28px] tracking-[0.03rem] py-[8px] px-[20px] text-[14px] font-normal text-[#fff] bg-[#6c7fd8] rounded-[10px] border-[1px] border-solid border-[#6c7fd8] hover:bg-transparent hover:border-[#3d4750] hover:text-[#3d4750]"
+                    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">Check Out</a>
             </div>
         </div>
     </div>
