@@ -43,17 +43,25 @@
                                     <th>Product Code</th>
                                     <th>Total Sales</th>
                                 </tr>
-                                @foreach($topProducts as $product)
+                                @if (!$topProducts->isEmpty())
+                                    @foreach($topProducts as $product)
+                                        <tr>
+                                            <td>
+                                                <img src="{{ asset('storage/' . $product->product->image) }}" alt="prod img"
+                                                    class="img-fluid rounded" style="height: 60px; width: auto;">
+                                            </td>
+                                            <td>{{ $product->product->name }}</td>
+                                            <td>ECOM0{{ $product->product->id }}</td>
+                                            <td>{{ $product->total_sales }}</td>
+                                        </tr>
+                                    @endforeach
+                                @else
                                     <tr>
-                                        <td>
-                                            <img src="{{ asset('storage/' . $product->product->image) }}" alt="prod img"
-                                                class="img-fluid rounded" style="height: 60px; width: auto;">
+                                        <td colspan="4" class="py-5 text-center">
+                                            <p>Top sales product is empty!</p>
                                         </td>
-                                        <td>{{ $product->product->name }}</td>
-                                        <td>ECOM0{{ $product->product->id }}</td>
-                                        <td>{{ $product->total_sales }}</td>
                                     </tr>
-                                @endforeach
+                                @endif
                             </table>
                         </div>
                     </div>

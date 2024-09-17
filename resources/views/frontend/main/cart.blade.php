@@ -156,7 +156,7 @@
                             @else
                                 <tr class="border-b-[1px] border-solid border-[#eee]">
                                     <td colspan="5" class="py-5 text-center">
-                                        <p>Cart is empty</p>
+                                        <p>Cart is empty!</p>
                                     </td>
                                 </tr>
                             @endif

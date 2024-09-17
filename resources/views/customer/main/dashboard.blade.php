@@ -32,7 +32,8 @@
                             <span class="badge bg-light-primary ms-2">{{ number_format($percentage, 0) }}%</span>
                         </div>
                         <p class="text-muted mb-2 text-sm mt-3">You made an extra
-                            {{ number_format($monthlyTotalOrder - $target, 2) }} this month</p>
+                            {{ number_format($monthlyTotalOrder - $target, 2) }} this month
+                        </p>
                         <div class="progress" style="height: 7px">
                             <div class="progress-bar bg-brand-color-3" role="progressbar"
                                 style="width: {{ $percentage }}%" aria-valuenow="{{ $percentage }}" aria-valuemin="0"
@@ -69,7 +70,8 @@
                             <span class="badge bg-light-primary ms-2">{{ number_format($percentage, 0) }}%</span>
                         </div>
                         <p class="text-muted mb-2 text-sm mt-3">You made an extra
-                            {{ number_format($monthlyTotal - $target, 2) }} this month</p>
+                            {{ number_format($monthlyTotal - $target, 2) }} this month
+                        </p>
                         <div class="progress" style="height: 7px">
                             <div class="progress-bar bg-brand-color-3" role="progressbar"
                                 style="width: {{ $percentage }}%" aria-valuenow="{{ $percentage }}" aria-valuemin="0"
@@ -93,19 +95,27 @@
                                     <th>Product Code</th>
                                     <th>Total Purchases</th>
                                 </tr>
-                                @foreach ($topProducts as $product)
+                                @if (!$topProducts->isEmpty())
+                                    @foreach ($topProducts as $product)
+                                        <tr>
+                                            <td>
+                                                <img src="{{ asset('storage/' . $product->image) }}" alt="prod img"
+                                                    class="img-fluid rounded" style="height: 60px; width: auto;">
+                                            </td>
+                                            <td>{{ $product->name }}</td>
+                                            <td>ECOM0{{ $product->id }}</td>
+                                            <td>
+                                                {{ \App\Models\OrderItem::where('product_id', $product->id)->count() }}
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @else
                                     <tr>
-                                        <td>
-                                            <img src="{{ asset('storage/' . $product->image) }}" alt="prod img"
-                                                class="img-fluid rounded" style="height: 60px; width: auto;">
-                                        </td>
-                                        <td>{{ $product->name }}</td>
-                                        <td>ECOM0{{ $product->id }}</td>
-                                        <td>
-                                            {{ \App\Models\OrderItem::where('product_id', $product->id)->count() }}
+                                        <td colspan="4" class="py-5 text-center">
+                                            <p>Top purchased product is empty!</p>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @endif
                             </table>
                         </div>
                     </div>
