@@ -41,11 +41,14 @@
                         </li>
                         <li
                             class="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
-                            <a href="javascript:void(0)" title="Add To Cart"
-                                class="w-[35px] h-[35px] flex items-center justify-center">
-                                <i
-                                    class="ri-shopping-cart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
-                            </a>
+                            <form action="{{ route('single.add.to.cart', $product->id) }}" method="post">
+                                @csrf
+                                <button type="submit" title="Add To Cart"
+                                    class="w-[35px] h-[35px] flex items-center justify-center">
+                                    <i
+                                        class="ri-shopping-cart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                                </button>
+                            </form>
                         </li>
                     </ul>
                 </div>
@@ -72,7 +75,7 @@
                         <div class="inner-price mx-[-3px]">
                             <span class="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">৳{{ $product->price }}</span>
                             <!-- <span
-                                                                                                                        class="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$22</span> -->
+                                                                                                                                class="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$22</span> -->
                         </div>
                         <!-- <span class="last-items text-[14px] text-[#686e7d]">500g</span> -->
                     </div>

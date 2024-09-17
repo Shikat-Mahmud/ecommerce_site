@@ -248,9 +248,9 @@
                         <div class="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
                             <div class="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
                                 <!-- <span
-                                                                                class="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
-                                                                                <span class="text-[14px] text-[#777] font-medium uppercase">New</span>
-                                                                            </span> -->
+                                                                                                class="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
+                                                                                                <span class="text-[14px] text-[#777] font-medium uppercase">New</span>
+                                                                                            </span> -->
                                 @if (isset($product->image))
                                     <a href="{{ route('view.product', $product->id)}}">
                                         <div class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
@@ -292,11 +292,14 @@
                                     </li>
                                     <li
                                         class="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
-                                        <a href="javascript:void(0)" title="Add To Cart"
-                                            class="w-[35px] h-[35px] flex items-center justify-center">
-                                            <i
-                                                class="ri-shopping-cart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
-                                        </a>
+                                        <form action="{{ route('single.add.to.cart', $product->id) }}" method="post">
+                                            @csrf
+                                            <button type="submit" title="Add To Cart"
+                                                class="w-[35px] h-[35px] flex items-center justify-center">
+                                                <i
+                                                    class="ri-shopping-cart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                                            </button>
+                                        </form>
                                     </li>
                                 </ul>
                             </div>
@@ -339,7 +342,8 @@
     <div class="w-full py-3 flex justify-center">
         <div class="bb-bl-btn py-[10px] flex max-[420px]:justify-center">
             <a href="{{ route('shop') }}"
-                class="bb-btn-1 transition-all duration-[0.3s] ease-in-out font-Poppins leading-[28px] tracking-[0.03rem] py-[8px] px-[20px] text-[14px] font-normal bg-[#6c7fd8] text-[#fff] rounded-[10px] border-[1px] border-solid border-[#6c7fd8] max-[1199px]:py-[3px] max-[1199px]:px-[15px] hover:bg-[#fff] hover:border-[#6c7fd8] hover:text-[#6c7fd8]">Explore More</a>
+                class="bb-btn-1 transition-all duration-[0.3s] ease-in-out font-Poppins leading-[28px] tracking-[0.03rem] py-[8px] px-[20px] text-[14px] font-normal bg-[#6c7fd8] text-[#fff] rounded-[10px] border-[1px] border-solid border-[#6c7fd8] max-[1199px]:py-[3px] max-[1199px]:px-[15px] hover:bg-[#fff] hover:border-[#6c7fd8] hover:text-[#6c7fd8]">Explore
+                More</a>
         </div>
     </div>
 </section>
