@@ -215,7 +215,7 @@
                                         @if (!$categories->isEmpty())
                                             @foreach ($categories as $category)
                                                 <li class="m-[0] py-[5px] px-[15px] relative flex items-center">
-                                                    <a href="javascript:void(0)"
+                                                    <a href="{{ route('category.product', $category->id) }}"
                                                         class="font-Poppins transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize tracking-[0.03rem]">{{ $category->name }}</a>
                                                 </li>
                                             @endforeach
@@ -263,7 +263,7 @@
                             @if (!$categories->isEmpty())
                                 @foreach ($categories as $category)
                                     <li class="relative">
-                                        <a href="javascript:void(0)"
+                                        <a href="{{ route('category.product', $category->id) }}"
                                             class="transition-all duration-[0.3s] ease-in-out mb-[0] pl-[15px] pr-[0] py-[12px] capitalize block text-[14px] font-normal text-[#686e7d]">{{ $category->name }}</a>
                                     </li>
                                 @endforeach

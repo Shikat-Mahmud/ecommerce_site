@@ -25,6 +25,7 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/product/{id}', [HomeController::class,'productView'])->name('view.product');
 Route::get('/about-us', [HomeController::class,'about'])->name('about');
 Route::get('/contact-us', [HomeController::class,'contact'])->name('contact');
+Route::get('/category-product/{id}', [HomeController::class, 'productOfCategory'])->name('category.product');
 Route::match(['get', 'post'], '/search', [HomeController::class, 'search'])->name('search');
 
 

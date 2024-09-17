@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title', '- Search Item')
+@section('title', '- Category Product')
 
 @section('content')
 <!-- Breadcrumb -->
@@ -13,7 +13,7 @@
                     <div class="min-[768px]:w-[50%] min-[576px]:w-full w-full px-[12px]">
                         <h2
                             class="bb-breadcrumb-title font-quicksand tracking-[0.03rem] leading-[1.2] text-[16px] font-bold text-[#3d4750] max-[767px]:text-center max-[767px]:mb-[10px]">
-                            Search Page</h2>
+                            Category Product</h2>
                     </div>
                     <div class="min-[768px]:w-[50%] min-[576px]:w-full w-full px-[12px]">
                         <ul class="bb-breadcrumb-list mx-[-5px] flex justify-end max-[767px]:justify-center">
@@ -26,7 +26,7 @@
                             </li>
                             <li
                                 class="bb-breadcrumb-item font-Poppins text-[#686e7d] text-[14px] leading-[28px] font-normal tracking-[0.03rem] px-[5px] active">
-                                Search Page</li>
+                                Category Product</li>
                         </ul>
                     </div>
                 </div>

@@ -305,7 +305,7 @@
                             </div>
                             <div class="bb-pro-contact p-[20px]">
                                 <div class="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
-                                    <a href="shop-left-sidebar-col-3.html"
+                                    <a href="{{ route('category.product', $product->category->id) }}"
                                         class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">{{ $product->category->name }}</a>
                                     <span class="bb-pro-rating">
                                         <i
