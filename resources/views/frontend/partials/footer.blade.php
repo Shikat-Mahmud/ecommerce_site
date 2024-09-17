@@ -1,3 +1,8 @@
+@php
+    $settings = generalSettings();
+    $categories = categories();
+@endphp
+
 <footer class="bb-footer mt-[50px] max-[1199px]:mt-[35px] bg-[#f8f8fb] text-[#fff]">
     <div class="footer-container border-t-[1px] border-solid border-[#eee]">
         <div class="footer-top py-[50px] max-[1199px]:py-[35px]">
@@ -7,12 +12,21 @@
                     data-aos-delay="200">
                     <div class="min-[992px]:w-[25%] max-[991px]:w-full w-full px-[12px] bb-footer-toggle bb-footer-cat">
                         <div class="bb-footer-widget bb-footer-company flex flex-col max-[991px]:mb-[24px]">
-                            <img src="{{ asset('frontend/img/logo/logo.png') }}"
-                                class="bb-footer-logo max-w-[144px] mb-[30px] max-[767px]:max-w-[130px]"
-                                alt="footer logo">
-                            <img src="{{ asset('frontend/img/logo/logo-dark.png') }}"
-                                class="bb-footer-dark-logo max-w-[144px] mb-[30px] max-[767px]:max-w-[130px] hidden"
-                                alt="footer logo">
+                            @if (isset($settings->logo))
+                                <img src="{{ asset('storage/' . $settings->logo) }}"
+                                    class="bb-footer-logo max-w-[144px] mb-[30px] max-[767px]:max-w-[130px]"
+                                    alt="footer logo">
+                                <img src="{{ asset('storage/' . $settings->logo) }}"
+                                    class="bb-footer-dark-logo max-w-[144px] mb-[30px] max-[767px]:max-w-[130px] hidden"
+                                    alt="footer logo">
+                            @else
+                                <img src="{{ asset('frontend/img/logo/logo.png') }}"
+                                    class="bb-footer-logo max-w-[144px] mb-[30px] max-[767px]:max-w-[130px]"
+                                    alt="footer logo">
+                                <img src="{{ asset('frontend/img/logo/logo-dark.png') }}"
+                                    class="bb-footer-dark-logo max-w-[144px] mb-[30px] max-[767px]:max-w-[130px] hidden"
+                                    alt="footer logo">
+                            @endif
                             <p
                                 class="bb-footer-detail max-w-[400px] mb-[30px] p-[0] font-Poppins text-[14px] leading-[27px] font-normal text-[#686e7d] inline-block relative max-[1399px]:text-[15px] max-[1199px]:text-[14px]">
                                 BlueBerry is the biggest market of grocery products. Get
@@ -32,89 +46,57 @@
                         </div>
                     </div>
                     <div
-                        class="min-[992px]:w-[16.66%] max-[991px]:w-full w-full px-[12px] bb-footer-toggle bb-footer-info">
+                        class="min-[992px]:w-[25%] max-[991px]:w-full w-full px-[12px] bb-footer-toggle bb-footer-info">
                         <div class="bb-footer-widget">
                             <h4
                                 class="bb-footer-heading font-quicksand leading-[1.2] text-[18px] font-bold mb-[20px] text-[#3d4750] tracking-[0] relative block w-full pb-[15px] capitalize border-b-[1px] border-solid border-[#eee] max-[991px]:text-[14px]">
                                 Category</h4>
                             <div class="bb-footer-links bb-footer-dropdown hidden max-[991px]:mb-[35px]">
                                 <ul class="align-items-center">
-                                    <li
-                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="shop-left-sidebar-col-3.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Dairy
-                                            & Milk</a>
-                                    </li>
-                                    <li
-                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="shop-banner-left-sidebar-col-3.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Snack
-                                            & Spice</a>
-                                    </li>
-                                    <li
-                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="shop-full-width-col-5.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Fast
-                                            Food</a>
-                                    </li>
-                                    <li
-                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="shop-list-left-sidebar.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Juice
-                                            & Drinks</a>
-                                    </li>
-                                    <li
-                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="shop-list-full-col-2.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Bakery</a>
-                                    </li>
-                                    <li class="bb-footer-link leading-[1.5] flex items-center">
-                                        <a href="shop-banner-right-sidebar-col-4.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Seafood</a>
-                                    </li>
+                                    @if (!$categories->isEmpty())
+                                        @foreach ($categories->take(5) as $category)
+                                            <li
+                                                class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
+                                                <a href="{{ route('category.product', $category->id) }}"
+                                                    class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">
+                                                    {{ $category->name }}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    @endif
                                 </ul>
+
                             </div>
                         </div>
                     </div>
                     <div
-                        class="min-[992px]:w-[16.66%] max-[991px]:w-full w-full px-[12px] bb-footer-toggle bb-footer-account">
+                        class="min-[992px]:w-[25%] max-[991px]:w-full w-full px-[12px] bb-footer-toggle bb-footer-account">
                         <div class="bb-footer-widget">
                             <h4
                                 class="bb-footer-heading font-quicksand leading-[1.2] text-[18px] font-bold mb-[20px] text-[#3d4750] tracking-[0] relative block w-full pb-[15px] capitalize border-b-[1px] border-solid border-[#eee] max-[991px]:text-[14px]">
-                                Company</h4>
+                                Links</h4>
                             <div class="bb-footer-links bb-footer-dropdown hidden max-[991px]:mb-[35px]">
                                 <ul class="align-items-center">
                                     <li
                                         class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="about-us.html"
+                                        <a href="{{ route('login') }}"
+                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Sign
+                                            In</a>
+                                    </li>
+                                    <li
+                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
+                                        <a href="{{ route('cart') }}"
+                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">View
+                                            Cart</a>
+                                    </li>
+                                    <li
+                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
+                                        <a href="{{ route('about') }}"
                                             class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">About
                                             us</a>
                                     </li>
-                                    <li
-                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="track-order.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Delivery</a>
-                                    </li>
-                                    <li
-                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="faq.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Legal
-                                            Notice</a>
-                                    </li>
-                                    <li
-                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="terms.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Terms
-                                            & conditions</a>
-                                    </li>
-                                    <li
-                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="checkout.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Secure
-                                            payment</a>
-                                    </li>
                                     <li class="bb-footer-link leading-[1.5] flex items-center">
-                                        <a href="contact-us.html"
+                                        <a href="{{ route('contact') }}"
                                             class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Contact
                                             us</a>
                                     </li>
@@ -122,52 +104,7 @@
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="min-[992px]:w-[16.66%] max-[991px]:w-full w-full px-[12px] bb-footer-toggle bb-footer-service">
-                        <div class="bb-footer-widget">
-                            <h4
-                                class="bb-footer-heading font-quicksand leading-[1.2] text-[18px] font-bold mb-[20px] text-[#3d4750] tracking-[0] relative block w-full pb-[15px] capitalize border-b-[1px] border-solid border-[#eee] max-[991px]:text-[14px]">
-                                Account</h4>
-                            <div class="bb-footer-links bb-footer-dropdown hidden max-[991px]:mb-[35px]">
-                                <ul class="align-items-center">
-                                    <li
-                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="login.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Sign
-                                            In</a>
-                                    </li>
-                                    <li
-                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="cart.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">View
-                                            Cart</a>
-                                    </li>
-                                    <li
-                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="faq.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Return
-                                            Policy</a>
-                                    </li>
-                                    <li
-                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="shop-left-sidebar-col-3.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Become
-                                            a Vendor</a>
-                                    </li>
-                                    <li
-                                        class="bb-footer-link leading-[1.5] flex items-center mb-[16px] max-[991px]:mb-[15px]">
-                                        <a href="product-left-sidebar.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Affiliate
-                                            Program</a>
-                                    </li>
-                                    <li class="bb-footer-link leading-[1.5] flex items-center">
-                                        <a href="checkout.html"
-                                            class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] hover:text-[#6c7fd8] mb-[0] inline-block break-all tracking-[0] font-normal">Payments</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+
                     <div
                         class="min-[992px]:w-[25%] max-[991px]:w-full w-full px-[12px] bb-footer-toggle bb-footer-cont-social">
                         <div class="bb-footer-contact mb-[30px]">
@@ -184,23 +121,23 @@
                                             </span>
                                             <p
                                                 class="m-[0] font-Poppins text-[14px] text-[#686e7d] font-normal leading-[28px] tracking-[0.03rem]">
-                                                971 Lajamni, Motavarachha, Surat, Gujarat, Bharat 394101.</p>
+                                                {{ $settings->business_address }}
+                                            </p>
                                         </li>
                                         <li
                                             class="bb-footer-link bb-foo-call flex items-start max-[991px]:mb-[15px] mb-[16px]">
                                             <span class="w-[25px] basis-[auto] grow-[0] shrink-[0]">
                                                 <i class="ri-whatsapp-line leading-[0] text-[18px] text-[#6c7fd8]"></i>
                                             </span>
-                                            <a href="tel:+009876543210"
-                                                class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] inline-block relative break-all tracking-[0] font-normal max-[1399px]:text-[15px] max-[1199px]:text-[14px]">+00
-                                                9876543210</a>
+                                            <a href="tel:{{ $settings->business_whatsapp ? $settings->business_whatsapp : $settings->business_number }}"
+                                                class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] inline-block relative break-all tracking-[0] font-normal max-[1399px]:text-[15px] max-[1199px]:text-[14px]">{{ $settings->business_whatsapp ? $settings->business_whatsapp : $settings->business_number }}</a>
                                         </li>
                                         <li class="bb-footer-link bb-foo-mail flex">
                                             <span class="w-[25px] basis-[auto] grow-[0] shrink-[0]">
                                                 <i class="ri-mail-line leading-[0] text-[18px] text-[#6c7fd8]"></i>
                                             </span>
-                                            <a href="mailto:example@email.com"
-                                                class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] inline-block relative break-all tracking-[0] font-normal max-[1399px]:text-[15px] max-[1199px]:text-[14px]">example@email.com</a>
+                                            <a href="mailto:{{ $settings->business_email }}"
+                                                class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] inline-block relative break-all tracking-[0] font-normal max-[1399px]:text-[15px] max-[1199px]:text-[14px]">{{ $settings->business_email }}</a>
                                         </li>
                                     </ul>
                                 </div>
