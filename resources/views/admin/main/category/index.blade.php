@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'Add Category')
+@section('title', 'Category List')
 @section('content')
 <section class="pc-container">
     <div class="pc-content">

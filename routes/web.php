@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CustomerManageController;
 use App\Http\Controllers\Admin\OrderManageController;
 use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\Customer\CustomerProfileController;
@@ -59,6 +60,8 @@ Route::middleware(['auth', 'permission:admin-panel'])->name('admin.')->prefix('a
 
     Route::resource('orders', OrderManageController::class);
     Route::get('/export-section/{orderId}', [OrderManageController::class, 'exportSection'])->name('export.section');
+
+    Route::resource('customers', CustomerManageController::class);
 
     // ============== search route ============== //
     Route::get('/search', [IndexController::class, 'search'])->name('search');

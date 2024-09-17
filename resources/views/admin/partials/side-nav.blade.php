@@ -45,6 +45,10 @@
                     <a class="pc-link" href="{{ route('admin.orders.index') }}"><span class="pc-micon"><i class="ph ph-truck"></i></span><span class="pc-mtext">Orders</span></a>
                 </li>
 
+                <li class="pc-item pc-hasmenu">
+                    <a class="pc-link" href="{{ route('admin.customers.index') }}"><span class="pc-micon"><i class="ph ph-truck"></i></span><span class="pc-mtext">Customers</span></a>
+                </li>
+
                 <li class="pc-item pc-caption">
                     <label>Widget</label>
                     <i class="ph ph-chart-pie"></i>
