@@ -25,6 +25,9 @@ Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/product/{id}', [HomeController::class,'productView'])->name('view.product');
 Route::get('/about-us', [HomeController::class,'about'])->name('about');
 Route::get('/contact-us', [HomeController::class,'contact'])->name('contact');
+// Route::post('/search', [HomeController::class, 'search'])->name('search');
+Route::match(['get', 'post'], '/search', [HomeController::class, 'search'])->name('search');
+
 
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 Route::get('/filter-products', [ShopController::class, 'index'])->name('filter.products');

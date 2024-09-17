@@ -74,8 +74,6 @@
                     <div class="bb-price flex flex-wrap justify-between">
                         <div class="inner-price mx-[-3px]">
                             <span class="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">৳{{ $product->price }}</span>
-                            <!-- <span
-                                                                                                                                class="old-price px-[3px] text-[14px] text-[#686e7d] line-through">$22</span> -->
                         </div>
                         <!-- <span class="last-items text-[14px] text-[#686e7d]">500g</span> -->
                     </div>

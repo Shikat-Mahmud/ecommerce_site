@@ -1,3 +1,7 @@
+@php
+    $categories = categories()
+@endphp
+
 <header class="bb-header relative z-[5] border-b-[1px] border-solid border-[#eee]">
     <div class="bottom-header py-[20px] max-[991px]:py-[15px]">
         <div
@@ -21,22 +25,27 @@
                             <div
                                 class="header-search w-[600px] max-[1399px]:w-[500px] max-[1199px]:w-[400px] max-[991px]:w-full max-[991px]:min-w-[300px] max-[767px]:py-[15px] max-[480px]:min-w-[auto]">
                                 <form class="bb-btn-group-form flex relative max-[991px]:ml-[20px] max-[767px]:m-[0]"
-                                    action="#">
+                                    action="{{ route('search') }}" method="get">
+                                    @csrf
                                     <div
                                         class="inner-select border-r-[1px] border-solid border-[#eee] h-full px-[20px] flex items-center absolute top-[0] left-[0] max-[991px]:hidden">
                                         <div
                                             class="custom-select w-[100px] capitalize text-[#777] flex items-center justify-between transition-all duration-[0.2s] ease-in text-[14px] relative">
-                                            <select>
-                                                <option value="option1">vegetables</option>
-                                                <option value="option2">Cold Drinks</option>
-                                                <option value="option3">Fruits</option>
-                                                <option value="option4">Bakery</option>
+                                            <select name="category">
+                                                <option value="" selected>Category</option>
+                                                @if (!$categories->isEmpty())
+                                                    @foreach ($categories as $category)
+                                                        <option value="{{ $category->id }}" {{ request('category') == $category->id ? 'selected' : '' }}>
+                                                            {{ $category->name }}
+                                                        </option>
+                                                    @endforeach
+                                                @endif
                                             </select>
                                         </div>
                                     </div>
                                     <input
                                         class="form-control bb-search-bar bg-[#fff] block w-full min-h-[45px] h-[48px] py-[10px] pr-[10px] pl-[160px] max-[991px]:min-h-[40px] max-[991px]:h-[40px] max-[991px]:p-[10px] text-[14px] font-normal leading-[1] text-[#777] rounded-[10px] border-[1px] border-solid border-[#eee] tracking-[0.5px]"
-                                        placeholder="Search products..." type="text">
+                                        placeholder="Search products..." name="search" type="text" value="{{ request('search') }}">
                                     <button
                                         class="submit absolute top-[0] left-[auto] right-[0] flex items-center justify-center w-[45px] h-full bg-transparent text-[#555] text-[16px] rounded-[0] outline-[0] border-[0] padding-[0]"
                                         type="submit">
@@ -203,13 +212,10 @@
                                         href="javascript:void(0)">Categories</a>
                                     <ul
                                         class="bb-dropdown-menu min-w-[205px] p-[10px] transition-all duration-[0.3s] ease-in-out mt-[25px] absolute top-[40px] z-[16] text-left opacity-[0] invisible left-[0] right-[auto] bg-[#fff] border-[1px] border-solid border-[#eee] flex flex-col rounded-[10px]">
-                                        @php
-                                            $categories = categories()
-                                        @endphp
-                                        @if (isset($categories))
+                                        @if (!$categories->isEmpty())
                                             @foreach ($categories as $category)
                                                 <li class="m-[0] py-[5px] px-[15px] relative flex items-center">
-                                                    <a href="product-full-width.html"
+                                                    <a href="javascript:void(0)"
                                                         class="font-Poppins transition-all duration-[0.3s] ease-in-out py-[5px] leading-[22px] text-[14px] font-normal text-[#686e7d] hover:text-[#6c7fd8] capitalize tracking-[0.03rem]">{{ $category->name }}</a>
                                                 </li>
                                             @endforeach
@@ -254,94 +260,15 @@
                         <a href="javascript:void(0)"
                             class="transition-all duration-[0.3s] ease-in-out mb-[12px] p-[12px] block font-Poppins capitalize text-[#686e7d] border-[1px] border-solid border-[#eee] rounded-[10px] text-[15px] font-medium leading-[28px] tracking-[0.03rem]">Categories</a>
                         <ul class="sub-menu w-full min-w-[auto] p-[0] mb-[10px] static hidden visible opacity-[1]">
-                            <li class="relative">
-                                <a href="javascript:void(0)"
-                                    class="transition-all duration-[0.3s] ease-in-out mb-[0] pl-[15px] pr-[0] py-[12px] capitalize block text-[14px] font-normal text-[#686e7d]">Classic</a>
-                                <ul
-                                    class="sub-menu w-full min-w-[auto] p-[0] mb-[10px] static hidden visible opacity-[1]">
-                                    <li class="relative"><a href="shop-left-sidebar-col-3.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Left
-                                            sidebar 3 column</a></li>
-                                    <li class="relative"><a href="shop-left-sidebar-col-4.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Left
-                                            sidebar 4 column</a></li>
-                                    <li class="relative"><a href="shop-right-sidebar-col-3.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Right
-                                            sidebar 3 column</a></li>
-                                    <li class="relative"><a href="shop-right-sidebar-col-4.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Right
-                                            sidebar 4 column</a></li>
-                                    <li class="relative"><a href="shop-full-width.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Full
-                                            width 4 column</a></li>
-                                </ul>
-                            </li>
-                            <li class="relative">
-                                <a href="javascript:void(0)"
-                                    class="transition-all duration-[0.3s] ease-in-out mb-[0] pl-[15px] pr-[0] py-[12px] capitalize block text-[14px] font-normal text-[#686e7d]">Banner</a>
-                                <ul
-                                    class="sub-menu w-full min-w-[auto] p-[0] mb-[10px] static hidden visible opacity-[1]">
-                                    <li class="relative"><a href="shop-banner-left-sidebar-col-3.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Left
-                                            sidebar 3 column</a></li>
-                                    <li class="relative"><a href="shop-banner-left-sidebar-col-4.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Left
-                                            sidebar 4 column</a></li>
-                                    <li class="relative"><a href="shop-banner-right-sidebar-col-3.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Right
-                                            sidebar 3 column</a></li>
-                                    <li class="relative"><a href="shop-banner-right-sidebar-col-4.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Right
-                                            sidebar 4 column</a></li>
-                                    <li class="relative"><a href="shop-banner-full-width.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Full
-                                            width 4 column</a></li>
-                                </ul>
-                            </li>
-                            <li class="relative">
-                                <a href="javascript:void(0)"
-                                    class="transition-all duration-[0.3s] ease-in-out mb-[0] pl-[15px] pr-[0] py-[12px] capitalize block text-[14px] font-normal text-[#686e7d]">Columns</a>
-                                <ul
-                                    class="sub-menu w-full min-w-[auto] p-[0] mb-[10px] static hidden visible opacity-[1]">
-                                    <li class="relative"><a href="shop-full-width-col-3.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">3
-                                            Columns full width</a></li>
-                                    <li class="relative"><a href="shop-full-width-col-4.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">4
-                                            Columns full width</a></li>
-                                    <li class="relative"><a href="shop-full-width-col-5.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">5
-                                            Columns full width</a></li>
-                                    <li class="relative"><a href="shop-full-width-col-6.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">6
-                                            Columns full width</a></li>
-                                    <li class="relative"><a href="shop-banner-full-width-col-3.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Banner
-                                            3 Columns</a></li>
-                                </ul>
-                            </li>
-                            <li class="relative">
-                                <a href="javascript:void(0)"
-                                    class="transition-all duration-[0.3s] ease-in-out mb-[0] pl-[15px] pr-[0] py-[12px] capitalize block text-[14px] font-normal text-[#686e7d]">List</a>
-                                <ul
-                                    class="sub-menu w-full min-w-[auto] p-[0] mb-[10px] static hidden visible opacity-[1]">
-                                    <li class="relative"><a href="shop-list-left-sidebar.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Shop
-                                            left sidebar</a></li>
-                                    <li class="relative"><a href="shop-list-right-sidebar.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Shop
-                                            right sidebar</a></li>
-                                    <li class="relative"><a href="shop-list-banner-left-sidebar.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Banner
-                                            left sidebar</a></li>
-                                    <li class="relative"><a href="shop-list-banner-right-sidebar.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Banner
-                                            right sidebar</a></li>
-                                    <li class="relative"><a href="shop-list-full-col-2.html"
-                                            class="font-Poppins leading-[28px] tracking-[0.03rem] transition-all duration-[0.3s] ease-in-out font-normal pl-[30px] text-[14px] text-[#777] mb-[0] capitalize block py-[12px]">Full
-                                            width 2 columns</a></li>
-                                </ul>
-                            </li>
+                            @if (!$categories->isEmpty())
+                                @foreach ($categories as $category)
+                                    <li class="relative">
+                                        <a href="javascript:void(0)"
+                                            class="transition-all duration-[0.3s] ease-in-out mb-[0] pl-[15px] pr-[0] py-[12px] capitalize block text-[14px] font-normal text-[#686e7d]">{{ $category->name }}</a>
+                                    </li>
+                                @endforeach
+                            @endif
+
                         </ul>
                     </li>
                     <li class="relative">

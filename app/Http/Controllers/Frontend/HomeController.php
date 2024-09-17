@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::where('status', 1)->get();
-        $products = Product::where('status',1)->latest()->limit(8)->get();
+        $products = Product::where('status', 1)->latest()->limit(8)->get();
         $catBg = [
             'fef1f1', // Light pink
             'e1fcf2', // Light cyan
@@ -46,5 +46,22 @@ class HomeController extends Controller
     public function contact()
     {
         return view('frontend.main.contact_us');
+    }
+
+
+    public function search(Request $request)
+    {
+        $categoryId = $request->input('category');
+        $searchContent = $request->input('search');
+
+        $products = Product::where('status', 1)
+            ->when($categoryId, function ($query, $categoryId) {
+                return $query->where('category_id', $categoryId);
+            })
+            ->where('name', 'LIKE', "%{$searchContent}%")
+            ->paginate(12)
+            ->appends($request->except('page')); // This ensures search parameters persist during pagination
+
+        return view('frontend.main.search', compact('products'));
     }
 }
