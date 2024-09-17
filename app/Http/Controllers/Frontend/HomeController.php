@@ -59,7 +59,7 @@ class HomeController extends Controller
                 return $query->where('category_id', $categoryId);
             })
             ->where('name', 'LIKE', "%{$searchContent}%")
-            ->paginate(12)
+            ->paginate(8)
             ->appends($request->except('page')); // This ensures search parameters persist during pagination
 
         return view('frontend.main.search', compact('products'));
