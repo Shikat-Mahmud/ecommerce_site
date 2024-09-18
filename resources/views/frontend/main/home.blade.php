@@ -181,33 +181,35 @@
                         @endphp
 
                         @if (isset($categories))
-                                            @foreach ($categories as $category)
-                                                                @php
-                                                                    $color = $catBg[$colorIndex % $bgColorCount];
-                                                                    $colorIndex++; // Increment the color index
-                                                                @endphp
-                                                                <div class="bb-category-box p-[30px] rounded-[20px] flex flex-col items-center text-center max-[1399px]:p-[20px] category-items-1"
-                                                                    data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200"
-                                                                    style="background-color: #{{ $color }};">
-                                                                    <div class="category-image mb-[12px]">
-                                                                        @if (isset($category->image))
-                                                                            <img src="{{ asset('storage/' . $category->image) }}" alt="category"
-                                                                                class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
-                                                                        @else
-                                                                            <img src="{{ asset('frontend/img/category/1.svg') }}" alt="category"
-                                                                                class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
-                                                                        @endif
-                                                                    </div>
-                                                                    <div class="category-sub-contact">
-                                                                        <h5
-                                                                            class="mb-[2px] text-[16px] font-quicksand text-[#3d4750] font-semibold tracking-[0.03rem] leading-[1.2]">
-                                                                            <a href="{{ route('category.product', $category->id) }}"
-                                                                                class="font-Poppins text-[16px] font-medium leading-[1.2] tracking-[0.03rem] text-[#3d4750] capitalize">{{ $category->name }}</a>
-                                                                        </h5>
-                                                                        <p class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">{{ $category->product->count() }} items</p>
-                                                                    </div>
-                                                                </div>
-                                            @endforeach
+                            @foreach ($categories as $category)
+                                @php
+                                    $color = $catBg[$colorIndex % $bgColorCount];
+                                    $colorIndex++; // Increment the color index
+                                @endphp
+                                <div class="bb-category-box p-[30px] rounded-[20px] flex flex-col items-center text-center max-[1399px]:p-[20px] category-items-1"
+                                    data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200"
+                                    style="background-color: #{{ $color }};">
+                                    <div class="category-image mb-[12px]">
+                                        @if (isset($category->image))
+                                            <img src="{{ asset('storage/' . $category->image) }}" alt="category"
+                                                class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
+                                        @else
+                                            <img src="{{ asset('frontend/img/category/1.svg') }}" alt="category"
+                                                class="w-[50px] h-[50px] max-[1399px]:h-[65px] max-[1399px]:w-[65px] max-[1199px]:h-[50px] max-[1199px]:w-[50px]">
+                                        @endif
+                                    </div>
+                                    <div class="category-sub-contact">
+                                        <h5
+                                            class="mb-[2px] text-[16px] font-quicksand text-[#3d4750] font-semibold tracking-[0.03rem] leading-[1.2]">
+                                            <a href="{{ route('category.product', $category->id) }}"
+                                                class="font-Poppins text-[16px] font-medium leading-[1.2] tracking-[0.03rem] text-[#3d4750] capitalize">{{ $category->name }}</a>
+                                        </h5>
+                                        <p
+                                            class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">
+                                            {{ $category->product->count() }} items</p>
+                                    </div>
+                                </div>
+                            @endforeach
                         @endif
                     </div>
                 </div>
@@ -244,10 +246,9 @@
                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                         <div class="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
                             <div class="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
-                                <!-- <span
-                                                                                                class="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
-                                                                                                <span class="text-[14px] text-[#777] font-medium uppercase">New</span>
-                                                                                            </span> -->
+                                <!-- <span class="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
+                                    <span class="text-[14px] text-[#777] font-medium uppercase">New</span>
+                                </span> -->
                                 @if (isset($product->image))
                                     <a href="{{ route('view.product', $product->id)}}">
                                         <div class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
@@ -289,14 +290,11 @@
                                     </li>
                                     <li
                                         class="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
-                                        <form action="{{ route('single.add.to.cart', $product->id) }}" method="post">
-                                            @csrf
-                                            <button type="submit" title="Add To Cart"
-                                                class="w-[35px] h-[35px] flex items-center justify-center">
-                                                <i
-                                                    class="ri-shopping-cart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
-                                            </button>
-                                        </form>
+                                        <button onclick="addToCart({{ $product->id }})" title="Add To Cart"
+                                            class="w-[35px] h-[35px] flex items-center justify-center">
+                                            <i
+                                                class="ri-shopping-cart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                                        </button>
                                     </li>
                                 </ul>
                             </div>

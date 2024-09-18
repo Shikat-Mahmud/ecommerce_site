@@ -2,37 +2,32 @@
 
 namespace App\Http\Controllers\Customer;
 
-use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Darryldecode\Cart\Facades\CartFacade as Cart;
+
 
 class OrderController extends Controller
 {
     public function checkout()
     {
-        $userId = auth()->id();
-        $cartItems = Cart::where('user_id', $userId)->get();
-
-        $totalAmount = $cartItems->sum(function ($item) {
-            return $item->product->price * $item->quantity;
-        });
+        $cartItems = Cart::getContent();
+        $totalAmount = Cart::getTotal();
         return view('frontend.main.checkout', compact('cartItems', 'totalAmount'));
     }
 
     public function placeOrder()
     {
         $userId = auth()->id();
-        $cartItems = Cart::where('user_id', $userId)->get();
+        $cartItems = Cart::getContent();
 
         if ($cartItems->isEmpty()) {
             return response()->json(['message' => 'Cart is empty'], 400);
         }
 
-        $totalAmount = $cartItems->sum(function ($item) {
-            return $item->product->price * $item->quantity;
-        });
+        $totalAmount = Cart::getTotal();
 
         $order = Order::create([
             'user_id' => $userId,
@@ -43,14 +38,14 @@ class OrderController extends Controller
         foreach ($cartItems as $cartItem) {
             OrderItem::create([
                 'order_id' => $order->id,
-                'product_id' => $cartItem->product_id,
+                'product_id' => $cartItem->id,
                 'quantity' => $cartItem->quantity,
-                'price' => $cartItem->product->price,
+                'price' => $cartItem->price,
             ]);
         }
 
         // Clear cart
-        Cart::where('user_id', $userId)->delete();
+        Cart::clear();
 
         return redirect()->route('order.success')->with('success', 'Order placed successfully');
     }

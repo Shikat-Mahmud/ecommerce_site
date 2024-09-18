@@ -114,15 +114,11 @@
                                                 </li>
                                                 <li
                                                     class="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
-                                                    <form action="{{ route('single.add.to.cart', $product->id) }}"
-                                                        method="post">
-                                                        @csrf
-                                                        <button type="submit" title="Add To Cart"
-                                                            class="w-[35px] h-[35px] flex items-center justify-center">
-                                                            <i
-                                                                class="ri-shopping-cart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
-                                                        </button>
-                                                    </form>
+                                                    <button onclick="addToCart({{ $product->id }})" title="Add To Cart"
+                                                        class="w-[35px] h-[35px] flex items-center justify-center">
+                                                        <i
+                                                            class="ri-shopping-cart-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
+                                                    </button>
                                                 </li>
                                             </ul>
                                         </div>

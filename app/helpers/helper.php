@@ -1,10 +1,9 @@
 <?php
 
-use App\Models\Cart;
-use App\Models\User;
 use App\Models\Category;
 use App\Models\ApplicationSetting;
 use Illuminate\Support\Facades\Auth;
+use Darryldecode\Cart\Facades\CartFacade as Cart;
 
 function generalSettings(){
     $application = ApplicationSetting::latest()->first();
@@ -24,8 +23,7 @@ function categories(){
 
 function totalCartItems()
 {
-    $userId = auth()->id();
-    $totalCartItems = Cart::where('user_id',$userId)->count();
+    $totalCartItems =Cart::getContent()->count();
 
     return $totalCartItems;
 }

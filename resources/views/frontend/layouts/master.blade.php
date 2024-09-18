@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Blueberry - Multi Purpose eCommerce Template.">
-    <meta name="keywords" content="eCommerce, mart, apparel, catalog, fashion, Tailwind, multipurpose, online store, shop, store, template">
+    <meta name="keywords"
+        content="eCommerce, mart, apparel, catalog, fashion, Tailwind, multipurpose, online store, shop, store, template">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Ecommerce @yield('title')</title>
 
@@ -49,7 +50,7 @@
 
     <!-- ============================================== -->
     <!-- Main Content -->
-     @yield('content')
+    @yield('content')
     <!-- ============================================== -->
 
     <!-- Footer -->
@@ -66,11 +67,13 @@
     <!-- Tools side bar -->
 
     <!-- Back to top  -->
-    <a href="#Top" class="back-to-top result-placeholder transition-all duration-[0.3s] ease-in-out w-[38px] h-[38px] hidden fixed right-[15px] bottom-[15px] z-[10] rounded-[20px] cursor-pointer bg-[#fff] text-[#6c7fd8] border-[1px] border-solid border-[#6c7fd8] text-center text-[22px] leading-[1.6]">
+    <a href="#Top"
+        class="back-to-top result-placeholder transition-all duration-[0.3s] ease-in-out w-[38px] h-[38px] hidden fixed right-[15px] bottom-[15px] z-[10] rounded-[20px] cursor-pointer bg-[#fff] text-[#6c7fd8] border-[1px] border-solid border-[#6c7fd8] text-center text-[22px] leading-[1.6]">
         <i class="ri-arrow-up-line text-[20px]"></i>
         <div class="back-to-top-wrap active-progress">
             <svg viewBox="-1 -1 102 102" class="w-[36px] h-[36px] fixed right-[16px] bottom-[16px]">
-                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" class="fill-transparent stroke-[5px] stroke-[#6c7fd8]"></path>
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                    class="fill-transparent stroke-[5px] stroke-[#6c7fd8]"></path>
             </svg>
         </div>
     </a>
@@ -108,6 +111,24 @@
         @elseif(Session::has('info'))
             toastr.info("{{ Session::get('info') }}");
         @endif
+    </script>
+
+    <script>
+        function addToCart(productId) {
+            $.ajax({
+                url: '/single-add-to-cart/' + productId,
+                type: 'POST',
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content') 
+                },
+                success: function (response) {
+                    toastr.success(response.success);
+                },
+                error: function (xhr) {
+                    toastr.error('An error occurred while adding the item to the cart.');
+                }
+            });
+        }
     </script>
 
     <!-- main-js -->

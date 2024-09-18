@@ -101,13 +101,17 @@
                         <tbody>
                             @if (!$cartItems->isEmpty())
                                 @foreach ($cartItems as $cartItem)
+                                    @php
+                                        $cartImage = $cartItem->attributes['cartImage'];
+                                    @endphp
+                                    
                                     <tr class="border-b-[1px] border-solid border-[#eee] cart-item"
                                         id="cart-item-{{ $cartItem->id }}">
                                         <td class="p-[12px]">
-                                            <a href="{{ route('view.product', $cartItem->product->id) }}">
+                                            <a href="{{ route('view.product', $cartItem->id) }}">
                                                 <div class="Product-cart flex items-center">
-                                                    @if (isset($cartItem->product->image))
-                                                        <img src="{{ asset('storage/' . $cartItem->product->image) }}"
+                                                    @if (isset($cartImage))
+                                                        <img src="{{ asset('storage/' . $cartImage) }}"
                                                             alt="{{ $cartItem->name }}"
                                                             class="w-[70px] border-[1px] border-solid border-[#eee] rounded-[10px]">
                                                     @else
@@ -115,37 +119,30 @@
                                                             class="w-[70px] border-[1px] border-solid border-[#eee] rounded-[10px]">
                                                     @endif
                                                     <span
-                                                        class="ml-[10px] font-Poppins text-[14px] font-normal leading-[28px] tracking-[0.03rem] text-[#686e7d]">{{ $cartItem->product->name }}</span>
+                                                        class="ml-[10px] font-Poppins text-[14px] font-normal leading-[28px] tracking-[0.03rem] text-[#686e7d]">{{ $cartItem->name }}</span>
                                                 </div>
                                             </a>
                                         </td>
                                         <td class="p-[12px]">
                                             <span
                                                 class="price font-Poppins text-[15px] font-medium leading-[26px] tracking-[0.02rem] text-[#686e7d]"
-                                                data-price="{{ $cartItem->product->price }}">৳{{ number_format($cartItem->product->price, 2) }}</span>
+                                                data-price="{{ $cartItem->price }}">৳{{ number_format($cartItem->price, 2) }}</span>
                                         </td>
 
                                         <td class="p-[12px]">
-                                            <div
-                                                class="h-[45px] py-[7px] border-[1px] border-solid border-[#eee] overflow-hidden relative flex items-center justify-between bg-[#fff] rounded-[10px]">
-                                                <button
-                                                    class="minus px-[10px] text-[#777] text-[20px] bg-transparent border-none" id="{{ $cartItem->id }}"
-                                                    onclick="decrementQuantity( '{{$cartItem->id}}' )">-</button>
-                                                <input id="cart-item-quantity-{{ $cartItem->id }}"
-                                                    class="text-[#777] text-[14px] m-[0] p-[0] text-center w-[32px] outline-none bg-transparent border-none qty-input"
-                                                    type="text" value="{{ $cartItem->quantity }}" readonly>
-                                                <button
-                                                    class="plus px-[10px] text-[#777] text-[20px] bg-transparent border-none" id="{{ $cartItem->id }}"
-                                                    onclick="incrementQuantity( '{{$cartItem->id}}' )">+</button>
+                                            <div class="h-[45px] py-[7px] border-[1px] border-solid border-[#eee] overflow-hidden relative flex items-center justify-between bg-[#fff] rounded-[10px]">
+                                                <button class="minus px-[10px] text-[#777] text-[20px] bg-transparent border-none" id="{{ $cartItem->id }}" onclick="decrementQuantity('{{ $cartItem->id }}')">-</button>
+                                                <input id="cart-item-quantity-{{ $cartItem->id }}" class="text-[#777] text-[14px] m-[0] p-[0] text-center w-[32px] outline-none bg-transparent border-none qty-input" type="text" value="{{ $cartItem->quantity }}" readonly>
+                                                <button class="plus px-[10px] text-[#777] text-[20px] bg-transparent border-none" id="{{ $cartItem->id }}" onclick="incrementQuantity('{{ $cartItem->id }}')">+</button>
                                             </div>
                                         </td>
 
                                         <td class="p-[12px]">
-                                        <input type="hidden" id="unit-price-{{ $cartItem->id }}" value="{{ $cartItem->product->price }}">
-
+                                            <input type="hidden" id="unit-price-{{ $cartItem->id }}" value="{{ $cartItem->price }}">
                                             <span  id="total-price-{{ $cartItem->id }}"
-                                                class="total-price font-Poppins text-[15px] font-medium leading-[26px] tracking-[0.02rem] text-[#686e7d]">৳{{ number_format($cartItem->product->price * $cartItem->quantity, 2) }}</span>
+                                                class="total-price font-Poppins text-[15px] font-medium leading-[26px] tracking-[0.02rem] text-[#686e7d]">৳{{ number_format($cartItem->price * $cartItem->quantity, 2) }}</span>
                                         </td>
+
                                         <td class="p-[12px]">
                                             <div class="pro-remove">
                                                 <a href="javascript:void(0)" onclick="removeCartItem({{ $cartItem->id }})">
@@ -196,73 +193,70 @@
     }
 
     function incrementQuantity(itemId) {
-        $.ajax({
-            url: '/increment-cart/' + itemId,
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                let quantityInput = $('#cart-item-quantity-' + itemId);
-                let newQuantity = parseInt(quantityInput.val()) + 1;
+    $.ajax({
+        url: '/increment-cart/' + itemId,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            let quantityInput = $('#cart-item-quantity-' + itemId);
+            let newQuantity = parseInt(quantityInput.val()) + 1;
+            quantityInput.val(newQuantity);
+
+            // Update total price for this item
+            let unitPrice = parseFloat($('#unit-price-' + itemId).val());
+            let newTotalPrice = (unitPrice * newQuantity).toFixed(2);
+            $('#total-price-' + itemId).text('৳' + newTotalPrice);
+
+            updateCartTotals();  // Update overall totals
+        },
+        error: function (data) {
+            console.error('Error incrementing quantity');
+        }
+    });
+}
+
+function decrementQuantity(itemId) {
+    $.ajax({
+        url: '/decrement-cart/' + itemId,
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            let quantityInput = $('#cart-item-quantity-' + itemId);
+            let newQuantity = parseInt(quantityInput.val()) - 1;
+
+            if (newQuantity >= 1) {
                 quantityInput.val(newQuantity);
 
-                // Update the total price for the item
-                let unitPrice = parseFloat($('#unit-price-' + itemId).val()); // Assuming you store unit price
+                // Update total price for this item
+                let unitPrice = parseFloat($('#unit-price-' + itemId).val());
                 let newTotalPrice = (unitPrice * newQuantity).toFixed(2);
                 $('#total-price-' + itemId).text('৳' + newTotalPrice);
-
-                // Optionally, you can also update the overall cart subtotal and total
-                updateCartTotals();
-            },
-            error: function (data) {
-                console.error('Error incrementing quantity');
             }
-        });
-    }
 
-    function decrementQuantity(itemId) {
-        $.ajax({
-            url: '/decrement-cart/' + itemId,
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                let quantityInput = $('#cart-item-quantity-' + itemId);
-                let newQuantity = parseInt(quantityInput.val()) - 1;
+            updateCartTotals();  // Update overall totals
+        },
+        error: function (data) {
+            console.error('Error decrementing quantity');
+        }
+    });
+}
 
-                // Ensure quantity does not go below 1
-                if (newQuantity >= 1) {
-                    quantityInput.val(newQuantity);
+function updateCartTotals() {
+    let subtotal = 0;
 
-                    // Update the total price for the item
-                    let unitPrice = parseFloat($('#unit-price-' + itemId).val()); // Assuming you store unit price
-                    let newTotalPrice = (unitPrice * newQuantity).toFixed(2);
-                    $('#total-price-' + itemId).text('৳' + newTotalPrice);
-                }
+    $('.cart-item').each(function () {
+        const price = parseFloat($(this).find('.price').data('price'));
+        const quantity = parseInt($(this).find('.qty-input').val());
 
-                // Optionally, you can also update the overall cart subtotal and total
-                updateCartTotals();
-            },
-            error: function (data) {
-                console.error('Error decrementing quantity');
-            }
-        });
-    }
+        if (!isNaN(price) && !isNaN(quantity)) {
+            subtotal += price * quantity;
+        }
+    });
 
-    function updateCartTotals() {
-        let subtotal = 0;
+    // Update subtotal and total in the DOM
+    $('#subtotal').text('৳' + subtotal.toFixed(2));
+    $('#total').text('৳' + subtotal.toFixed(2));
+}
 
-        $('.cart-item').each(function () {
-            const price = parseFloat($(this).find('.price').data('price'));
-            const quantity = parseInt($(this).find('.qty-input').val());
-
-            // Add to subtotal only if price and quantity are valid numbers
-            if (!isNaN(price) && !isNaN(quantity)) {
-                subtotal += price * quantity;
-            }
-        });
-
-        // Update subtotal and total in the DOM
-        $('#subtotal').text('৳' + subtotal.toFixed(2));
-        $('#total').text('৳' + subtotal.toFixed(2)); // Assuming no additional charges
-    }
 </script>
 

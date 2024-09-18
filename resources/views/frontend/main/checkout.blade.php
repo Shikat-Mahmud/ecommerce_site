@@ -95,12 +95,16 @@
                             <!-- single item  -->
                             @if (!$cartItems->isEmpty())
                                 @foreach ($cartItems as $cartItem)
+                                    @php
+                                        $cartImage = $cartItem->attributes['cartImage'];
+                                    @endphp
+
                                     <div
                                         class="pro-items p-[15px] bg-[#f8f8fb] border-[1px] border-solid border-[#eee] rounded-[20px] flex mb-[24px] max-[420px]:flex-col">
                                         <div class="image mr-[15px] max-[420px]:mr-[0] max-[420px]:mb-[15px]">
-                                            @if (isset($cartItem->product->image))
-                                                <img src="{{ asset('storage/' . $cartItem->product->image) }}"
-                                                    alt="{{ $cartItem->product->name }}"
+                                            @if (isset($cartImage))
+                                                <img src="{{ asset('storage/' . $cartImage) }}"
+                                                    alt="{{ $cartItem->name }}"
                                                     class="max-w-max w-[100px] h-[100px] border-[1px] border-solid border-[#eee] rounded-[20px] max-[1399px]:h-[80px] max-[1399px]:w-[80px]">
                                             @else
                                                 <img src="{{ asset('frontend/img/new-product/1.jpg') }}" alt="new-product-1"
@@ -109,8 +113,8 @@
                                         </div>
                                         <div class="items-contact">
                                             <h4 class="text-[16px]"><a
-                                                    href="{{ route('view.product', $cartItem->product->id) }}"
-                                                    class="font-Poppins tracking-[0.03rem] text-[15px] font-medium leading-[18px] text-[#3d4750]">{{ $cartItem->product->name }}</a>
+                                                    href="{{ route('view.product', $cartItem->id) }}"
+                                                    class="font-Poppins tracking-[0.03rem] text-[15px] font-medium leading-[18px] text-[#3d4750]">{{ $cartItem->name }}</a>
                                             </h4>
                                             <span class="bb-pro-rating flex">
                                                 <i class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
@@ -121,7 +125,7 @@
                                             </span>
                                             <div class="inner-price flex items-center justify-left mb-[4px]">
                                                 <span
-                                                    class="new-price font-Poppins text-[#3d4750] font-semibold leading-[26px] tracking-[0.02rem] text-[15px]">৳{{ $cartItem->product->price }}</span>
+                                                    class="new-price font-Poppins text-[#3d4750] font-semibold leading-[26px] tracking-[0.02rem] text-[15px]">৳{{ $cartItem->price }}</span>
                                             </div>
                                             <div class="bb-pro-variation">
                                                 <ul class="flex flex-wrap m-[-2px]">
