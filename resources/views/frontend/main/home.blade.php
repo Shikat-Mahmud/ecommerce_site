@@ -201,13 +201,10 @@
                                                                     <div class="category-sub-contact">
                                                                         <h5
                                                                             class="mb-[2px] text-[16px] font-quicksand text-[#3d4750] font-semibold tracking-[0.03rem] leading-[1.2]">
-                                                                            <a href="shop-left-sidebar-col-3.html"
+                                                                            <a href="{{ route('category.product', $category->id) }}"
                                                                                 class="font-Poppins text-[16px] font-medium leading-[1.2] tracking-[0.03rem] text-[#3d4750] capitalize">{{ $category->name }}</a>
                                                                         </h5>
-                                                                        <!-- <p class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">485 items</p> -->
-                                                                        <p
-                                                                            class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">
-                                                                            Explore</p>
+                                                                        <p class="font-Poppins text-[13px] text-[#686e7d] leading-[25px] font-light tracking-[0.03rem]">{{ $category->product->count() }} items</p>
                                                                     </div>
                                                                 </div>
                                             @endforeach

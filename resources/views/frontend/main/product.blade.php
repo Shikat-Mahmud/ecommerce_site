@@ -98,9 +98,12 @@
                                                 class="font-quicksand text-[18px] font-extrabold leading-[1.2] tracking-[0.03rem] text-[#3d4750]">
                                                 Product Id: ECOM0{{ $product->id }}</h5>
                                         </div>
-                                        <div class="stock">
+                                        
+                                        <!-- Under Development -->
+                                        <!-- <div class="stock">
                                             <span class="text-[18px] text-[#6c7fd8]">In stock</span>
-                                        </div>
+                                            <span class="item-left px-[3px] text-[14px] text-[#6c7fd8]">Out Of Stock</span>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="bb-single-list mb-[30px]">
