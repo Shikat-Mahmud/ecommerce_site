@@ -18,9 +18,8 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 
 
+// ============== start frontend routes ============== //
 
-
-// ============== frontend routes ============== //
 Route::get('/', [HomeController::class,'index'])->name('home');
 Route::get('/product/{id}', [HomeController::class,'productView'])->name('view.product');
 Route::get('/about-us', [HomeController::class,'about'])->name('about');
@@ -32,18 +31,22 @@ Route::match(['get', 'post'], '/search', [HomeController::class, 'search'])->nam
 Route::get('/shop', [ShopController::class, 'index'])->name('shop');
 Route::get('/filter-products', [ShopController::class, 'index'])->name('filter.products');
 
+// cart routes 
+Route::get('/cart', [CartController::class,'cart'])->name('cart');
+Route::post('/add-to-cart/{id}', [CartController::class,'addToCart'])->name('add.to.cart');
+Route::post('/single-add-to-cart/{id}', [CartController::class,'singleAddToCart'])->name('single.add.to.cart');
+Route::get('/increment-cart/{id}', [CartController::class, 'incrementQuantity'])->name('cart.incrementQuantity');
+Route::get('/decrement-cart/{id}', [CartController::class, 'decrementQuantity'])->name('cart.decrementQuantity');
+Route::delete('/remove-cart/{id}', [CartController::class, 'removeCartItem'])->name('cart.remove');
 
-// ============== customer routes ============== //
+// ============== end frontend routes ============== //
+
+
+// ============== start customer routes ============== //
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/customer-dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
     Route::get('/customer-orders', [CustomerController::class, 'customerOrders'])->name('customer.orders');
-
-    Route::get('/cart', [CartController::class,'cart'])->name('cart');
-    Route::post('/add-to-cart/{id}', [CartController::class,'addToCart'])->name('add.to.cart');
-    Route::post('/single-add-to-cart/{id}', [CartController::class,'singleAddToCart'])->name('single.add.to.cart');
-    Route::get('/increment-cart/{id}', [CartController::class, 'incrementQuantity'])->name('cart.incrementQuantity');
-    Route::get('/decrement-cart/{id}', [CartController::class, 'decrementQuantity'])->name('cart.decrementQuantity');
-    Route::delete('/remove-cart/{id}', [CartController::class, 'removeCartItem'])->name('cart.remove');
 
     Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
     Route::post('/place-order', [OrderController::class, 'placeOrder'])->name('place.order');
@@ -54,7 +57,10 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/customer-profile', [CustomerProfileController::class, 'destroy'])->name('customer.profile.destroy');
 });
 
-// ============== admin routes ============== //
+// ============== end customer routes ============== //
+
+
+// ============== start admin routes ============== //
 Route::middleware(['auth', 'permission:admin-panel'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [IndexController::class, 'index'])->name('index');
     Route::resource('/roles', RoleController::class);
@@ -72,7 +78,7 @@ Route::middleware(['auth', 'permission:admin-panel'])->name('admin.')->prefix('a
 
     Route::resource('customers', CustomerManageController::class);
 
-    // ============== search route ============== //
+    //  search route
     Route::get('/search', [IndexController::class, 'search'])->name('search');
 });
 
@@ -85,9 +91,13 @@ Route::middleware('auth')->group(function () {
 
 });
 
-require __DIR__ . '/auth.php';
+Route::resource('categories', CategoryController::class);
+Route::resource('products', ProductController::class);
 
-// ============== all settings route ============== //
+// ============== end admin routes ============== //
+
+
+// ============== start all settings route ============== //
 Route::get('/general-setting', [SettingsController::class, 'index'])->name('general.setting');
 Route::post('/setting-update', [SettingsController::class, 'update'])->name('setting.update');
 
@@ -96,7 +106,7 @@ Route::post('/email-update', [SettingsController::class, 'emailUpdate'])->name('
 
 Route::get('application-cache-clear', [SettingsController::class, 'cacheClear'])->name('application.cache.clear');
 
+// ============== end all settings route ============== //
 
-Route::resource('categories', CategoryController::class);
-Route::resource('products', ProductController::class);
 
+require __DIR__ . '/auth.php';
