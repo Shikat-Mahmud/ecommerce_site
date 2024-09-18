@@ -41,8 +41,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/cart', [CartController::class,'cart'])->name('cart');
     Route::post('/add-to-cart/{id}', [CartController::class,'addToCart'])->name('add.to.cart');
     Route::post('/single-add-to-cart/{id}', [CartController::class,'singleAddToCart'])->name('single.add.to.cart');
-    Route::patch('/cart/{id}', [CartController::class, 'updateQuantity'])->name('cart.updateQuantity');
-    Route::delete('/cart/{id}', [CartController::class, 'removeCartItem'])->name('cart.remove');
+    Route::get('/increment-cart/{id}', [CartController::class, 'incrementQuantity'])->name('cart.incrementQuantity');
+    Route::get('/decrement-cart/{id}', [CartController::class, 'decrementQuantity'])->name('cart.decrementQuantity');
+    Route::delete('/remove-cart/{id}', [CartController::class, 'removeCartItem'])->name('cart.remove');
 
     Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
     Route::post('/place-order', [OrderController::class, 'placeOrder'])->name('place.order');

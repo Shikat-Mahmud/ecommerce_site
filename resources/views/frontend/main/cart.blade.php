@@ -124,23 +124,26 @@
                                                 class="price font-Poppins text-[15px] font-medium leading-[26px] tracking-[0.02rem] text-[#686e7d]"
                                                 data-price="{{ $cartItem->product->price }}">৳{{ number_format($cartItem->product->price, 2) }}</span>
                                         </td>
+
                                         <td class="p-[12px]">
                                             <div
                                                 class="h-[45px] py-[7px] border-[1px] border-solid border-[#eee] overflow-hidden relative flex items-center justify-between bg-[#fff] rounded-[10px]">
                                                 <button
-                                                    class="minus px-[10px] text-[#777] text-[20px] bg-transparent border-none"
-                                                    onclick="updateQuantity({{ $cartItem->id }}, {{ $cartItem->quantity - 1 }})">-</button>
+                                                    class="minus px-[10px] text-[#777] text-[20px] bg-transparent border-none" id="{{ $cartItem->id }}"
+                                                    onclick="decrementQuantity( '{{$cartItem->id}}' )">-</button>
                                                 <input id="cart-item-quantity-{{ $cartItem->id }}"
                                                     class="text-[#777] text-[14px] m-[0] p-[0] text-center w-[32px] outline-none bg-transparent border-none qty-input"
                                                     type="text" value="{{ $cartItem->quantity }}" readonly>
                                                 <button
-                                                    class="plus px-[10px] text-[#777] text-[20px] bg-transparent border-none"
-                                                    onclick="updateQuantity({{ $cartItem->id }}, {{ $cartItem->quantity + 1 }})">+</button>
+                                                    class="plus px-[10px] text-[#777] text-[20px] bg-transparent border-none" id="{{ $cartItem->id }}"
+                                                    onclick="incrementQuantity( '{{$cartItem->id}}' )">+</button>
                                             </div>
                                         </td>
 
                                         <td class="p-[12px]">
-                                            <span
+                                        <input type="hidden" id="unit-price-{{ $cartItem->id }}" value="{{ $cartItem->product->price }}">
+
+                                            <span  id="total-price-{{ $cartItem->id }}"
                                                 class="total-price font-Poppins text-[15px] font-medium leading-[26px] tracking-[0.02rem] text-[#686e7d]">৳{{ number_format($cartItem->product->price * $cartItem->quantity, 2) }}</span>
                                         </td>
                                         <td class="p-[12px]">
@@ -175,7 +178,7 @@
 <script>
     function removeCartItem(itemId) {
         $.ajax({
-            url: '/cart/' + itemId,
+            url: '/remove-cart/' + itemId,
             type: 'DELETE',
             data: {
                 _token: $('meta[name="csrf-token"]').attr('content') // Fetch CSRF token from meta
@@ -184,57 +187,67 @@
                 toastr.success(response.success);
                 // Remove the cart item from the DOM
                 $('#cart-item-' + itemId).remove();
-                updateTotals(); // Update totals after removal
+                updateCartTotals(); // Update totals after removal
             },
             error: function (response) {
                 toastr.error(response.responseJSON.error || 'Something went wrong!');
             }
         });
     }
-</script>
 
-<script>
-    function updateQuantity(itemId, newQuantity) {
-        if (newQuantity < 1) {
-            toastr.error('Quantity cannot be less than 1');
-            return;
-        }
-
-        // Update the input field instantly before sending the request
-        $('#cart-item-quantity-' + itemId).val(newQuantity);
-
-        // Send the AJAX request to update the server
+    function incrementQuantity(itemId) {
         $.ajax({
-            url: '/cart/' + itemId,
-            type: 'PATCH',
-            data: {
-                quantity: newQuantity,
-                _token: $('meta[name="csrf-token"]').attr('content')
+            url: '/increment-cart/' + itemId,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                let quantityInput = $('#cart-item-quantity-' + itemId);
+                let newQuantity = parseInt(quantityInput.val()) + 1;
+                quantityInput.val(newQuantity);
+
+                // Update the total price for the item
+                let unitPrice = parseFloat($('#unit-price-' + itemId).val()); // Assuming you store unit price
+                let newTotalPrice = (unitPrice * newQuantity).toFixed(2);
+                $('#total-price-' + itemId).text('৳' + newTotalPrice);
+
+                // Optionally, you can also update the overall cart subtotal and total
+                updateCartTotals();
             },
-            success: function (response) {
-                // toastr.success(response.success);
-
-                // Ensure we are getting the correct price
-                const price = parseFloat($('#cart-item-' + itemId).find('.price').data('price'));
-
-                // Calculate the total price for the item
-                const totalPrice = price * newQuantity;
-
-                // Update the total price for the item in the view
-                $('#cart-item-' + itemId).find('.total-price').text('৳' + totalPrice.toFixed(2));
-
-                // Update the subtotal and total amounts
-                updateTotals();
-            },
-            error: function (response) {
-                toastr.error(response.responseJSON.error || 'Unable to update quantity');
-                // If the update fails, revert the input field to the old value
-                $('#cart-item-quantity-' + itemId).val(newQuantity - 1); // Or set it to a previous known state
+            error: function (data) {
+                console.error('Error incrementing quantity');
             }
         });
     }
 
-    function updateTotals() {
+    function decrementQuantity(itemId) {
+        $.ajax({
+            url: '/decrement-cart/' + itemId,
+            type: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                let quantityInput = $('#cart-item-quantity-' + itemId);
+                let newQuantity = parseInt(quantityInput.val()) - 1;
+
+                // Ensure quantity does not go below 1
+                if (newQuantity >= 1) {
+                    quantityInput.val(newQuantity);
+
+                    // Update the total price for the item
+                    let unitPrice = parseFloat($('#unit-price-' + itemId).val()); // Assuming you store unit price
+                    let newTotalPrice = (unitPrice * newQuantity).toFixed(2);
+                    $('#total-price-' + itemId).text('৳' + newTotalPrice);
+                }
+
+                // Optionally, you can also update the overall cart subtotal and total
+                updateCartTotals();
+            },
+            error: function (data) {
+                console.error('Error decrementing quantity');
+            }
+        });
+    }
+
+    function updateCartTotals() {
         let subtotal = 0;
 
         $('.cart-item').each(function () {
@@ -251,19 +264,5 @@
         $('#subtotal').text('৳' + subtotal.toFixed(2));
         $('#total').text('৳' + subtotal.toFixed(2)); // Assuming no additional charges
     }
-
-    // Event listeners for dynamic button clicks (optional improvement)
-    $(document).on('click', '.plus', function () {
-        const itemId = $(this).data('item-id');
-        const currentQuantity = parseInt($('#cart-item-quantity-' + itemId).val());
-        updateQuantity(itemId, currentQuantity + 1);
-    });
-
-    $(document).on('click', '.minus', function () {
-        const itemId = $(this).data('item-id');
-        const currentQuantity = parseInt($('#cart-item-quantity-' + itemId).val());
-        if (currentQuantity > 1) {
-            updateQuantity(itemId, currentQuantity - 1);
-        }
-    });
 </script>
+

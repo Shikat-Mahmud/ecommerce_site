@@ -115,7 +115,7 @@
                                 <div class="bb-footer-links bb-footer-dropdown hidden max-[991px]:mb-[35px]">
                                     <ul class="align-items-center">
                                         <li
-                                            class="bb-footer-link bb-foo-location flex items-start max-[991px]:mb-[15px] mb-[16px]">
+                                            class="bb-footer-link bb-foo-location flex items-center max-[991px]:mb-[15px] mb-[16px]">
                                             <span class="mt-[5px] w-[25px] basis-[auto] grow-[0] shrink-[0]">
                                                 <i class="ri-map-pin-line leading-[0] text-[18px] text-[#6c7fd8]"></i>
                                             </span>
@@ -125,14 +125,14 @@
                                             </p>
                                         </li>
                                         <li
-                                            class="bb-footer-link bb-foo-call flex items-start max-[991px]:mb-[15px] mb-[16px]">
+                                            class="bb-footer-link bb-foo-call flex items-center max-[991px]:mb-[15px] mb-[16px]">
                                             <span class="w-[25px] basis-[auto] grow-[0] shrink-[0]">
                                                 <i class="ri-whatsapp-line leading-[0] text-[18px] text-[#6c7fd8]"></i>
                                             </span>
                                             <a href="tel:{{ $settings->business_whatsapp ? $settings->business_whatsapp : $settings->business_number }}"
                                                 class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[14px] leading-[20px] text-[#686e7d] inline-block relative break-all tracking-[0] font-normal max-[1399px]:text-[15px] max-[1199px]:text-[14px]">{{ $settings->business_whatsapp ? $settings->business_whatsapp : $settings->business_number }}</a>
                                         </li>
-                                        <li class="bb-footer-link bb-foo-mail flex">
+                                        <li class="bb-footer-link bb-foo-mail flex items-center">
                                             <span class="w-[25px] basis-[auto] grow-[0] shrink-[0]">
                                                 <i class="ri-mail-line leading-[0] text-[18px] text-[#6c7fd8]"></i>
                                             </span>

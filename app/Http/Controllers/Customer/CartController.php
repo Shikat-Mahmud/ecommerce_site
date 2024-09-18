@@ -42,24 +42,13 @@ class CartController extends Controller
     {
         $userId = auth()->id();
 
-            Cart::create([
-                'user_id' => $userId,
-                'product_id' => $productId,
-                'quantity' => 1,
-            ]);
+        Cart::create([
+            'user_id' => $userId,
+            'product_id' => $productId,
+            'quantity' => 1,
+        ]);
 
         return redirect()->back()->with('success', 'Item added to cart');
-    }
-
-    public function updateQuantity(Request $request, $id)
-    {
-        $cartItem = Cart::find($id);
-        if ($cartItem) {
-            $cartItem->quantity = $request->quantity;
-            $cartItem->save();
-            return response()->json(['success' => 'Quantity updated']);
-        }
-        return response()->json(['error' => 'Item not found'], 404);
     }
 
     public function removeCartItem($id)
@@ -68,6 +57,29 @@ class CartController extends Controller
         if ($cartItem) {
             $cartItem->delete();
             return response()->json(['success' => 'Item removed from cart']);
+        }
+        return response()->json(['error' => 'Item not found'], 404);
+    }
+
+    public function incrementQuantity($id)
+    {
+        $cartItem = Cart::find($id);
+        if ($cartItem) {
+            $cartItem->quantity = $cartItem->quantity + 1;
+
+            $cartItem->update();
+            return response()->json(['success' => 'Quantity incremented.']);
+        }
+        return response()->json(['error' => 'Item not found'], 404);
+    }
+    public function decrementQuantity($id)
+    {
+        $cartItem = Cart::find($id);
+        if ($cartItem) {
+            $cartItem->quantity = $cartItem->quantity - 1;
+
+            $cartItem->update();
+            return response()->json(['success' => 'Quantity decremented.']);
         }
         return response()->json(['error' => 'Item not found'], 404);
     }
