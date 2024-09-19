@@ -20,7 +20,7 @@
 
         <div class="w-full mb-[24px]">
             <div class="bb-cart-table border-[1px] border-solid border-[#eee] rounded-[20px] overflow-hidden max-[1399px]:overflow-y-auto"
-                data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" style="overflow-x: auto;">
                 <!-- Order Summary Table -->
                 <table class="w-full max-[1399px]:w-[780px]">
                     <thead>
@@ -100,7 +100,6 @@
                                 </span>
                             </li>
                         </ul>
-
                     </div>
                 </div>
             </div>

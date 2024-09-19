@@ -77,7 +77,7 @@
             </div>
             <div class="min-[992px]:w-[66.66%] w-full px-[12px] mb-[24px]">
                 <div class="bb-cart-table border-[1px] border-solid border-[#eee] rounded-[20px] overflow-hidden max-[1399px]:overflow-y-auto"
-                    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" style="overflow-x: auto;">
                     <table class="w-full max-[1399px]:w-[780px]">
                         <thead>
                             <tr class="border-b-[1px] border-solid border-[#eee]">
