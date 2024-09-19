@@ -1,5 +1,6 @@
 @php
-    $categories = categories()
+    $categories = categories();
+    $totalCartItems = totalCartItems();
 @endphp
 
 <header class="bb-header relative z-[5] border-b-[1px] border-solid border-[#eee]">
@@ -45,7 +46,8 @@
                                     </div>
                                     <input
                                         class="form-control bb-search-bar bg-[#fff] block w-full min-h-[45px] h-[48px] py-[10px] pr-[10px] pl-[160px] max-[991px]:min-h-[40px] max-[991px]:h-[40px] max-[991px]:p-[10px] text-[14px] font-normal leading-[1] text-[#777] rounded-[10px] border-[1px] border-solid border-[#eee] tracking-[0.5px]"
-                                        placeholder="Search products..." name="search" type="text" value="{{ request('search') }}">
+                                        placeholder="Search products..." name="search" type="text"
+                                        value="{{ request('search') }}">
                                     <button
                                         class="submit absolute top-[0] left-[auto] right-[0] flex items-center justify-center w-[45px] h-full bg-transparent text-[#555] text-[16px] rounded-[0] outline-[0] border-[0] padding-[0]"
                                         type="submit">
@@ -161,19 +163,23 @@
                                                 <path class="fill-[#6c7fd8]"
                                                     d="M351.552 831.424c-35.328 0-63.968 28.64-63.968 63.968 0 35.328 28.64 63.968 63.968 63.968 35.328 0 63.968-28.64 63.968-63.968C415.52 860.064 386.88 831.424 351.552 831.424L351.552 831.424 351.552 831.424zM799.296 831.424c-35.328 0-63.968 28.64-63.968 63.968 0 35.328 28.64 63.968 63.968 63.968 35.328 0 63.968-28.64 63.968-63.968C863.264 860.064 834.624 831.424 799.296 831.424L799.296 831.424 799.296 831.424zM862.752 799.456 343.264 799.456c-46.08 0-86.592-36.448-92.224-83.008L196.8 334.592 165.92 156.128c-1.92-15.584-16.128-28.288-29.984-28.288L95.2 127.84c-17.664 0-32-14.336-32-31.968 0-17.664 14.336-32 32-32l40.736 0c46.656 0 87.616 36.448 93.28 83.008l30.784 177.792 54.464 383.488c1.792 14.848 15.232 27.36 28.768 27.36l519.488 0c17.696 0 32 14.304 32 31.968S880.416 799.456 862.752 799.456L862.752 799.456zM383.232 671.52c-16.608 0-30.624-12.8-31.872-29.632-1.312-17.632 11.936-32.928 29.504-34.208l433.856-31.968c15.936-0.096 29.344-12.608 31.104-26.816l50.368-288.224c1.28-10.752-1.696-22.528-8.128-29.792-4.128-4.672-9.312-7.04-15.36-7.04L319.04 223.84c-17.664 0-32-14.336-32-31.968 0-17.664 14.336-31.968 32-31.968l553.728 0c24.448 0 46.88 10.144 63.232 28.608 18.688 21.088 27.264 50.784 23.52 81.568l-50.4 288.256c-5.44 44.832-45.92 81.28-92 81.28L385.6 671.424C384.8 671.488 384 671.52 383.232 671.52L383.232 671.52zM383.232 671.52" />
                                             </svg>
-                                            <span class="main-label-note-new"></span>
+                                            <span
+                                                class="main-label-note-new absolute top-[-8px] right-[-8px] bg-red-500 text-white text-[12px] font-bold w-[20px] h-[20px] rounded-full flex items-center justify-center hidden max-[767px]:flex">
+                                                {{ $totalCartItems }}
+                                            </span>
                                         </div>
                                         <div class="bb-btn-desc flex flex-col ml-[10px] max-[1199px]:hidden">
-                                            @php
-                                                $totalCartItems = totalCartItems();
-                                            @endphp
                                             <span
-                                                class="bb-btn-title font-Poppins transition-all duration-[0.3s] ease-in-out text-[12px] leading-[1] text-[#3d4750] mb-[4px] tracking-[0.6px] capitalize font-medium whitespace-nowrap"><b
-                                                    class="bb-cart-count">{{ $totalCartItems }}</b> items</span>
+                                                class="bb-btn-title font-Poppins transition-all duration-[0.3s] ease-in-out text-[12px] leading-[1] text-[#3d4750] mb-[4px] tracking-[0.6px] capitalize font-medium whitespace-nowrap">
+                                                <b class="bb-cart-count">{{ $totalCartItems }}</b> items
+                                            </span>
                                             <span
-                                                class="bb-btn-stitle font-Poppins transition-all duration-[0.3s] ease-in-out text-[14px] leading-[16px] font-semibold text-[#3d4750]  tracking-[0.03rem] whitespace-nowrap">Cart</span>
+                                                class="bb-btn-stitle font-Poppins transition-all duration-[0.3s] ease-in-out text-[14px] leading-[16px] font-semibold text-[#3d4750] tracking-[0.03rem] whitespace-nowrap">
+                                                Cart
+                                            </span>
                                         </div>
                                     </a>
+
                                     <a href="javascript:void(0)"
                                         class="bb-toggle-menu hidden max-[991px]:flex max-[991px]:ml-[20px]">
                                         <div class="header-icon">
