@@ -26,8 +26,9 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <!-- tailwindcss -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.5/dist/tailwind.min.css" rel="stylesheet">
-    <script src="{{ asset('frontend/js/vendor/tailwindcss3.4.5.js') }}"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.5/dist/tailwind.min.css" rel="stylesheet"> -->
+    <!-- <script src="{{ asset('frontend/js/vendor/tailwindcss3.4.5.js') }}"></script> -->
+    <link rel="stylesheet" href="{{ asset('frontend/css/output.css') }}">
 
     <!-- Main Style -->
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
