@@ -38,6 +38,12 @@ class HomeController extends Controller
         return view('frontend.main.product', compact('product'));
     }
 
+    public function quickProductView($id)
+    {
+        $product = Product::findOrFail($id);
+        return response()->json($product);
+    }
+
     public function about()
     {
         return view('frontend.main.about_us');

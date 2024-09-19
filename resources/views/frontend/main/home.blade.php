@@ -249,8 +249,8 @@
                                 <!-- <span class="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
                                     <span class="text-[14px] text-[#777] font-medium uppercase">New</span>
                                 </span> -->
-                                @if (isset($product->image))
-                                    <a href="{{ route('view.product', $product->id)}}">
+                                <a href="javascript:void(0)">
+                                    @if (isset($product->image))
                                         <div class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
                                             <img class="main-img transition-all duration-[0.3s] ease-in-out w-full"
                                                 src="{{ asset('storage/' . $product->image) }}" alt="product-1"
@@ -259,17 +259,15 @@
                                                 src="{{ asset('storage/' . $product->image) }}" alt="product-1"
                                                 style="height: 300px; object-fit: cover;">
                                         </div>
-                                    </a>
-                                @else
-                                    <a href="{{ route('view.product', $product->id)}}">
+                                    @else
                                         <div class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
                                             <img class="main-img transition-all duration-[0.3s] ease-in-out w-full"
-                                                src="{{ asset('frontend/img/new-product/1.jpg') }}" alt="product-1">
+                                            src="{{ asset('frontend/img/new-product/1.jpg') }}" alt="product-1">
                                             <img class="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
-                                                src="{{ asset('frontend/img/new-product/back-1.jpg') }}" alt="product-1">
+                                            src="{{ asset('frontend/img/new-product/back-1.jpg') }}" alt="product-1">
                                         </div>
-                                    </a>
-                                @endif
+                                    @endif
+                                </a>
                                 <ul
                                     class="bb-pro-actions transition-all duration-[0.3s] ease-in-out my-[0] mx-[auto] absolute z-[9] left-[0] right-[0] bottom-[0] flex flex-row items-center justify-center opacity-[0]">
                                     <li
@@ -283,7 +281,8 @@
                                     <li
                                         class="bb-btn-group transition-all duration-[0.3s] ease-in-out w-[35px] h-[35px] mx-[2px] flex items-center justify-center text-[#fff] bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[10px]">
                                         <a href="javascript:void(0)" title="Quick View"
-                                            class="bb-modal-toggle w-[35px] h-[35px] flex items-center justify-center">
+                                            class="bb-modal-toggle w-[35px] h-[35px] flex items-center justify-center"
+                                            data-product-id="{{ $product->id }}">
                                             <i
                                                 class="ri-eye-line transition-all duration-[0.3s] ease-in-out text-[18px] text-[#777] leading-[10px]"></i>
                                         </a>
@@ -315,7 +314,7 @@
                                     </span>
                                 </div>
                                 <h4 class="bb-pro-title mb-[8px] text-[16px] leading-[18px]">
-                                    <a href="{{ route('view.product', $product->id)}}"
+                                    <a href="{{ route('view.product', $product->id) }}"
                                         class="transition-all duration-[0.3s] ease-in-out font-quicksand w-full block whitespace-nowrap overflow-hidden text-ellipsis text-[15px] leading-[18px] text-[#3d4750] font-semibold tracking-[0.03rem]">
                                         {{ $product->name }}</a>
                                 </h4>

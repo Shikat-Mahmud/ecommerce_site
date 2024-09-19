@@ -4,7 +4,7 @@
             data-aos-duration="1000" data-aos-delay="200">
             <div class="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
                 <div class="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
-                    <a href="{{ route('view.product', $product->id)}}">
+                    <a href="javascript:void(0)">
                         @if (isset($product->image))
                             <div class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
                                 <img class="main-img transition-all duration-[0.3s] ease-in-out w-full"
