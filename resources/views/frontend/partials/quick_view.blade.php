@@ -48,7 +48,7 @@
                                         class="qty-plus-minus w-[85px] h-[40px] py-[7px] border-[1px] border-solid border-[#eee] flex items-center justify-between bg-[#fff] rounded-[10px]">
                                         <input
                                             class="qty-input text-[#777] text-[14px] text-center w-[32px] outline-none font-normal leading-[35px] rounded-[10px]"
-                                            type="number" name="quantity" value="1" min="0">
+                                            type="num" name="quantity" value="1" min="1" readonly>
                                     </div>
                                     <button type="submit"
                                         class="bb-btn-2 transition-all duration-[0.3s] ease-in-out h-[40px] py-[6px] px-[25px] text-[14px] font-normal text-[#fff] bg-[#6c7fd8] rounded-[10px] border-[1px] border-solid border-[#6c7fd8] hover:bg-transparent hover:border-[#3d4750] hover:text-[#3d4750]">
