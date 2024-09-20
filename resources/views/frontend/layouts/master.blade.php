@@ -150,7 +150,11 @@
                     }
                 },
                 error: function (xhr) {
-                    toastr.error('An error occurred while adding the item to the wish list.');
+                    if(xhr.status === 401) {
+                        window.location.href = '/login';  // Redirect to login if not authenticated
+                    } else {
+                        toastr.error('An error occurred while adding the item to the wish list.');
+                    }
                 }
             });
         }
