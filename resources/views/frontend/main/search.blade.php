@@ -74,7 +74,7 @@
                                         <div
                                             class="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
 
-                                            <a href="{{ route('view.product', $product->id) }}">
+                                            <a href="javascript:void(0)">
                                                 @if (isset($product->image))
                                                     <div
                                                         class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
