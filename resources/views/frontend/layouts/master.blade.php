@@ -131,6 +131,30 @@
             });
         }
 
+        function addToWishList(productId) {
+            $.ajax({
+                url: '/toggle-wish-list/' + productId,
+                type: 'POST',
+                data: {
+                    _token: $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function (response) {
+                    toastr.success(response.success);
+
+                    var icon = $('#wishlist-icon-' + productId);
+
+                    if (response.isFavorited) {
+                        icon.removeClass('ri-heart-line').addClass('ri-heart-fill');
+                    } else {
+                        icon.removeClass('ri-heart-fill').addClass('ri-heart-line');
+                    }
+                },
+                error: function (xhr) {
+                    toastr.error('An error occurred while adding the item to the wish list.');
+                }
+            });
+        }
+
         // ======================= js for load data in the quick view modal ====================== //
 
         // Function to truncate description to a maximum of `maxWords` words

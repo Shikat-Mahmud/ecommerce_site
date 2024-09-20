@@ -2,10 +2,12 @@
 
 use App\Models\Category;
 use App\Models\ApplicationSetting;
+use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
 
-function generalSettings(){
+function generalSettings()
+{
     $application = ApplicationSetting::latest()->first();
     return $application;
 }
@@ -16,14 +18,20 @@ function user($id)
     return $user;
 }
 
-function categories(){
+function categories()
+{
     $categories = Category::where('status', 1)->get();
     return $categories;
 }
 
 function totalCartItems()
 {
-    $totalCartItems =Cart::getContent()->count();
+    $totalCartItems = Cart::getContent()->count();
 
     return $totalCartItems;
+}
+function totalWishItems()
+{
+    $wishCount = Auth::user()->favorite(Product::class)->count();
+    return $wishCount;
 }

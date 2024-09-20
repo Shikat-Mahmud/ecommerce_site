@@ -3,65 +3,31 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
-use App\Models\WishList;
-use Illuminate\Http\Request;
+use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 
 class WishListController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $wishLists = WishList::all();
-        return view('frontend.main.wish_list', compact('wishLists'));
+        $wishlistItems = Auth::user()->favorite(Product::class);
+
+        return view('frontend.main.wish_list', compact('wishlistItems'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function toggleWish($id)
     {
-        //
-    }
+        try {
+            $product = Product::findOrFail($id);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+            Auth::user()->toggleFavorite($product);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+            return response()->json([
+                'success' => Auth::user()->hasFavorited($product) ? 'Product added to wishlist.' : 'Product removed from wishlist.'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Failed to update wishlist. ' . $e->getMessage()], 500);
+        }
     }
 }

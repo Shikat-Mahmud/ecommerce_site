@@ -13,7 +13,7 @@
                     <div class="min-[768px]:w-[50%] min-[576px]:w-full w-full px-[12px]">
                         <h2
                             class="bb-breadcrumb-title font-quicksand tracking-[0.03rem] leading-[1.2] text-[16px] font-bold text-[#3d4750] max-[767px]:text-center max-[767px]:mb-[10px]">
-                            Search Page</h2>
+                            Wish List Page</h2>
                     </div>
                     <div class="min-[768px]:w-[50%] min-[576px]:w-full w-full px-[12px]">
                         <ul class="bb-breadcrumb-list mx-[-5px] flex justify-end max-[767px]:justify-center">
@@ -26,7 +26,7 @@
                             </li>
                             <li
                                 class="bb-breadcrumb-item font-Poppins text-[#686e7d] text-[14px] leading-[28px] font-normal tracking-[0.03rem] px-[5px] active">
-                                Search Page</li>
+                                Wish List Page</li>
                         </ul>
                     </div>
                 </div>
@@ -66,8 +66,8 @@
                         </div>
 
                         <!-- Single product -->
-                        @if (!$wishLists->isEmpty())
-                            @foreach ($wishLists as $product)
+                        @if (!$wishlistItems->isEmpty())
+                            @foreach ($wishlistItems as $product)
                                 <div class="min-[992px]:w-[25%] min-[768px]:w-[33.33%] w-[50%] max-[480px]:w-full px-[12px] mb-[24px] pro-bb-content"
                                     data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
                                     <div class="bb-pro-box bg-[#fff] border-[1px] border-solid border-[#eee] rounded-[20px]">
@@ -161,26 +161,11 @@
                         @else
                             <div class="w-full my-5 flex justify-center">
                                 <p>
-                                    Wish List is empty!
+                                    Your favorite list is empty!
                                 </p>
                             </div>
                         @endif
 
-                        <div class="w-full px-[12px]">
-                            <div
-                                class="bb-pro-pagination mb-[24px] flex justify-between max-[575px]:flex-col max-[575px]:items-center">
-                                @if (!$wishLists->isEmpty())
-                                    <p
-                                        class="font-Poppins text-[15px] text-[#686e7d] font-light leading-[28px] tracking-[0.03rem] max-[575px]:mb-[10px]">
-                                        Showing {{ $wishLists->firstItem() }}-{{ $wishLists->lastItem() }} of
-                                        {{ $wishLists->total() }} item(s)
-                                    </p>
-                                    <ul class="flex">
-                                        {{ $wishLists->links() }}
-                                    </ul>
-                                @endif
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

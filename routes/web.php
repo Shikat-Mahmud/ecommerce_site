@@ -59,8 +59,10 @@ Route::middleware(['auth'])->group(function () {
     Route::patch('/customer-profile', [CustomerProfileController::class, 'update'])->name('customer.profile.update');
     Route::delete('/customer-profile', [CustomerProfileController::class, 'destroy'])->name('customer.profile.destroy');
 
+    Route::get('/wish-list', [WishListController::class,'index'])->name('wishlist');
+    Route::post('/toggle-wish-list/{id}', [WishListController::class,'toggleWish'])->name('wishlist.toggle');
+
     Route::resource('reviews', ReviewController::class);
-    Route::resource('wishlists', WishListController::class);
 });
 
 // ============== end customer routes ============== //
