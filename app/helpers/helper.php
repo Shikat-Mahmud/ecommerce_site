@@ -32,6 +32,10 @@ function totalCartItems()
 }
 function totalWishItems()
 {
-    $wishCount = Auth::user()->favorite(Product::class)->count();
+    if (Auth::check()) {
+        $wishCount = Auth::user()->favorite(Product::class)->count();
+    } else {
+        $wishCount = 0; 
+    }
     return $wishCount;
 }
