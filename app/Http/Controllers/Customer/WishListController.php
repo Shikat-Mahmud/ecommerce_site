@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\WishList;
 use Illuminate\Http\Request;
 
 class WishListController extends Controller
@@ -12,7 +13,8 @@ class WishListController extends Controller
      */
     public function index()
     {
-        //
+        $wishLists = WishList::all();
+        return view('frontend.main.wish_list', compact('wishLists'));
     }
 
     /**

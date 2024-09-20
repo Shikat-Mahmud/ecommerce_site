@@ -7,6 +7,7 @@ use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\Customer\CustomerProfileController;
 use App\Http\Controllers\Customer\OrderController;
 use App\Http\Controllers\Customer\ReviewController;
+use App\Http\Controllers\Customer\WishListController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\ProfileController;
@@ -59,6 +60,7 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/customer-profile', [CustomerProfileController::class, 'destroy'])->name('customer.profile.destroy');
 
     Route::resource('reviews', ReviewController::class);
+    Route::resource('wishlists', WishListController::class);
 });
 
 // ============== end customer routes ============== //
