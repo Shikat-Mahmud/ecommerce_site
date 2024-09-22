@@ -35,7 +35,10 @@ class HomeController extends Controller
     public function productView($id)
     {
         $product = Product::findOrFail($id);
-        return view('frontend.main.product', compact('product'));
+        $relatedProducts = Product::where('category_id', $product->category_id)
+        ->whereNot('id',$product->id)
+        ->get();
+        return view('frontend.main.product', compact('product', 'relatedProducts'));
     }
 
     public function quickProductView($id)
