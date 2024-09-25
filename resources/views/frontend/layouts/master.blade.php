@@ -150,56 +150,60 @@
                     }
                 },
                 error: function (xhr) {
-                    if(xhr.status === 401) {
-                        window.location.href = '/login'; 
+                    if (xhr.status === 401) {
+                        window.location.href = '/login';
                     } else {
                         toastr.error('An error occurred while adding the item to the wish list.');
                     }
                 }
             });
         }
+    </script>
 
+    <script>
         // ======================= js for load data in the quick view modal ====================== //
-
-        // Function to truncate description to a maximum of `maxWords` words
-        function truncateDescription(description, maxWords) {
-            const words = description.split(/\s+/); // Split the description into words
-            if (words.length <= maxWords) {
-                return description; // Return the full description if within limit
-            }
-            return words.slice(0, maxWords).join(' ') + '...'; // Return truncated description with ellipsis
-        }
-
-        $(".bb-modal-toggle").on("click", function () {
-            var productId = $(this).data('product-id');  // Get product ID from the button's data attribute
-
-            // Fetch product data via AJAX
-            $.ajax({
-                url: "/quick-product/" + productId,
-                method: "GET",
-                success: function (product) {
-                    // Update modal fields with product data
-                    $(".product-name").text(product.name).attr("href", "/product/" + product.id);
-
-                    // Truncate description to 100 words and update the modal
-                    var truncatedDescription = truncateDescription(product.description, 50);
-                    $(".product-description").text(truncatedDescription);
-
-                    $(".product-price").text('৳' + product.price);
-                    $(".product-image").attr("src", 'storage/' + product.image); // Assuming the image URL is returned in the response
-
-                    // Update the form action for adding the product to the cart
-                    $(".add-to-cart-form").attr("action", "/add-to-cart/" + product.id);
-
-                    // Show the modal
-                    $(".bb-modal-overlay").fadeIn();
-                    $(".bb-modal").fadeIn();
-                    $("body").addClass("bb-overflow-hidden");
-                    $(".bb-modal-dialog").addClass("bb-fadeOutUp").removeClass("bb-fadeInDown");
-                },
-                error: function () {
-                    alert("Failed to load product details.");
+        
+        $(document).ready(function () {
+            // Function to truncate description to a maximum of `maxWords` words
+            function truncateDescription(description, maxWords) {
+                const words = description.split(/\s+/); // Split the description into words
+                if (words.length <= maxWords) {
+                    return description; // Return the full description if within limit
                 }
+                return words.slice(0, maxWords).join(' ') + '...'; // Return truncated description with ellipsis
+            }
+
+            $(".bb-modal-toggle").on("click", function () {
+                var productId = $(this).data('product-id');  // Get product ID from the button's data attribute
+
+                // Fetch product data via AJAX
+                $.ajax({
+                    url: "/quick-product/" + productId,
+                    method: "GET",
+                    success: function (product) {
+                        // Update modal fields with product data
+                        $(".product-name").text(product.name).attr("href", "/product/" + product.id);
+
+                        // Truncate description to 100 words and update the modal
+                        var truncatedDescription = truncateDescription(product.description, 50);
+                        $(".product-description").text(truncatedDescription);
+
+                        $(".product-price").text('৳' + product.price);
+                        $(".product-image").attr("src", 'storage/' + product.image); // Assuming the image URL is returned in the response
+
+                        // Update the form action for adding the product to the cart
+                        $(".add-to-cart-form").attr("action", "/add-to-cart/" + product.id);
+
+                        // Show the modal
+                        $(".bb-modal-overlay").fadeIn();
+                        $(".bb-modal").fadeIn();
+                        $("body").addClass("bb-overflow-hidden");
+                        $(".bb-modal-dialog").addClass("bb-fadeOutUp").removeClass("bb-fadeInDown");
+                    },
+                    error: function () {
+                        alert("Failed to load product details.");
+                    }
+                });
             });
         });
     </script>

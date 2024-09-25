@@ -413,9 +413,9 @@
             <div class="w-full px-[12px]">
 
                 <!-- Single Related Product -->
-                <div class="bb-deal-slider m-[-12px]">
-                    <div class="bb-deal-block owl-carousel">
-                        @if (!$relatedProducts->isEmpty())
+                @if (!$relatedProducts->isEmpty())
+                    <div class="bb-deal-slider m-[-12px]">
+                        <div class="bb-deal-block owl-carousel">
                             @foreach ($relatedProducts as $relatedProduct)
                                 <div class="bb-deal-card p-[12px]" data-aos="fade-up" data-aos-duration="1000"
                                     data-aos-delay="200">
@@ -431,9 +431,9 @@
                                                     <div
                                                         class="inner-img relative block overflow-hidden pointer-events-none rounded-t-[20px]">
                                                         <img class="main-img transition-all duration-[0.3s] ease-in-out w-full"
-                                                            src="{{ asset('storage/'. $relatedProduct->image) }}" alt="product-1">
+                                                            src="{{ asset('storage/' . $relatedProduct->image) }}" alt="product-1">
                                                         <img class="hover-img transition-all duration-[0.3s] ease-in-out absolute z-[2] top-[0] left-[0] opacity-[0] w-full"
-                                                            src="{{ asset('storage/'. $relatedProduct->image) }}" alt="product-1">
+                                                            src="{{ asset('storage/' . $relatedProduct->image) }}" alt="product-1">
                                                     </div>
                                                 @else
                                                     <div
@@ -507,15 +507,15 @@
                                     </div>
                                 </div>
                             @endforeach
-                        @else
-                            <div class="w-full my-5 flex justify-center">
-                                <p>
-                                    No Match Found!
-                                </p>
-                            </div>
-                        @endif
+                        </div>
                     </div>
-                </div>
+                @else
+                    <div class="w-full my-5 flex justify-center">
+                        <p>
+                            No Related Product Found!
+                        </p>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

@@ -290,7 +290,7 @@
 
     /* Deal slider section (Home Page) */
     $(".bb-deal-block").owlCarousel({
-        loop: true,
+        loop: false,
         dots: false,
         nav: false,
         smartSpeed: 500,

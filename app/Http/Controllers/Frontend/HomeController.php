@@ -14,7 +14,6 @@ class HomeController extends Controller
         $categories = Category::where('status', 1)->get();
         $products = Product::where('status', 1)->latest()->limit(8)->get();
         $catBg = [
-            'fef1f1', // Light pink
             'e1fcf2', // Light cyan
             'f4f1fe', // Light lavender
             'fbf9e4', // Light yellow
