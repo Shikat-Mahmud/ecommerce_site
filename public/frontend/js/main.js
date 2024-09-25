@@ -289,30 +289,30 @@
     });
 
     /* Deal slider section (Home Page) */
-    $(".bb-deal-block").owlCarousel({
-        loop: false,
-        dots: false,
-        nav: false,
-        smartSpeed: 500,
-        autoplay: false,
-        autoplayTimeout: 2500,
-        items: 3,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            481: {
-                items: 2,
-            },
-            768: {
-                items: 3,
-            },
-            1200: {
-                items: 4,
-            },
-        },
-    });
+    // $(".bb-deal-block").owlCarousel({
+    //     loop: false,
+    //     dots: false,
+    //     nav: false,
+    //     smartSpeed: 500,
+    //     autoplay: false,
+    //     autoplayTimeout: 2500,
+    //     items: 3,
+    //     responsiveClass: true,
+    //     responsive: {
+    //         0: {
+    //             items: 1,
+    //         },
+    //         481: {
+    //             items: 2,
+    //         },
+    //         768: {
+    //             items: 3,
+    //         },
+    //         1200: {
+    //             items: 4,
+    //         },
+    //     },
+    // });
 
     /* blog-2 (Home Page) */
     $(".blog-2-slider").owlCarousel({

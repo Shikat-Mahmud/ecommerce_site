@@ -162,7 +162,7 @@
 
     <script>
         // ======================= js for load data in the quick view modal ====================== //
-        
+
         $(document).ready(function () {
             // Function to truncate description to a maximum of `maxWords` words
             function truncateDescription(description, maxWords) {
@@ -204,6 +204,32 @@
                         alert("Failed to load product details.");
                     }
                 });
+            });
+
+            /* Deal slider section (Product Page) */
+            $(".bb-deal-block").owlCarousel({
+                loop: false,
+                dots: false,
+                nav: false,
+                smartSpeed: 500,
+                autoplay: false,
+                autoplayTimeout: 2500,
+                items: 3,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    481: {
+                        items: 2,
+                    },
+                    768: {
+                        items: 3,
+                    },
+                    1200: {
+                        items: 4,
+                    },
+                },
             });
         });
     </script>
