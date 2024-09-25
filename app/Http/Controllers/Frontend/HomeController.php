@@ -36,11 +36,19 @@ class HomeController extends Controller
     {
         $product = Product::findOrFail($id);
         $relatedProducts = Product::where('category_id', $product->category_id)
-        ->whereNot('id',$product->id)
-        ->get();
+            ->whereNot('id', $product->id)
+            ->get();
         $reviews = Review::where('status', 'approved')->get();
+        $reviewCount = Review::where('product_id', $id)->count();
+        $avgRating = round(Review::where('product_id', $id)->avg('rating'), 1);
 
-        return view('frontend.main.product', compact('product', 'relatedProducts', 'reviews'));
+        // rating stars
+        $roundedRating = ($avgRating - floor($avgRating)) > 0.8 ? ceil($avgRating) : $avgRating;
+        $fullStars = floor($roundedRating);
+        $halfStar = ($avgRating - $fullStars) > 0.3 && ($avgRating - $fullStars) <= 0.8 ? true : false;
+        $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0);
+
+        return view('frontend.main.product', compact('product', 'relatedProducts', 'reviews', 'reviewCount', 'avgRating', 'fullStars', 'halfStar', 'emptyStars'));
     }
 
     public function quickProductView($id)

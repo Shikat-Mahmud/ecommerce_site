@@ -69,15 +69,21 @@
                                 </div>
                                 <div class="bb-single-rating mb-[12px]">
                                     <span class="bb-pro-rating mr-[10px]">
-                                        <i class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                        <i class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                        <i class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                        <i class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                        <i class="ri-star-line float-left text-[15px] mr-[3px] text-[#777]"></i>
+                                        @for ($i = 1; $i <= $fullStars; $i++)
+                                            <i class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
+                                        @endfor
+
+                                        @if ($halfStar)
+                                            <i class="ri-star-half-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
+                                        @endif
+
+                                        @for ($i = 1; $i <= $emptyStars; $i++)
+                                            <i class="ri-star-line float-left text-[15px] mr-[3px] text-[#777]"></i>
+                                        @endfor
                                     </span>
                                     <span class="bb-read-review">
-                                        |&nbsp;&nbsp;<a href="#bb-spt-nav-review"
-                                            class="font-Poppins text-[15px] font-light leading-[28px] tracking-[0.03rem] text-[#6c7fd8]">992
+                                        |&nbsp;&nbsp;<a href="javascript:void(0)"
+                                            class="font-Poppins text-[15px] font-light leading-[28px] tracking-[0.03rem] text-[#6c7fd8]">{{ $reviewCount }}
                                             Ratings</a>
                                     </span>
                                 </div>
