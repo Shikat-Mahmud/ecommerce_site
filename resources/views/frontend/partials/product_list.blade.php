@@ -50,12 +50,29 @@
                     <div class="bb-pro-subtitle mb-[8px] flex flex-wrap justify-between">
                         <a href="{{ route('category.product', $product->category->id) }}"
                             class="transition-all duration-[0.3s] ease-in-out font-Poppins text-[13px] leading-[16px] text-[#777] font-light tracking-[0.03rem]">{{ $product->category->name }}</a>
+                        
+                        @php
+                            $avgRating = round(App\Models\Review::where('product_id', $product->id)->avg('rating'), 1);
+
+                            // rating stars
+                            $roundedRating = ($avgRating - floor($avgRating)) > 0.8 ? ceil($avgRating) : $avgRating;
+                            $fullStars = floor($roundedRating);
+                            $halfStar = ($avgRating - $fullStars) > 0.3 && ($avgRating - $fullStars) <= 0.8 ? true : false;
+                            $emptyStars = 5 - $fullStars - ($halfStar ? 1 : 0);
+                        @endphp
+
                         <span class="bb-pro-rating">
-                            <i class="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
-                            <i class="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
-                            <i class="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
-                            <i class="ri-star-fill float-left text-[15px] mr-[3px] leading-[18px] text-[#fea99a]"></i>
-                            <i class="ri-star-line float-left text-[15px] mr-[3px] leading-[18px] text-[#777]"></i>
+                            @for ($i = 1; $i <= $fullStars; $i++)
+                                <i class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
+                            @endfor
+
+                            @if ($halfStar)
+                                <i class="ri-star-half-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
+                            @endif
+
+                            @for ($i = 1; $i <= $emptyStars; $i++)
+                                <i class="ri-star-line float-left text-[15px] mr-[3px] text-[#777]"></i>
+                            @endfor
                         </span>
                     </div>
                     <h4 class="bb-pro-title mb-[8px] text-[16px] leading-[18px]">
