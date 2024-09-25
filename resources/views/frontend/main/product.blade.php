@@ -247,6 +247,11 @@
                                         <a id="see-more-reviews" class="bb-btn-2 transition-all duration-[0.3s] ease-in-out h-[40px] inline-flex font-Poppins leading-[28px] tracking-[0.03rem] text-[#6c7fd8] cursor-pointer py-[4px] px-[15px] text-[14px] font-normal hover:text-[#3d4750]">See More Reviews</a>
                                     </div>
                                     @endif
+
+                                    @else
+                                        <div class="m-5">
+                                            <p>No reviews yet!</p>
+                                        </div>
                                     @endif
                                 </div>
 

@@ -38,7 +38,7 @@ class HomeController extends Controller
         $relatedProducts = Product::where('category_id', $product->category_id)
             ->whereNot('id', $product->id)
             ->get();
-        $reviews = Review::where('status', 'approved')->get();
+        $reviews = Review::where('status', 'approved')->where('product_id', $id)->get();
         $reviewCount = Review::where('product_id', $id)->count();
         $avgRating = round(Review::where('product_id', $id)->avg('rating'), 1);
 
