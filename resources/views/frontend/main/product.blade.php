@@ -424,7 +424,7 @@
                                             class="bb-pro-img overflow-hidden relative border-b-[1px] border-solid border-[#eee] z-[4]">
                                             <span
                                                 class="flags transition-all duration-[0.3s] ease-in-out absolute z-[5] top-[10px] left-[6px]">
-                                                <span class="text-[14px] text-[#777] font-medium uppercase">New</span>
+                                                <!-- <span class="text-[14px] text-[#777] font-medium uppercase">New</span> -->
                                             </span>
                                             <a href="javascript:void(0)">
                                                 @if (isset($relatedProduct->image))
