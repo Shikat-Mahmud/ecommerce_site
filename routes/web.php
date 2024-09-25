@@ -62,7 +62,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/wish-list', [WishListController::class,'index'])->name('wishlist');
     Route::post('/toggle-wish-list/{id}', [WishListController::class,'toggleWish'])->name('wishlist.toggle');
 
-    Route::resource('reviews', ReviewController::class);
+    Route::post('/store-review/{id}', [ReviewController::class,'storeReview'])->name('store.review');
 });
 
 // ============== end customer routes ============== //

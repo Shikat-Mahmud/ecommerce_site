@@ -167,219 +167,112 @@
                         </div>
                     </div>
                 </div>
+
+<!-- Review Tab start -->
                 <div class="bb-single-pro-tab">
                     <div class="bb-pro-tab mb-[24px]">
-                        <ul class="bb-pro-tab-nav flex flex-wrap mx-[-20px] max-[991px]:justify-center" id="ProTab">
+                        <ul class="bb-pro-tab-nav flex flex-wrap mx-[-20px] max-[991px]:justify-center">
                             <li class="nav-item relative leading-[28px]">
-                                <a class="nav-link px-[20px] font-Poppins text-[16px] text-[#686e7d] font-medium capitalize leading-[28px] tracking-[0.03rem] block active"
-                                    href="#detail">Detail</a>
-                            </li>
-                            <li class="nav-item relative leading-[28px]">
-                                <a class="nav-link px-[20px] font-Poppins text-[16px] text-[#686e7d] font-medium capitalize leading-[28px] tracking-[0.03rem] block"
-                                    href="#information">Information</a>
-                            </li>
-                            <li class="nav-item relative leading-[28px]">
-                                <a class="nav-link px-[20px] font-Poppins text-[16px] text-[#686e7d] font-medium capitalize leading-[28px] tracking-[0.03rem] block"
-                                    href="#reviews">Reviews</a>
+                                <span class="px-[20px] font-Poppins text-[16px] text-[#686e7d] font-medium capitalize leading-[28px] tracking-[0.03rem]">Reviews</span>
                             </li>
                         </ul>
                     </div>
                     <div class="tab-content">
-                        <div class="tab-pro-pane" id="detail">
-                            <div class="bb-inner-tabs border-[1px] border-solid border-[#eee] p-[15px] rounded-[20px]">
-                                <div class="bb-details">
-                                    <p
-                                        class="mb-[12px] font-Poppins text-[#686e7d] leading-[28px] tracking-[0.03rem] font-light">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
-                                        voluptatum. Vitae dolores alias repellat eligendi, officiis, exercitationem
-                                        corporis
-                                        quisquam delectus cum non recusandae numquam dignissimos molestiae
-                                        magnam hic natus. Cumque.</p>
-                                    <div class="details-info">
-                                        <ul class="list-disc pl-[20px] mb-[0]">
-                                            <li
-                                                class="py-[5px] text-[15px] text-[#686e7d] font-Poppins leading-[28px] font-light">
-                                                Any Product types that You want - Simple, Configurable</li>
-                                            <li
-                                                class="py-[5px] text-[15px] text-[#686e7d] font-Poppins leading-[28px] font-light">
-                                                Downloadable/Digital Products, Virtual Products</li>
-                                            <li
-                                                class="py-[5px] text-[15px] text-[#686e7d] font-Poppins leading-[28px] font-light">
-                                                Inventory Management with Backordered items</li>
-                                            <li
-                                                class="py-[5px] text-[15px] text-[#686e7d] font-Poppins leading-[28px] font-light">
-                                                Flatlock seams throughout.</li>
-                                        </ul>
-                                        <ul class="list-disc pl-[20px] mb-[0]">
-                                            <li
-                                                class="py-[5px] text-[15px] text-[#686e7d] font-Poppins leading-[28px] font-light">
-                                                <span
-                                                    class="inline-flex font-medium min-w-[150px]">Highlights</span>Form
-                                                FactorWhole
-                                            </li>
-                                            <li
-                                                class="py-[5px] text-[15px] text-[#686e7d] font-Poppins leading-[28px] font-light">
-                                                <span class="inline-flex font-medium min-w-[150px]">Seller</span>No
-                                                Returns Allowed
-                                            </li>
-                                            <li
-                                                class="py-[5px] text-[15px] text-[#686e7d] font-Poppins leading-[28px] font-light">
-                                                <span class="inline-flex font-medium min-w-[150px]">Services</span>Cash
-                                                on Delivery available
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pro-pane" id="information">
-                            <div class="bb-inner-tabs border-[1px] border-solid border-[#eee] p-[15px] rounded-[20px]">
-                                <div class="information">
-                                    <ul class="list-disc pl-[20px]">
-                                        <li
-                                            class="font-Poppins text-[15px] font-light tracking-[0.03rem] leading-[28px] text-[#686e7d] py-[5px]">
-                                            <span class="inline-flex min-w-[130px] font-medium">Weight</span> 500 g
-                                        </li>
-                                        <li
-                                            class="font-Poppins text-[15px] font-light tracking-[0.03rem] leading-[28px] text-[#686e7d] py-[5px]">
-                                            <span class="inline-flex min-w-[130px] font-medium">Dimensions</span> 17 ×
-                                            15 × 3 cm
-                                        </li>
-                                        <li
-                                            class="font-Poppins text-[15px] font-light tracking-[0.03rem] leading-[28px] text-[#686e7d] py-[5px]">
-                                            <span class="inline-flex min-w-[130px] font-medium">Color</span>
-                                            black,yellow,red
-                                        </li>
-                                        <li
-                                            class="font-Poppins text-[15px] font-light tracking-[0.03rem] leading-[28px] text-[#686e7d] py-[5px]">
-                                            <span class="inline-flex min-w-[130px] font-medium">Brand</span> Wonder Fort
-                                        </li>
-                                        <li
-                                            class="font-Poppins text-[15px] font-light tracking-[0.03rem] leading-[28px] text-[#686e7d] py-[5px]">
-                                            <span class="inline-flex min-w-[130px] font-medium">Form Factor</span>Whole
-                                        </li>
-                                        <li
-                                            class="font-Poppins text-[15px] font-light tracking-[0.03rem] leading-[28px] text-[#686e7d] py-[5px]">
-                                            <span class="inline-flex min-w-[130px] font-medium">Quantity</span>1
-                                        </li>
-                                        <li
-                                            class="font-Poppins text-[15px] font-light tracking-[0.03rem] leading-[28px] text-[#686e7d] py-[5px]">
-                                            <span class="inline-flex min-w-[130px] font-medium">Container
-                                                Type</span>Pouch
-                                        </li>
-                                        <li
-                                            class="font-Poppins text-[15px] font-light tracking-[0.03rem] leading-[28px] text-[#686e7d] py-[5px]">
-                                            <span class="inline-flex min-w-[130px] font-medium">Shelf Life</span>12
-                                            Months
-                                        </li>
-                                        <li
-                                            class="font-Poppins text-[15px] font-light tracking-[0.03rem] leading-[28px] text-[#686e7d] py-[5px]">
-                                            <span
-                                                class="inline-flex min-w-[130px] font-medium">Ingredients</span>Dalchini,
-                                            Dhaniya, Badi Elaichi, Laung
-                                        </li>
-                                        <li
-                                            class="font-Poppins text-[15px] font-light tracking-[0.03rem] leading-[28px] text-[#686e7d] py-[5px]">
-                                            <span class="inline-flex min-w-[130px] font-medium">Other
-                                                Features</span>Ingredient Type: Vegetarian
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pro-pane" id="reviews">
+                        <div class="tab-pro-pane">
                             <div class="bb-inner-tabs border-[1px] border-solid border-[#eee] p-[15px] rounded-[20px]">
                                 <div class="bb-reviews">
-                                    <div class="reviews-bb-box flex mb-[24px] max-[575px]:flex-col">
-                                        <div class="inner-image mr-[12px] max-[575px]:mr-[0] max-[575px]:mb-[12px]">
-                                            <img src="{{ asset('frontend/img/reviews/1.jpg') }}" alt="img-1"
-                                                class="w-[50px] h-[50px] max-w-[50px] rounded-[10px]">
-                                        </div>
-                                        <div class="inner-contact">
-                                            <h4
-                                                class="font-quicksand leading-[1.2] tracking-[0.03rem] mb-[5px] text-[16px] font-bold text-[#3d4750]">
-                                                Mariya Lykra</h4>
-                                            <div class="bb-pro-rating flex">
-                                                <i
-                                                    class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                                <i
-                                                    class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                                <i
-                                                    class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                                <i
-                                                    class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                                <i class="ri-star-line float-left text-[15px] mr-[3px] text-[#777]"></i>
+
+                                    <!-- Single Review -->
+                                    @if (!$reviews->isEmpty())
+                                    @foreach ($reviews as $index => $review)
+                                        <div class="reviews-bb-box flex mb-[24px] max-[575px]:flex-col review-item {{ $index >= 5 ? 'hidden' : '' }}">
+                                            <div class="inner-image mr-[12px] max-[575px]:mr-[0] max-[575px]:mb-[12px]">
+                                                @if (isset($review->user->photo))
+                                                    <img src="{{ asset('storage/'. $review->user->photo) }}" alt="Reviewer Image" style="object-fit: cover;"
+                                                    class="w-[50px] h-[50px] max-w-[50px] rounded-[10px]">
+                                                @else
+                                                    <img src="{{ asset('frontend/img/reviews/1.jpg') }}" alt="Reviewer Image"
+                                                        class="w-[50px] h-[50px] max-w-[50px] rounded-[10px]">
+                                                @endif
                                             </div>
-                                            <p
-                                                class="font-Poppins text-[14px] leading-[26px] font-light tracking-[0.03rem] text-[#686e7d]">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
-                                                hic expedita asperiores eos neque cumque impedit quam, placeat
-                                                laudantium soluta repellendus possimus a distinctio voluptate
-                                                veritatis nostrum perspiciatis est! Commodi!</p>
-                                        </div>
-                                    </div>
-                                    <div class="reviews-bb-box flex mb-[24px] max-[575px]:flex-col">
-                                        <div class="inner-image mr-[12px] max-[575px]:mr-[0] max-[575px]:mb-[12px]">
-                                            <img src="{{ asset('frontend/img/reviews/2.jpg') }}" alt="img-2"
-                                                class="w-[50px] h-[50px] max-w-[50px] rounded-[10px]">
-                                        </div>
-                                        <div class="inner-contact">
-                                            <h4
-                                                class="font-quicksand leading-[1.2] tracking-[0.03rem] mb-[5px] text-[16px] font-bold text-[#3d4750]">
-                                                Saddika Alard</h4>
-                                            <div class="bb-pro-rating flex">
-                                                <i
-                                                    class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                                <i
-                                                    class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                                <i
-                                                    class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                                <i
-                                                    class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                                <i class="ri-star-line float-left text-[15px] mr-[3px] text-[#777]"></i>
+                                            <div class="inner-contact">
+                                                <h4 class="font-quicksand leading-[1.2] tracking-[0.03rem] mb-[5px] text-[16px] font-bold text-[#3d4750]">{{ $review->user->name }}</h4>
+                                                <div class="bb-pro-rating flex">
+                                                    @for ($i = 1; $i <= 5; $i++)
+                                                        @if ($i <= $review->rating)
+                                                            <i class="ri-star-fill text-[15px] mr-[3px] text-[#fea99a]"></i>
+                                                        @else
+                                                            <i class="ri-star-line text-[15px] mr-[3px] text-[#777]"></i>
+                                                        @endif
+                                                    @endfor
+
+                                                    <span>
+                                                        @switch($review->rating)
+                                                            @case(1)
+                                                                (Poor)
+                                                                @break
+                                                            @case(2)
+                                                                (Fair)
+                                                                @break
+                                                            @case(3)
+                                                                (Good)
+                                                                @break
+                                                            @case(4)
+                                                                (Very Good)
+                                                                @break
+                                                            @case(5)
+                                                                (Excellent)
+                                                                @break
+                                                            @default
+                                                                (Not Rated)
+                                                        @endswitch
+                                                    </span>
+                                                </div>
+                                                <p class="font-Poppins text-[14px] leading-[26px] font-light tracking-[0.03rem] text-[#686e7d]">
+                                                {{ $review->review }}
+                                                </p>
                                             </div>
-                                            <p
-                                                class="font-Poppins text-[14px] leading-[26px] font-light tracking-[0.03rem] text-[#686e7d]">
-                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo,
-                                                hic expedita asperiores eos neque cumque impedit quam, placeat
-                                                laudantium soluta repellendus possimus a distinctio voluptate
-                                                veritatis nostrum perspiciatis est! Commodi!</p>
                                         </div>
+                                    @endforeach
+
+                                    <!-- See More Reviews Button -->
+                                    @if ($reviews->count() > 5)
+                                    <div class="see-more-wrapper mb-[20px] mt-[20px]">
+                                        <a id="see-more-reviews" class="bb-btn-2 transition-all duration-[0.3s] ease-in-out h-[40px] inline-flex font-Poppins leading-[28px] tracking-[0.03rem] text-[#6c7fd8] cursor-pointer py-[4px] px-[15px] text-[14px] font-normal hover:text-[#3d4750]">See More Reviews</a>
                                     </div>
+                                    @endif
+                                    @endif
                                 </div>
+
+                                <hr style="margin: 20px 0;">
+
                                 <div class="bb-reviews-form">
-                                    <h3
-                                        class="font-quicksand tracking-[0.03rem] leading-[1.2] mb-[8px] text-[20px] font-bold text-[#3d4750]">
-                                        Add a Review</h3>
-                                    <div class="bb-review-rating flex mb-[12px]">
-                                        <span
-                                            class="pr-[10px] font-Poppins text-[15px] font-semibold leading-[26px] tracking-[0.02rem] text-[#3d4750]">Your
-                                            ratting :</span>
-                                        <div class="bb-pro-rating">
-                                            <i class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                            <i class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                            <i class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                            <i class="ri-star-fill float-left text-[15px] mr-[3px] text-[#fea99a]"></i>
-                                            <i class="ri-star-line float-left text-[15px] mr-[3px] text-[#777]"></i>
+                                    <h3 class="font-quicksand tracking-[0.03rem] leading-[1.2] mb-[8px] text-[20px] font-bold text-[#3d4750]">
+                                        Add a Review
+                                    </h3>
+                                    <form action="{{ route('store.review', $product->id) }}" method="POST">
+                                        @csrf
+                                        <div class="input-box mb-[24px] flex">
+                                            <span class="pr-[10px] font-Poppins text-[15px] leading-[26px] tracking-[0.02rem] text-[#3d4750]">Your rating : <span style="color: #ff4949;">*</span></span>
+                                            <!-- Hidden input to hold the rating value -->
+                                            <input type="hidden" name="rating" id="rating-input" value="">
+
+                                            <!-- Clickable stars for rating -->
+                                            <div class="bb-pro-rating flex" id="rating-stars">
+                                                @for ($i = 1; $i <= 5; $i++)
+                                                    <i class="ri-star-line float-left text-[15px] mr-[3px] text-[#777] cursor-pointer" data-value="{{ $i }}"></i>
+                                                @endfor
+                                            </div>
                                         </div>
-                                    </div>
-                                    <form action="#">
+
                                         <div class="input-box mb-[24px]">
-                                            <input type="text" placeholder="Name" name="your-name"
-                                                class="w-full h-[50px] border-[1px] border-solid border-[#eee] pl-[20px] outline-[0] text-[14px] font-normal text-[#777] rounded-[20px] p-[10px]">
-                                        </div>
-                                        <div class="input-box mb-[24px]">
-                                            <input type="email" placeholder="Email" name="your-email"
-                                                class="w-full h-[50px] border-[1px] border-solid border-[#eee] pl-[20px] outline-[0] text-[14px] font-normal text-[#777] rounded-[20px] p-[10px]">
-                                        </div>
-                                        <div class="input-box mb-[24px]">
-                                            <textarea name="your-comment" placeholder="Enter Your Comment"
+                                        <span class="pr-[10px] font-Poppins text-[15px] leading-[26px] tracking-[0.02rem] text-[#3d4750]">Your comment : <span style="color: #ff4949;">*</span></span>
+                                            <textarea name="review" placeholder="Enter Your Comment"
                                                 class="w-full h-[100px] border-[1px] border-solid border-[#eee] py-[20px] pl-[20px] pr-[10px] outline-[0] text-[14px] font-normal text-[#777] rounded-[20px] p-[10px]"></textarea>
                                         </div>
                                         <div class="input-button">
-                                            <a href="javascript:void(0)"
-                                                class="bb-btn-2 transition-all duration-[0.3s] ease-in-out h-[40px] inline-flex font-Poppins leading-[28px] tracking-[0.03rem] py-[4px] px-[15px] text-[14px] font-normal text-[#fff] bg-[#6c7fd8] rounded-[10px] border-[1px] border-solid border-[#6c7fd8] hover:bg-transparent hover:border-[#3d4750] hover:text-[#3d4750]">View
-                                                Cart</a>
+                                            <button type="submit"
+                                                class="bb-btn-2 transition-all duration-[0.3s] ease-in-out h-[40px] inline-flex font-Poppins leading-[28px] tracking-[0.03rem] py-[4px] px-[15px] text-[14px] font-normal text-[#fff] bg-[#6c7fd8] rounded-[10px] border-[1px] border-solid border-[#6c7fd8] hover:bg-transparent hover:border-[#3d4750] hover:text-[#3d4750]">Submit Review</button>
                                         </div>
                                     </form>
                                 </div>
@@ -387,6 +280,8 @@
                         </div>
                     </div>
                 </div>
+                <!-- Review Tab end -->
+
             </div>
         </div>
     </div>
@@ -521,3 +416,52 @@
     </div>
 </section>
 @endsection
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const stars = document.querySelectorAll('#rating-stars i');
+        const ratingInput = document.getElementById('rating-input');
+
+        // Function to highlight stars
+        function highlightStars(rating) {
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.remove('ri-star-line');
+                    star.classList.add('ri-star-fill');
+                    star.style.color = '#fea99a';
+                } else {
+                    star.classList.remove('ri-star-fill');
+                    star.classList.add('ri-star-line');
+                    star.style.color = '#777';
+                }
+            });
+        }
+
+        // Add click event listener to each star
+        stars.forEach(star => {
+            star.addEventListener('click', function () {
+                const rating = this.getAttribute('data-value');
+                
+                // Update the hidden input value
+                ratingInput.value = rating;
+
+                // Highlight stars based on the selected rating
+                highlightStars(rating);
+            });
+        });
+    });
+
+    // ============== for see reviews ============== //
+    document.addEventListener('DOMContentLoaded', function() {
+        const seeMoreButton = document.getElementById('see-more-reviews');
+        if (seeMoreButton) {
+            seeMoreButton.addEventListener('click', function() {
+                const hiddenReviews = document.querySelectorAll('.review-item.hidden');
+                hiddenReviews.forEach(function(review) {
+                    review.classList.remove('hidden');
+                });
+                this.style.display = 'none'; // Hide the "See More" button after showing all reviews
+            });
+        }
+    });
+</script>

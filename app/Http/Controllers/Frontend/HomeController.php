@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -37,7 +38,9 @@ class HomeController extends Controller
         $relatedProducts = Product::where('category_id', $product->category_id)
         ->whereNot('id',$product->id)
         ->get();
-        return view('frontend.main.product', compact('product', 'relatedProducts'));
+        $reviews = Review::where('status', 'approved')->get();
+
+        return view('frontend.main.product', compact('product', 'relatedProducts', 'reviews'));
     }
 
     public function quickProductView($id)
