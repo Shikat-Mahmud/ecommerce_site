@@ -9,10 +9,15 @@ use ChristianKuri\LaravelFavorite\Traits\Favoriteable;
 class Product extends Model
 {
     use HasFactory, Favoriteable;
-    protected $fillable = ['name','description','image','status', 'price', 'category_id'];
+    protected $fillable = ['name','description','image','status', 'price', 'category_id', 'unit_id'];
 
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function unit()
+    {
+        return $this->belongsTo(Unit::class);
     }
 }

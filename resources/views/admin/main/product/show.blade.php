@@ -46,10 +46,19 @@
 
                             <div class="row d-flex text-left">
                                 <div class="col-md-4">
+                                    <span>Unit: </span>
+                                </div>
+                                <div class="col-md-8">
+                                    <p class="ml-3">{{ $product->unit->name }}</p>
+                                </div>
+                            </div>
+
+                            <div class="row d-flex text-left">
+                                <div class="col-md-4">
                                     <span>Price: </span>
                                 </div>
                                 <div class="col-md-8">
-                                    <p class="ml-3">{{ $product->price }}</p>
+                                    <p class="ml-3">৳{{ $product->price }}</p>
                                 </div>
                             </div>
 

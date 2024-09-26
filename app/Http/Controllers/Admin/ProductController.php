@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Unit;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -28,6 +27,7 @@ class ProductController extends Controller
         if (auth()->user()->can('create-product')) {
             return view('admin.main.product.create', [
                 'categories' => Category::where('status', 1)->get(),
+                'units' => Unit::where('status', 1)->get(),
             ]);
         } else {
             return redirect()->back()->with('error', 'You do not have permission to add product.');
@@ -43,6 +43,7 @@ class ProductController extends Controller
                 'description' => 'nullable|string',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'category_id' => 'required|exists:categories,id',
+                'unit_id' => 'required|exists:units,id',
             ]);
 
             $inputs = $request->all();
@@ -67,7 +68,8 @@ class ProductController extends Controller
         if (auth()->user()->can('show-product')) {
             $product = Product::findOrFail($id);
             $category = Category::all();
-            return view('admin.main.product.show', compact('product', 'category'));
+            $unit = Unit::all();
+            return view('admin.main.product.show', compact('product', 'category', 'unit'));
         } else {
             return redirect()->back()->with('error', 'You do not have permission to show product.');
         }
@@ -79,6 +81,7 @@ class ProductController extends Controller
             return view('admin.main.product.edit', [
                 'product' => Product::find($id),
                 'categories' => Category::where('status', 1)->get(),
+                'units' => Unit::where('status', 1)->get(),
             ]);
         } else {
             return redirect()->back()->with('error', 'You do not have permission to edit products.');
@@ -94,6 +97,7 @@ class ProductController extends Controller
                 'description' => 'nullable|string',
                 'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
                 'category_id' => 'required|exists:categories,id',
+                'unit_id' => 'required|exists:units,id',
             ]);
 
             $product = Product::find($id);
@@ -103,6 +107,7 @@ class ProductController extends Controller
             $product->status = $request->input('status');
             $product->description = $request->input('description');
             $product->category_id = $request->input('category_id');
+            $product->unit_id = $request->input('unit_id');
 
             if ($request->hasFile('image')) {
                 if ($product->image) {

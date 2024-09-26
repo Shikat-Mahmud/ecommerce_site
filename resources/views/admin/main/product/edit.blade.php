@@ -49,7 +49,20 @@
                                                     {{ $category->name }}</option>
                                             @endforeach
                                         </select>
-
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <label for="" class="col-md-4" required>Unit <span
+                                            class="text-danger">*</span></label>
+                                    <div class="col-md-8">
+                                        <select name="unit_id" id="" class="form-control">
+                                            <option value="" disabled selected>Select an Unit</option>
+                                            @foreach ($units as $unit)
+                                                <option value="{{ $unit->id }}"
+                                                    {{ $product->unit_id == $unit->id ? 'selected' : '' }}>
+                                                    {{ $unit->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row mt-3">
