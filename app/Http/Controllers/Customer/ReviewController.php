@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 
 class ReviewController extends Controller
 {
+    // =============== Frontend ============= //
     public function storeReview(Request $request, $productId)
     {
         $userId = auth()->user()->id;
@@ -46,5 +47,30 @@ class ReviewController extends Controller
 
             return back()->with('error', 'There was an error submitting your review. Please try again later.');
         }
+    }
+
+    // =============== Admin ============= //
+
+    public function index()
+    {
+        $reviews = Review::all();
+
+        return view('admin.main.review.index', compact('reviews'));
+    }
+
+    public function show(string $id)
+    {
+        $review = Review::findOrFail($id);
+        return view('admin.main.review.show', compact('review'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $review = Review::find($id);
+        $review->status = $request->status;
+
+        $review->update();
+
+        return redirect()->back()->with('success', 'Review status updated successfully');
     }
 }

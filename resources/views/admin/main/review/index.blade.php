@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'Order List')
+@section('title', 'Review List')
 @push('styles')
     <style>
         .desc-box {
@@ -19,7 +19,7 @@
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div>
                             <i class="fas fa-table me-1"></i>
-                            Order List
+                            Review List
                         </div>
                     </div>
                     <div class="card-body table-border-style">
@@ -28,33 +28,35 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Customer Name</th>
-                                        <th>Amount</th>
+                                        <th>Reviewer Name</th>
+                                        <th>Product Name</th>
+                                        <th>Rating</th>
+                                        <th>Review</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($orders as $order)
+                                    @foreach ($reviews as $review)
                                         <tr>
-                                            <td>{{ $order->id }}</td>
-                                            <td>{{ $order->user ? $order->user->name : '' }}</td>
-                                            <td>৳{{ $order->total_amount }}</td>
+                                            <td>{{ $review->id }}</td>
+                                            <td>{{ $review->user ? $review->user->name : '' }}</td>
+                                            <td>{{ $review->product ? $review->product->name : '' }}</td>
+                                            <td>{{ $review->rating }}</td>
+                                            <td>{{ $review->review }}</td>
                                             <td>
-                                                @if ($order->status == 'pending')
-                                                    <span class="badge bg-warning">Pending</span>
-                                                @elseif($order->status == 'completed')
-                                                    <span class="badge bg-success">Completed</span>
-                                                @elseif($order->status == 'cancelled')
-                                                    <span class="badge bg-danger">Cancelled</span>
+                                                @if ($review->status == 'approved')
+                                                    <span class="badge bg-success">Approved</span>
+                                                @elseif ($review->status == 'rejected')
+                                                    <span class="badge bg-danger">Rejected</span>
                                                 @endif
                                             </td>
                                             <td>
                                                 <div class="d-flex">
                                                     <a class="btn btn-secondary btn-sm me-2"
-                                                        href="{{ route('admin.orders.show', $order->id) }}">View</a>
+                                                        href="{{ route('admin.reviews.show', $review->id) }}">View</a>
 
-                                                    <form action="{{ route('admin.orders.update', $order->id) }}"
+                                                    <form action="{{ route('admin.reviews.update', $review->id) }}"
                                                         method="POST">
                                                         @csrf
                                                         @method('PUT')
@@ -62,9 +64,8 @@
                                                         <div class="d-flex">
                                                             <select name="status" class="form-select me-2"
                                                                 style="min-width: 120px;">
-                                                                <option value="pending" {{ $order->status == 'pending' ? 'selected' : '' }}>Pending</option>
-                                                                <option value="completed" {{ $order->status == 'completed' ? 'selected' : '' }}>Completed</option>
-                                                                <option value="cancelled" {{ $order->status == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
+                                                                <option value="approved" {{ $review->status == 'approved' ? 'selected' : '' }}>Approved</option>
+                                                                <option value="rejected" {{ $review->status == 'rejected' ? 'selected' : '' }}>Rejected</option>
                                                             </select>
 
                                                             <button type="submit" class="btn btn-info btn-sm">Change

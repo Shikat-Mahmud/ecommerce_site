@@ -85,6 +85,7 @@ Route::middleware(['auth', 'permission:admin-panel'])->name('admin.')->prefix('a
     Route::get('/export-section/{orderId}', [OrderManageController::class, 'exportSection'])->name('export.section');
 
     Route::resource('customers', CustomerManageController::class);
+    Route::resource('reviews', ReviewController::class);
 
     //  search route
     Route::get('/search', [IndexController::class, 'search'])->name('search');
