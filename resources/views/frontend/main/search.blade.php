@@ -161,7 +161,7 @@
                                                     <span
                                                         class="new-price px-[3px] text-[16px] text-[#686e7d] font-bold">৳{{ $product->price }}</span>
                                                 </div>
-                                                <!-- <span class="last-items text-[14px] text-[#686e7d]">500g</span> -->
+                                                <span class="last-items text-[14px] text-[#686e7d]">1{{ $product->unit->name }}</span>
                                             </div>
                                         </div>
                                     </div>
