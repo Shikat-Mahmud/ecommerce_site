@@ -59,7 +59,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="min-[992px]:w-[58.33%] w-full px-[12px] mb-[24px]">
+                        <div class="min-[992px]:w-[58.33%] w-full px-[12px] mb-[24px] mt-[24px]">
                             <div class="bb-single-pro-contact">
                                 <div class="bb-sub-title mb-[20px]">
                                     <h4
