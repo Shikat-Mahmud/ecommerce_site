@@ -53,7 +53,7 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex">
-                                                    <a class="btn btn-secondary btn-sm me-2"
+                                                    <a class="btn btn-secondary btn-sm me-2 d-flex align-items-center"
                                                         href="{{ route('admin.reviews.show', $review->id) }}">View</a>
 
                                                     <form action="{{ route('admin.reviews.update', $review->id) }}"
@@ -62,8 +62,7 @@
                                                         @method('PUT')
 
                                                         <div class="d-flex">
-                                                            <select name="status" class="form-select me-2"
-                                                                style="min-width: 120px;">
+                                                            <select name="status" class="me-2 text-secondary rounded">
                                                                 <option value="approved" {{ $review->status == 'approved' ? 'selected' : '' }}>Approved</option>
                                                                 <option value="rejected" {{ $review->status == 'rejected' ? 'selected' : '' }}>Rejected</option>
                                                             </select>

@@ -51,7 +51,7 @@
                                             </td>
                                             <td>
                                                 <div class="d-flex">
-                                                    <a class="btn btn-secondary btn-sm me-2"
+                                                    <a class="btn btn-secondary btn-sm me-2 d-flex align-items-center"
                                                         href="{{ route('admin.orders.show', $order->id) }}">View</a>
 
                                                     <form action="{{ route('admin.orders.update', $order->id) }}"
@@ -60,8 +60,7 @@
                                                         @method('PUT')
 
                                                         <div class="d-flex">
-                                                            <select name="status" class="form-select me-2"
-                                                                style="min-width: 120px;">
+                                                            <select name="status" class="me-2 text-secondary rounded">
                                                                 <option value="pending" {{ $order->status == 'pending' ? 'selected' : '' }}>Pending</option>
                                                                 <option value="completed" {{ $order->status == 'completed' ? 'selected' : '' }}>Completed</option>
                                                                 <option value="cancelled" {{ $order->status == 'cancelled' ? 'selected' : '' }}>Cancelled</option>
