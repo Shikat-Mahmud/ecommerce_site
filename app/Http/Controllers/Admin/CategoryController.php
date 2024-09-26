@@ -66,8 +66,8 @@ class CategoryController extends Controller
     public function edit(string $id)
     {
         if (auth()->user()->can('edit-category')) {
-            $categories = Category::find($id);
-            return view('admin.main.category.edit', compact('categories'));
+            $category = Category::find($id);
+            return view('admin.main.category.edit', compact('category'));
         } else {
             return redirect()->back()->with('error', 'You do not have permission to edit category.');
         }
@@ -102,8 +102,8 @@ class CategoryController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }
-
     }
+    
     public function destroy(string $id)
     {
         if (auth()->user()->can('delete-category')) {

@@ -17,14 +17,14 @@
                         </div>
                         <div class="card-body">
 
-                            <form action="{{ route('categories.update', ['category' => $categories->id]) }}" method="post" enctype="multipart/form-data">
+                            <form action="{{ route('categories.update', ['category' => $category->id]) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="row mt-3">
                                     <label for="" class="col-md-4" required>Category Name <span
                                             class="text-danger">*</span></label>
                                     <div class="col-md-8">
-                                        <input type="text" name="name" value="{{ $categories->name }}"
+                                        <input type="text" name="name" value="{{ $category->name }}"
                                             class="form-control" />
                                     </div>
                                 </div>
@@ -32,10 +32,10 @@
                                     <label for="" class="col-md-4">Category Image <span
                                     class="text-danger">*</span></label>
                                     <div class="col-md-8">
-                                        <input type="file" name="image" value="{{ $categories->image }}"
+                                        <input type="file" name="image" value="{{ $category->image }}"
                                             class="form-control" accept="image/*" />
-                                            @if (isset($categories->image))
-                                                <img src="{{ asset('storage/'.$categories->image) }}" alt="Category Image" style="height: 80px"
+                                            @if (isset($category->image))
+                                                <img src="{{ asset('storage/'.$category->image) }}" alt="Category Image" style="height: 80px"
                                                 class="mt-2 rounded">
                                             @endif
                                     </div>
@@ -45,10 +45,10 @@
                                             class="text-danger">*</span></label>
                                     <div class="col-md-8">
                                         <label for=""><input type="radio" name="status"
-                                                {{ $categories->status == 1 ? 'checked' : '' }} value="1" />
+                                                {{ $category->status == 1 ? 'checked' : '' }} value="1" />
                                             Published</label>
                                         <label for=""><input type="radio" name="status"
-                                                {{ $categories->status == 0 ? 'checked' : '' }} value="0" />
+                                                {{ $category->status == 0 ? 'checked' : '' }} value="0" />
                                             Unpublished</label>
                                     </div>
                                 </div>

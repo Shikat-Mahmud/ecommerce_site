@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CustomerManageController;
 use App\Http\Controllers\Admin\OrderManageController;
+use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\Customer\CustomerProfileController;
@@ -83,7 +84,8 @@ Route::middleware(['auth', 'permission:admin-panel'])->name('admin.')->prefix('a
 
     Route::resource('orders', OrderManageController::class);
     Route::get('/export-section/{orderId}', [OrderManageController::class, 'exportSection'])->name('export.section');
-
+    
+    Route::resource('units', UnitController::class);
     Route::resource('customers', CustomerManageController::class);
     Route::resource('reviews', ReviewController::class);
 
