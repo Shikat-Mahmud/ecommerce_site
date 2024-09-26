@@ -25,51 +25,41 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if (!$customers->isEmpty())
-                                        @foreach ($customers as $customer)
-                                            <tr>
-                                                <td>{{ $customer->name }}</td>
-                                                <td>
-                                                    @if ($customer->photo)
-                                                        <img src="{{ asset('storage/' . $customer->photo) }}" alt="Category Photo"
-                                                            style="height: 50px; border-radius: 6px;">
-                                                    @else
-                                                        <img src="https://placehold.co/400" alt="Default Photo"
-                                                            style="height: 50px; border-radius: 6px;">
-                                                    @endif
-                                                </td>
-                                                <td>{{ $customer->email }}</td>
-                                                <td>
-                                                    @if (isset($customer->phone))
-                                                        {{ $customer->phone }}
-                                                    @else
-                                                        <span class="text-secondary">Null</span>
-                                                    @endif
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex">
-                                                        <a class="btn btn-secondary btn-sm me-2"
-                                                            href="{{ route('admin.customers.show', $customer->id) }}">View</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    @else
+                                    @foreach ($customers as $customer)
                                         <tr>
-                                            <td colspan="5" class="py-5 text-center">
-                                                <p>Top product is empty!</p>
+                                            <td>{{ $customer->name }}</td>
+                                            <td>
+                                                @if ($customer->photo)
+                                                    <img src="{{ asset('storage/' . $customer->photo) }}" alt="Customer Photo"
+                                                        style="height: 50px; border-radius: 6px;">
+                                                @else
+                                                    <img src="https://placehold.co/400" alt="Default Photo"
+                                                        style="height: 50px; border-radius: 6px;">
+                                                @endif
+                                            </td>
+                                            <td>{{ $customer->email }}</td>
+                                            <td>
+                                                @if (isset($customer->phone))
+                                                    {{ $customer->phone }}
+                                                @else
+                                                    <span class="text-secondary">Null</span>
+                                                @endif
+                                            </td>
+                                            <td>
+                                                <div class="d-flex">
+                                                    <a class="btn btn-secondary btn-sm me-2"
+                                                        href="{{ route('admin.customers.show', $customer->id) }}">View</a>
+                                                </div>
                                             </td>
                                         </tr>
-                                    @endif
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
 </section>
 @endsection
