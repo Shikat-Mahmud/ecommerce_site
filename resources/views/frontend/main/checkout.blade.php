@@ -200,122 +200,155 @@
                     </div>
 
                     <div class="input-box-form mt-[20px]">
-                        <!-- <form method="post"> -->
-                        <div class="flex flex-wrap mx-[-12px]">
-                            <div class="min-[992px]:w-[50%] w-full px-[12px]">
-                                <div class="input-item mb-[24px]">
-                                    <label
-                                        class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">Name
-                                        *</label>
-                                    <input type="text" name="name" placeholder="Enter your name"
-                                        value="{{ auth()->user()->name }}"
-                                        class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] leading-[26px] outline-[0] rounded-[10px]"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="min-[992px]:w-[50%] w-full px-[12px]">
-                                <div class="input-item mb-[24px]">
-                                    <label
-                                        class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">Phone
-                                        No *</label>
-                                    <input type="text" name="phone" placeholder="Enter your phone no"
-                                        value="{{ auth()->user()->phone ? auth()->user()->phone : '' }}"
-                                        class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] leading-[26px] outline-[0] rounded-[10px]"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="w-full px-[12px]">
-                                <div class="input-item mb-[24px]">
-                                    <label
-                                        class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">Address
-                                        *</label>
-                                    <input type="text" name="name" placeholder="Address Line 1"
-                                        value="{{ auth()->user()->address ? auth()->user()->address : '' }}"
-                                        class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] leading-[26px] outline-[0] rounded-[10px]"
-                                        required>
-                                </div>
-                            </div>
-
-                            <!-- ================ Under development ================== -->
-
-                            <!-- <div class="min-[992px]:w-[50%] w-full px-[12px]">
-                                    <div class="input-item mb-[24px]">
-                                        <label
-                                            class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">City
-                                            *</label>
-                                        <div
-                                            class="custom-select p-[10px] border-[1px] border-solid border-[#eee] leading-[26px] rounded-[10px]">
-                                            <select>
-                                                <option value="option1">City</option>
-                                                <option value="option1">City 1</option>
-                                                <option value="option2">City 2</option>
-                                                <option value="option3">City 3</option>
-                                                <option value="option4">City 4</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                        <form action="{{ isset($billingDetail) ? route('update.billing.detail', $billingDetail->id) : route('store.billing.detail') }}" method="POST">
+                            @csrf
+                            @if(isset($billingDetail))
+                                @method('PUT')
+                            @endif
+                            <div class="flex flex-wrap mx-[-12px]">
                                 <div class="min-[992px]:w-[50%] w-full px-[12px]">
                                     <div class="input-item mb-[24px]">
-                                        <label
-                                            class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">Post
-                                            Code *</label>
-                                        <input type="text" name="name" placeholder="Post Code"
+                                        <label for="fname"
+                                            class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">First Name <span class="text-[#ff0000]">*</span></label>
+                                        <input 
+                                            type="text" 
+                                            name="fname" 
+                                            id="fname" 
+                                            placeholder="Enter your first name"
+                                            value="{{ $billingDetail->fname ?? $user->name ?? '' }}"
                                             class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] leading-[26px] outline-[0] rounded-[10px]"
                                             required>
                                     </div>
                                 </div>
+
                                 <div class="min-[992px]:w-[50%] w-full px-[12px]">
                                     <div class="input-item mb-[24px]">
-                                        <label
-                                            class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">Country
-                                            *</label>
-                                        <div
-                                            class="custom-select p-[10px] border-[1px] border-solid border-[#eee] leading-[26px] rounded-[10px]">
-                                            <select>
-                                                <option value="option1">Country</option>
-                                                <option value="option1">Country 1</option>
-                                                <option value="option2">Country 2</option>
-                                                <option value="option3">Country 3</option>
-                                                <option value="option4">Country 4</option>
-                                            </select>
-                                        </div>
+                                        <label for="lname"
+                                            class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">Last Name </label>
+                                        <input type="text" 
+                                            name="lname" 
+                                            id="lname" 
+                                            placeholder="Enter your last name"
+                                            value="{{ $billingDetail->lname ?? '' }}"
+                                            class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] leading-[26px] outline-[0] rounded-[10px]"
+                                            >
                                     </div>
                                 </div>
+
                                 <div class="min-[992px]:w-[50%] w-full px-[12px]">
                                     <div class="input-item mb-[24px]">
-                                        <label
-                                            class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">Region
-                                            State *</label>
-                                        <div
-                                            class="custom-select p-[10px] border-[1px] border-solid border-[#eee] leading-[26px] rounded-[10px]">
-                                            <select>
-                                                <option value="option1">Region/State</option>
-                                                <option value="option1">Region/State 1</option>
-                                                <option value="option2">Region/State 2</option>
-                                                <option value="option3">Region/State 3</option>
-                                                <option value="option4">Region/State 4</option>
-                                            </select>
-                                        </div>
+                                        <label for="phone"
+                                            class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">Phone No <span class="text-[#ff0000]">*</span></label>
+                                        <input 
+                                            type="text" 
+                                            name="phone" 
+                                            id="phone" 
+                                            placeholder="Enter your phone no"
+                                            value="{{ $billingDetail->phone ?? $user->phone ?? '' }}"
+                                            class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] leading-[26px] outline-[0] rounded-[10px]"
+                                            required>
                                     </div>
-                                </div> -->
+                                </div>
 
-                            <!-- ================ Under development ================== -->
+                                <div class="min-[992px]:w-[50%] w-full px-[12px]">
+                                    <div class="input-item mb-[24px]">
+                                        <label for="email"
+                                            class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">Email </label>
+                                        <input 
+                                            type="text" 
+                                            name="email" 
+                                            id="email" 
+                                            placeholder="Enter your email"
+                                            value="{{ $billingDetail->email ?? $user->email ?? '' }}"
+                                            class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] leading-[26px] outline-[0] rounded-[10px]"
+                                            >
+                                    </div>
+                                </div>
 
-                            <div class="w-full px-[12px]">
-                                <div class="input-button">
+                                <div class="w-full px-[12px]">
+                                    <div class="input-item mb-[24px]">
+                                        <label for="address"
+                                            class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">Address <span class="text-[#ff0000]">*</span></label>
+                                        <input 
+                                            type="text" 
+                                            name="address" 
+                                            id="address" 
+                                            placeholder="Address Line 1"
+                                            value="{{ $billingDetail->address ?? $user->address ?? '' }}"
+                                            class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] leading-[26px] outline-[0] rounded-[10px]"
+                                            required>
+                                    </div>
+                                </div>
 
-                                    <form action="{{ route('place.order') }}" method="POST">
-                                        @csrf
+                                <div class="min-[992px]:w-[50%] w-full px-[12px]">
+                                    <div class="input-item mb-[24px]">
+                                        <label for="city" class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">City <span class="text-[#ff0000]">*</span></label>
+                                        <input 
+                                            type="text" 
+                                            name="city" 
+                                            id="city" 
+                                            placeholder="Enter your city" 
+                                            value="{{ $billingDetail->city ?? '' }}" 
+                                            class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] leading-[26px] outline-[0] rounded-[10px]"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <div class="min-[992px]:w-[50%] w-full px-[12px]">
+                                    <div class="input-item mb-[24px]">
+                                        <label for="postal_code" class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">Post Code <span class="text-[#ff0000]">*</span></label>
+                                        <input 
+                                            type="text" 
+                                            name="postal_code" 
+                                            id="postal_code" 
+                                            placeholder="Enter your post code" 
+                                            value="{{ $billingDetail->postal_code ?? '' }}" 
+                                            class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] leading-[26px] outline-[0] rounded-[10px]"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <div class="min-[992px]:w-[50%] w-full px-[12px]">
+                                    <div class="input-item mb-[24px]">
+                                        <label for="country" class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">Country <span class="text-[#ff0000]">*</span></label>
+                                        <input 
+                                            type="text" 
+                                            name="country" 
+                                            id="country" 
+                                            placeholder="Enter your country" 
+                                            value="{{ $billingDetail->country ?? '' }}" 
+                                            class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] leading-[26px] outline-[0] rounded-[10px]"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <div class="min-[992px]:w-[50%] w-full px-[12px]">
+                                    <div class="input-item mb-[24px]">
+                                        <label for="state" class="inline-block font-Poppins leading-[26px] tracking-[0.02rem] mb-[8px] text-[14px] font-medium text-[#3d4750]">Region/State <span class="text-[#ff0000]">*</span></label>
+                                        <input 
+                                            type="text" 
+                                            name="state" 
+                                            id="state" 
+                                            placeholder="Enter your state or state" 
+                                            value="{{ $billingDetail->state ?? '' }}" 
+                                            class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] leading-[26px] outline-[0] rounded-[10px]"
+                                            required>
+                                    </div>
+                                </div>
+                                
+
+
+                                <div class="w-full px-[12px]">
+                                    <div class="input-button">
                                         <button type="submit"
-                                            class="bb-btn-2 inline-block items-center justify-center check-btn transition-all duration-[0.3s] ease-in-out font-Poppins leading-[28px] tracking-[0.03rem] py-[4px] px-[25px] text-[14px] font-normal text-[#fff] bg-[#6c7fd8] rounded-[10px] border-[1px] border-solid border-[#6c7fd8] hover:bg-transparent hover:border-[#3d4750] hover:text-[#3d4750]">Place
-                                            Order</button>
-                                    </form>
-
+                                            class="bb-btn-2 inline-block items-center justify-center check-btn transition-all duration-[0.3s] ease-in-out font-Poppins leading-[28px] tracking-[0.03rem] py-[4px] px-[25px] text-[14px] font-normal text-[#fff] bg-[#6c7fd8] rounded-[10px] border-[1px] border-solid border-[#6c7fd8] hover:bg-transparent hover:border-[#3d4750] hover:text-[#3d4750]">
+                                            {{ isset($billingDetail) ? 'Place Order' : 'Save Billing Details & Place Order' }}
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- </form> -->
+                                
+                        </form>
                     </div>
                 </div>
             </div>

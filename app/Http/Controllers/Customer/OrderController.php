@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Customer;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
+use App\Models\BillingDetail;
 use App\Http\Controllers\Controller;
 use Darryldecode\Cart\Facades\CartFacade as Cart;
 
@@ -13,12 +14,15 @@ class OrderController extends Controller
 {
     public function checkout()
     {
+        $user = auth()->user();
+        $billingDetail = BillingDetail::where('user_id', $user->id)->first();
+
         $cartItems = Cart::getContent();
         $totalAmount = Cart::getTotal();
-        return view('frontend.main.checkout', compact('cartItems', 'totalAmount'));
+        return view('frontend.main.checkout', compact('cartItems', 'totalAmount', 'user', 'billingDetail'));
     }
 
-    public function placeOrder()
+    public function placeOrder(Request $request)
     {
         $userId = auth()->id();
         $cartItems = Cart::getContent();

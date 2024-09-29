@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CustomerManageController;
 use App\Http\Controllers\Admin\OrderManageController;
 use App\Http\Controllers\Admin\UnitController;
+use App\Http\Controllers\Customer\BillingDetailController;
 use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\CustomerController;
 use App\Http\Controllers\Customer\CustomerProfileController;
@@ -64,6 +65,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/toggle-wish-list/{id}', [WishListController::class,'toggleWish'])->name('wishlist.toggle');
 
     Route::post('/store-review/{id}', [ReviewController::class,'storeReview'])->name('store.review');
+
+    Route::post('/store-billing-detail',[BillingDetailController::class, 'store'])->name('store.billing.detail');
+    Route::put('/update-billing-detail/{id}',[BillingDetailController::class, 'update'])->name('update.billing.detail');
 });
 
 // ============== end customer routes ============== //
