@@ -264,7 +264,7 @@
                                     <form action="{{ route('store.review', $product->id) }}" method="POST">
                                         @csrf
                                         <div class="input-box mb-[24px] flex">
-                                            <span class="pr-[10px] font-Poppins text-[15px] leading-[26px] tracking-[0.02rem] text-[#3d4750]">Your rating : <span style="color: #ff4949;">*</span></span>
+                                            <span class="pr-[10px] font-Poppins text-[15px] leading-[26px] tracking-[0.02rem] text-[#3d4750]">Your rating <span class="text-[#ff0000]">*</span></span>
                                             <!-- Hidden input to hold the rating value -->
                                             <input type="hidden" name="rating" id="rating-input" value="">
 
@@ -277,7 +277,7 @@
                                         </div>
 
                                         <div class="input-box mb-[24px]">
-                                        <span class="pr-[10px] font-Poppins text-[15px] leading-[26px] tracking-[0.02rem] text-[#3d4750]">Your comment : <span style="color: #ff4949;">*</span></span>
+                                        <span class="pr-[10px] font-Poppins text-[15px] leading-[26px] tracking-[0.02rem] text-[#3d4750]">Your comment <span class="text-[#ff0000]">*</span></span>
                                             <textarea name="review" placeholder="Enter Your Comment"
                                                 class="w-full h-[100px] border-[1px] border-solid border-[#eee] py-[20px] pl-[20px] pr-[10px] outline-[0] text-[14px] font-normal text-[#777] rounded-[20px] p-[10px]"></textarea>
                                         </div>
