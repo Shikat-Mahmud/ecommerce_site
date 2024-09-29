@@ -1,5 +1,19 @@
 <nav class="pc-sidebar">
     <div class="navbar-wrapper">
+    <div class="m-header">
+            <a href="{{ route('home') }}" class="b-brand text-primary">
+
+                @php
+                $settings = generalSettings()
+                @endphp
+                @if($settings->logo)
+                <img src="{{ asset('storage/' . $settings->logo) }}" class="logo-lg" alt="Logo image"
+                    style="max-height: 40px; width: auto; max-width: 100%;">
+                @else
+                <img src="{{ asset('frontend/img/logo/logo.png') }}"
+                    alt="logo image" class="logo-lg">
+                @endif
+        </div>
         <div class="navbar-content">
             <div class="text-center my-3">
                 @php

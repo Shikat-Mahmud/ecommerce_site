@@ -10,7 +10,7 @@
                 <img src="{{ asset('storage/' . $settings->logo) }}" class="logo-lg" alt="Logo image"
                     style="max-height: 40px; width: auto; max-width: 100%;">
                 @else
-                <img src="https://codedthemes.com/demos/admin-templates/gradient-able/bootstrap/default/assets/images/logo-dark.svg"
+                <img src="{{ asset('frontend/img/logo/logo.png') }}"
                     alt="logo image" class="logo-lg">
                 @endif
         </div>
