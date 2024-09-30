@@ -52,6 +52,7 @@ Route::delete('/remove-cart/{id}', [CartController::class, 'removeCartItem'])->n
 Route::middleware(['auth'])->group(function () {
     Route::get('/customer-dashboard', [CustomerController::class, 'index'])->name('customer.dashboard');
     Route::get('/customer-orders', [CustomerController::class, 'customerOrders'])->name('customer.orders');
+    Route::get('/customer-billing-address', [CustomerController::class, 'customerBillingDetail'])->name('customer.billing.detail');
 
     Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');
     Route::post('/place-order', [OrderController::class, 'placeOrder'])->name('place.order');
@@ -68,6 +69,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/store-billing-detail',[BillingDetailController::class, 'store'])->name('store.billing.detail');
     Route::put('/update-billing-detail/{id}',[BillingDetailController::class, 'update'])->name('update.billing.detail');
+    Route::post('/store-profile-billing',[BillingDetailController::class, 'profileStore'])->name('store.profile.billing');
+    Route::put('/update-profile-billing/{id}',[BillingDetailController::class, 'profileUpdate'])->name('update.profile.billing');
 });
 
 // ============== end customer routes ============== //

@@ -45,6 +45,11 @@
                     <a href="{{ route('customer.orders') }}" class="pc-link"><span class="pc-micon">
                             <i class="ph ph-shopping-cart"></i></span><span class="pc-mtext">My Orders</span></a>
                 </li>
+
+                <li class="pc-item pc-hasmenu">
+                    <a href="{{ route('customer.billing.detail') }}" class="pc-link"><span class="pc-micon">
+                            <i class="ph ph-receipt"></i></span><span class="pc-mtext">Billing Address</span></a>
+                </li>
                 
                 <li class="pc-item pc-hasmenu">
                     <a href="{{ route('customer.profile.edit') }}" class="pc-link"><span class="pc-micon">
