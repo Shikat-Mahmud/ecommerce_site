@@ -16,7 +16,7 @@
                             Summary</h3>
                     </div>
                     <div class="bb-sb-blok-contact">
-                        <div class="bb-cart-summary">
+                        <div class="bb-cart-summary" id="cart-summary" data-delivery-charge="{{ $deliveryCharge }}">
                             <div class="inner-summary">
                                 <ul>
                                     <li class="mb-[12px] flex justify-between leading-[28px]">
@@ -24,14 +24,14 @@
                                             class="text-left font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] text-[#686e7d] font-medium">Sub-Total</span>
                                         <span
                                             class="text-right font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] text-[#686e7d] font-semibold"
-                                            id="subtotal">৳{{ number_format($totalAmount, 2) }}</span>
+                                            id="subtotal">৳{{ number_format($subTotalAmount, 2) }}</span>
                                     </li>
                                     <li class="mb-[12px] flex justify-between leading-[28px]">
                                         <span
                                             class="text-left font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] text-[#686e7d] font-medium">Delivery
                                             Charges</span>
                                         <span
-                                            class="text-right font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] text-[#686e7d] font-semibold">৳00.00</span>
+                                            class="text-right font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] text-[#686e7d] font-semibold">৳{{ number_format($deliveryCharge, 2) }}</span>
                                     </li>
                                     <li class="mb-[12px] flex justify-between leading-[28px]">
                                         <span
@@ -244,6 +244,9 @@ function decrementQuantity(itemId) {
 function updateCartTotals() {
     let subtotal = 0;
 
+    // Fetch the delivery charge from the HTML attribute
+    const deliveryCharge = parseFloat($('#cart-summary').data('delivery-charge'));
+
     $('.cart-item').each(function () {
         const price = parseFloat($(this).find('.price').data('price'));
         const quantity = parseInt($(this).find('.qty-input').val());
@@ -253,9 +256,12 @@ function updateCartTotals() {
         }
     });
 
-    // Update subtotal and total in the DOM
+    // Update subtotal in the DOM
     $('#subtotal').text('৳' + subtotal.toFixed(2));
-    $('#total').text('৳' + subtotal.toFixed(2));
+
+    // Update total (subtotal + delivery charge)
+    const total = subtotal + deliveryCharge;
+    $('#total').text('৳' + total.toFixed(2));
 }
 
 </script>

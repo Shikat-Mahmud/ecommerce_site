@@ -18,8 +18,10 @@ class OrderController extends Controller
         $billingDetail = BillingDetail::where('user_id', $user->id)->first();
 
         $cartItems = Cart::getContent();
-        $totalAmount = Cart::getTotal();
-        return view('frontend.main.checkout', compact('cartItems', 'totalAmount', 'user', 'billingDetail'));
+        $deliveryCharge = 60;
+        $subTotalAmount = Cart::getTotal();
+        $totalAmount = $deliveryCharge + $subTotalAmount;
+        return view('frontend.main.checkout', compact('cartItems', 'subTotalAmount', 'totalAmount', 'deliveryCharge', 'user', 'billingDetail'));
     }
 
     public function placeOrder(Request $request)

@@ -55,14 +55,14 @@
                                     <span
                                         class="left-item font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] font-medium text-[#686e7d]">sub-total</span>
                                     <span
-                                        class="font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] font-medium text-[#686e7d]">৳{{ number_format($totalAmount, 2) }}</span>
+                                        class="font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] font-medium text-[#686e7d]">৳{{ number_format($subTotalAmount, 2) }}</span>
                                 </li>
                                 <li class="flex justify-between leading-[28px] mb-[8px]">
                                     <span
                                         class="left-item font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] font-medium text-[#686e7d]">Delivery
                                         Charges</span>
                                     <span
-                                        class="font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] font-medium text-[#686e7d]">৳00.00</span>
+                                        class="font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] font-medium text-[#686e7d]">৳{{ number_format($deliveryCharge, 2) }}</span>
                                 </li>
                                 <li class="flex justify-between leading-[28px] mb-[8px]">
                                     <span
@@ -88,8 +88,14 @@
                                         </form>
                                     </div>
                                 </li>
+                                <hr class="mt-[10px] mb-[8px]">
+                                <li class="flex justify-between leading-[28px] mb-[8px]">
+                                    <span class="text-left font-Poppins text-[16px] leading-[28px] tracking-[0.03rem] font-semibold text-[#686e7d]">Total Amount</span>
+                                    <span class="text-right font-Poppins text-[16px] leading-[28px] tracking-[0.03rem] font-semibold text-[#686e7d]" id="total">৳{{ number_format($totalAmount, 2) }}</span>
+                                </li>
                             </ul>
                         </div>
+                        
                         <div class="bb-checkout-pro mb-[-24px]">
 
                             <!-- single item  -->
@@ -160,11 +166,20 @@
                             <div class="bb-del-option mt-[12px] flex max-[480px]:flex-col">
                                 <div class="inner-del w-[50%] max-[480px]:w-full">
                                     <div class="radio-itens">
-                                        <input type="radio" id="Cash1" name="radio-itens"
-                                            class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] rounded-[10px]">
+                                        <input type="radio" id="Cash1" name="radio-items"
+                                            class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] rounded-[10px]" 
+                                            checked>
                                         <label for="Cash1"
                                             class="relative pl-[26px] cursor-pointer leading-[16px] inline-block text-[#686e7d] tracking-[0]">Cash
                                             On Delivery</label>
+                                    </div>
+                                </div>
+                                <div class="inner-del w-[50%] max-[480px]:w-full">
+                                    <div class="radio-itens">
+                                        <input type="radio" id="Cash2" name="radio-items"
+                                            class="w-full p-[10px] text-[14px] font-normal text-[#686e7d] border-[1px] border-solid border-[#eee] outline-[0] rounded-[10px]">
+                                        <label for="Cash2"
+                                            class="relative pl-[26px] cursor-pointer leading-[16px] inline-block text-[#686e7d] tracking-[0]">Card</label>
                                     </div>
                                 </div>
                             </div>
@@ -196,7 +211,7 @@
                     <div class="main-title mb-[20px]">
                         <h4
                             class="font-quicksand tracking-[0.03rem] leading-[1.2] text-[20px] font-bold text-[#3d4750]">
-                            Customer Details</h4>
+                            Billing Details</h4>
                     </div>
 
                     <div class="input-box-form mt-[20px]">

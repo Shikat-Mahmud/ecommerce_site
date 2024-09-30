@@ -12,9 +12,11 @@ class CartController extends Controller
     public function cart()
     {
         $cartItems = Cart::getContent();
-        $totalAmount = Cart::getTotal();
+        $deliveryCharge = 60;
+        $subTotalAmount = Cart::getTotal();
+        $totalAmount = $deliveryCharge + $subTotalAmount;
 
-        return view('frontend.main.cart', compact('cartItems', 'totalAmount'));
+        return view('frontend.main.cart', compact('cartItems', 'subTotalAmount', 'totalAmount', 'deliveryCharge'));
     }
 
     public function addToCart(Request $request, $productId)
