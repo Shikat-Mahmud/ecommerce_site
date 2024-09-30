@@ -64,11 +64,15 @@ class OrderController extends Controller
             $orderItems = $order->items;
 
             // If the 'total' is not directly stored in the order, calculate it manually
-            $totalAmount = $orderItems->sum(function ($item) {
+            $subTotalAmount = $orderItems->sum(function ($item) {
                 return $item->product->price * $item->quantity;
             });
 
-            return view('frontend.main.order_success', compact('orderItems', 'totalAmount'));
+            $couponDiscount = 0;
+            $deliveryCharge = 60;
+            $totalAmount = $couponDiscount + $deliveryCharge + $subTotalAmount;
+
+            return view('frontend.main.order_success', compact('orderItems', 'deliveryCharge', 'couponDiscount', 'subTotalAmount', 'totalAmount'));
         }
 
         return redirect()->route('home')->with('error', 'Order not found.');

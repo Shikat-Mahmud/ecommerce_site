@@ -77,7 +77,7 @@
                                     class="text-left font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] text-[#686e7d] font-medium">Sub-Total</span>
                                 <span
                                     class="text-right font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] text-[#686e7d] font-semibold">
-                                    ৳{{ number_format($totalAmount, 2) }}
+                                    ৳{{ number_format($subTotalAmount, 2) }}
                                 </span>
                             </li>
                             <li class="mb-[12px] flex justify-between leading-[28px]">
@@ -86,7 +86,15 @@
                                     Charges</span>
                                 <span
                                     class="text-right font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] text-[#686e7d] font-semibold">
-                                    ৳00.00
+                                    ৳{{ number_format($deliveryCharge, 2) }}
+                                </span>
+                            </li>
+                            <li class="mb-[12px] flex justify-between leading-[28px]">
+                                <span
+                                    class="text-left font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] text-[#686e7d] font-medium">Coupon Discount</span>
+                                <span
+                                    class="text-right font-Poppins leading-[28px] tracking-[0.03rem] text-[14px] text-[#686e7d] font-semibold">
+                                    ৳{{ number_format($couponDiscount, 2) }}
                                 </span>
                             </li>
                             <li
