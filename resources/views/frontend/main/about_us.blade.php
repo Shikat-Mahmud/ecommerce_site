@@ -381,7 +381,7 @@
                                     </li>
                                     <li class="bb-social-link leading-[28px] pb-[10px]">
                                         <a href="javascript:void(0)"><i
-                                                class="ri-twitter-x-fill text-[16px] hover:text-[#6c7fd8]"></i></a>
+                                                class="ri-twitter-fill text-[16px] hover:text-[#6c7fd8]"></i></a>
                                     </li>
                                     <li class="bb-social-link leading-[28px]">
                                         <a href="javascript:void(0)"><i
@@ -412,7 +412,7 @@
                                     </li>
                                     <li class="bb-social-link leading-[28px] pb-[10px]">
                                         <a href="javascript:void(0)"><i
-                                                class="ri-twitter-x-fill text-[16px] hover:text-[#6c7fd8]"></i></a>
+                                                class="ri-twitter-fill text-[16px] hover:text-[#6c7fd8]"></i></a>
                                     </li>
                                     <li class="bb-social-link leading-[28px]">
                                         <a href="javascript:void(0)"><i
@@ -443,7 +443,7 @@
                                     </li>
                                     <li class="bb-social-link leading-[28px] pb-[10px]">
                                         <a href="javascript:void(0)"><i
-                                                class="ri-twitter-x-fill text-[16px] hover:text-[#6c7fd8]"></i></a>
+                                                class="ri-twitter-fill text-[16px] hover:text-[#6c7fd8]"></i></a>
                                     </li>
                                     <li class="bb-social-link leading-[28px]">
                                         <a href="javascript:void(0)"><i
@@ -474,7 +474,7 @@
                                     </li>
                                     <li class="bb-social-link leading-[28px] pb-[10px]">
                                         <a href="javascript:void(0)"><i
-                                                class="ri-twitter-x-fill text-[16px] hover:text-[#6c7fd8]"></i></a>
+                                                class="ri-twitter-fill text-[16px] hover:text-[#6c7fd8]"></i></a>
                                     </li>
                                     <li class="bb-social-link leading-[28px]">
                                         <a href="javascript:void(0)"><i
